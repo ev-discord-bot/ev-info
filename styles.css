@@ -1,0 +1,9 @@
+.search-bar input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px; /* Rounded corners */
+    padding-left: 15px; /* Add some padding to the left for better visual */
+    text-align: center; /* Center-align the text */
+}
