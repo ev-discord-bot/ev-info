@@ -1,0 +1,199 @@
+<head>
+    <meta content="Simple Aim Tester" property="og:title" />
+    <meta content="A Simple Aim Tester In A Website!" property="og:description" />
+    <meta content="https://media.discordapp.net/attachments/1039308604148293682/1108820053547307008/9999ef6602e13b05d3921152a7986df6.webp" property="og:image" />
+    <meta content="#8B0000" data-react-helmet="true" name="theme-color" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://media.discordapp.net/attachments/1039308604148293682/1108820053547307008/9999ef6602e13b05d3921152a7986df6.webp" type="image/x-icon">
+    <title>iminthebibleson | Aim Tester</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        body {
+        background-image: url('https://media.discordapp.net/attachments/1039308604148293682/1152384610685169694/360_F_185054754_4fTfc14FT7uLYtNnpAF3WhMfUWwha4eV.png'); /* Replace with the URL of your grid pattern image */
+        background-size: 50px 50px; /* Set the size of each grid square */
+        background-repeat: repeat; /* Repeat the pattern in both directions */
+        background-attachment: fixed; /* Fixed background */
+        }
+        #target {
+            width: 60px;
+            height: 60px;
+            background-color: #ff5722;
+            border-radius: 50%;
+            position: absolute;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        #score {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        #timer {
+            font-size: 24px;
+            color: #333;
+        }
+
+        #controls {
+            margin-top: 20px;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        footer {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        }
+    
+        footer div {
+            margin-bottom: 10px;
+        }
+    
+        footer a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #FF5733; /* Change color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div id="score">Score: <span id="scoreValue">0</span></div>
+    <div id="timer">Time: <span id="timeValue">60</span> seconds</div>
+    <div id="controls">
+        <button id="startButton">Start</button>
+        <button id="pauseButton" disabled>Pause</button>
+        <button id="resetButton" disabled>Reset</button>
+    </div>
+    <div id="target"></div>
+    
+    <footer>
+        <div>
+            <a href="/index.html">Home</a> |
+            <a href="/uisettings.html">UI/Settings Mod List</a>
+        </div>
+        Made By Iminthebibleson<br>If you need any bugs or things you think I should add, please contact me
+    </footer>
+
+    <script>
+        const target = document.getElementById('target');
+        const scoreValue = document.getElementById('scoreValue');
+        const timeValue = document.getElementById('timeValue');
+        const startButton = document.getElementById('startButton');
+        const pauseButton = document.getElementById('pauseButton');
+        const resetButton = document.getElementById('resetButton');
+        const goal = 20; // Change the goal here
+        let score = 0;
+        let time = 60; // Change the time limit here (in seconds)
+        let timerInterval;
+        let missPenalty = 1; // Penalty for missing the target
+
+        // Function to generate a random position for the target
+        function randomPosition() {
+            const maxX = window.innerWidth - target.clientWidth;
+            const maxY = window.innerHeight - target.clientHeight;
+            const newX = Math.random() * maxX;
+            const newY = Math.random() * maxY;
+            return { x: newX, y: newY };
+        }
+
+        // Function to move the target to a random position
+        function moveTarget() {
+            const position = randomPosition();
+            target.style.left = position.x + 'px';
+            target.style.top = position.y + 'px';
+        }
+
+        // Function to handle clicks on the target
+        function handleTargetClick() {
+            score++;
+            scoreValue.textContent = score;
+            moveTarget();
+        }
+
+        target.addEventListener('click', handleTargetClick);
+
+        // Function to update the timer
+        function updateTimer() {
+            if (time > 0 && score < goal) {
+                time--;
+                timeValue.textContent = time;
+            } else {
+                clearInterval(timerInterval);
+                target.removeEventListener('click', handleTargetClick);
+                if (score >= goal) {
+                    alert('Congratulations! You reached the goal.');
+                } else {
+                    alert('Time\'s up! You didn\'t reach the goal.');
+                }
+            }
+        }
+
+        startButton.addEventListener('click', () => {
+            timerInterval = setInterval(updateTimer, 1000);
+            startButton.disabled = true;
+            pauseButton.disabled = false;
+            resetButton.disabled = false;
+            target.addEventListener('click', handleTargetClick);
+            moveTarget();
+        });
+
+        pauseButton.addEventListener('click', () => {
+            clearInterval(timerInterval);
+            startButton.disabled = false;
+            pauseButton.disabled = true;
+            target.removeEventListener('click', handleTargetClick);
+        });
+
+        resetButton.addEventListener('click', () => {
+            score = 0;
+            scoreValue.textContent = score;
+            time = 60;
+            timeValue.textContent = time;
+            startButton.disabled = false;
+            pauseButton.disabled = true;
+            resetButton.disabled = true;
+            target.removeEventListener('click', handleTargetClick);
+        });
+    </script>
+</body>
+</html>
