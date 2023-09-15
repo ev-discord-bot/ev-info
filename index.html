@@ -163,7 +163,7 @@
                         userInfoDiv.innerHTML = `
                             <p><strong>Username:</strong> ${user.name}</p>
                             <p><strong>Profile URL:</strong> <a href="https://ev.io/user/${user.drupal_internal__uid}" target="_blank">https://ev.io/user/${user.drupal_internal__uid}</a></p>
-                            <p><strong>Created:</strong> ${new Date(user.created * 1000).toLocaleDateString()}</p>
+                            <p><strong>Created:</strong> ${user.created}</p>
                             <p><strong>Kills:</strong> ${user.field_deaths}</p>
                             <p><strong>Deaths:</strong> ${user.field_kills}</p>
                             <p><strong>Scores:</strong> ${user.field_score}</p>
