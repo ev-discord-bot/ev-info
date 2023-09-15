@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Open Graph Meta Tags -->
+    <meta content="Ev.io Username" property="og:title" />
+    <meta content="Shows User Info From A Website!" property="og:description" />
+    <meta content="https://media.discordapp.net/attachments/1039308604148293682/1108820053547307008/9999ef6602e13b05d3921152a7986df6.webp" property="og:image" />
+    <meta content="#8B0000" data-react-helmet="true" name="theme-color" />
+    <!-- End of Open Graph Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ev.io User Info</title>
+    <link rel="icon" href="https://media.discordapp.net/attachments/1039308604148293682/1108820053547307008/9999ef6602e13b05d3921152a7986df6.webp" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            text-align: center; /* Center align the container */
+        }
+
+        .middle-header {
+            color: #333;
+            padding: 10px 0;
+            text-align: center;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .search-bar {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center vertically */
+        }
+
+        .search-bar label {
+            font-weight: bold;
+        }
+
+        .search-bar input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 25px; /* Rounded corners */
+            padding-left: 15px; /* Add some padding to the left for better visual */
+        }
+
+        .search-bar button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px; /* Rounded corners */
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color: #555;
+        }
+
+        #loadingMessage {
+            display: none;
+            margin-top: 20px;
+        }
+
+        #userInfo {
+            margin-top: 20px;
+            background-color: #f0f0f0; /* Gray background */
+            padding: 15px;
+            border-radius: 5px; /* Rounded corners */
+            text-align: center; /* Center-align text */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #userInfo p {
+            margin-bottom: 10px;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ev.io User Information</h1>
+    <div class="container">
+        <!-- Updated class for the search bar -->
+        <div class="search-bar">
+            <label for="usernameInput">Enter Username:</label>
+            <input type="text" id="usernameInput">
+            <button id="fetchUserButton">Fetch User Info</button>
+        </div>
+        <div id="loadingMessage">Loading...</div>
+        <div class="middle-header" id="middleHeader" style="display: none;"></div>
+        <div id="userInfo"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        Made By Iminthebibleson
+    </footer>
+
+    <script>
+        const fetchUserButton = document.getElementById('fetchUserButton');
+        const usernameInput = document.getElementById('usernameInput');
+        const loadingMessage = document.getElementById('loadingMessage');
+        const userInfoDiv = document.getElementById('userInfo');
+        const middleHeader = document.getElementById('middleHeader');
+
+        // Function to fetch user info
+        const fetchUserInfo = () => {
+            const username = usernameInput.value.trim();
+            if (username === '') {
+                alert('Please enter a username.');
+                return;
+            }
+
+            // Display loading message while fetching data
+            loadingMessage.style.display = 'block';
+            userInfoDiv.innerHTML = '';
+            middleHeader.style.display = 'none';
+
+            // Make a GET request to the API
+            fetch(`https://ev.io/jsonapi/user/user?filter[name]=${encodeURIComponent(username)}`)
+                .then(response => response.json())
+                .then(data => {
+                    // Hide loading message
+                    loadingMessage.style.display = 'none';
+
+                    if (data.data.length === 0) {
+                        userInfoDiv.innerHTML = '<p>User not found.</p>';
+                    } else {
+                        const user = data.data[0].attributes;
+                        middleHeader.style.display = 'block';
+                        middleHeader.innerHTML = `<h2>User Information for ${user.name}</h2>`;
+                        userInfoDiv.innerHTML = `
+                            <p><strong>Username:</strong> ${user.name}</p>
+                            <p><strong>Profile URL:</strong> <a href="https://ev.io/user/${user.drupal_internal__uid}" target="_blank">https://ev.io/user/${user.drupal_internal__uid}</a></p>
+                            <p><strong>Created:</strong> ${new Date(user.created * 1000).toLocaleDateString()}</p>
+                            <p><strong>Kills:</strong> ${user.field_deaths}</p>
+                            <p><strong>Deaths:</strong> ${user.field_kills}</p>
+                            <p><strong>Scores:</strong> ${user.field_score}</p>
+                            <p><strong>KD:</strong> ${user.field_k_d}</p>
+                            <p><strong>Rank:</strong> ${user.field_rank}</p><br>
+                        `;
+                    }
+                })
+                .catch(error => {
+                    loadingMessage.style.display = 'none';
+                    userInfoDiv.innerHTML = '<p>Error fetching user information.</p>';
+                    console.error('Error:', error);
+                });
+        };
+
+        fetchUserButton.addEventListener('click', fetchUserInfo);
+
+        // Listen for Enter key press in the username input field
+        usernameInput.addEventListener('keyup', event => {
+            if (event.key === 'Enter') {
+                fetchUserInfo();
+            }
+        });
+    </script>
+</body>
+</html>
