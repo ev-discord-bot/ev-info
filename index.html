@@ -8,337 +8,450 @@
     <title>iminthebibleson | Ev.io User Info</title>
     <link rel="icon" href="https://media.discordapp.net/attachments/1039308604148293682/1108820053547307008/9999ef6602e13b05d3921152a7986df6.webp" type="image/x-icon">
     <style>
-        footer {
-        background-color: #333;
-        color: #fff;
-        padding: 10px 0;
-        text-align: center;
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        }
-    
-        footer div {
-            margin-bottom: 10px;
-        }
-    
-        footer a {
-            text-decoration: none;
-            color: #fff;
-            margin: 0 10px;
-            transition: color 0.3s ease;
-        }
-
-    footer a:hover {
-        color: #FF5733; /* Change color on hover */
-    }
-        ::-webkit-scrollbar {
-          width: 10px;
-        }
-
-        /* Track */
-        ::-webkit-scrollbar-track {
-          box-shadow: inset 0 0 5px grey; 
-          border-radius: 10px;
-        }
-
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-          background: #5A5A5A; 
-          border-radius: 10px;
-        }
-
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-          background: #333; 
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-        }
-
-        h1 {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            text-align: center; /* Center align the container */
-            overflow: hidden; /* Hide the default scrollbar */
-        }
-
-        .container::-webkit-scrollbar {
-            width: 12px; /* Width of the custom scrollbar */
-        }
-
-        .container::-webkit-scrollbar-thumb {
-            background-color: #333; /* Color of the scrollbar thumb */
-            border-radius: 10px; /* Rounded corners of the thumb */
-        }
-
-        .middle-header {
-            color: #333;
-            padding: 10px 0;
-            text-align: center;
-            margin-bottom: 20px;
-            display: none;
-        }
-
-        .search-bar {
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Center vertically */
-        }
-
-        .search-bar label {
-            font-weight: bold;
-        }
-
-        .search-bar input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 25px; /* Rounded corners */
-            padding-left: 15px; /* Add some padding to the left for better visual */
-            text-align: center; /* Center-align the text */
-        }
-
-        .search-bar button {
-            background-color: #333;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 25px; /* Rounded corners */
-            cursor: pointer;
-        }
-
-        .search-bar button:hover {
-            background-color: #555;
-        }
-
-        #loadingMessage {
-            display: none;
-            margin-top: 20px;
-        }
-
-        #userInfo {
-            margin-top: 20px;
-            background-color: #f0f0f0; /* Gray background */
-            padding: 15px;
-            border-radius: 5px; /* Rounded corners */
-            text-align: center; /* Center-align text */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        #userInfo p {
-            margin-bottom: 10px;
-            font-size: 18px;
-            color: #333;
-        }
-
-        /* Footer styles */
-        footer {
-        background-color: #333;
-        color: #fff;
-        padding: 10px 0;
-        text-align: center;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        }
-
-        footer div {
-            margin-bottom: 10px;
-        }
-
-        footer a {
-            text-decoration: none;
-            color: #fff;
-            margin: 0 10px;
-            transition: color 0.3s ease;
-        }
-
-        footer a:hover {
-            color: #FF5733; /* Change color on hover */
-        }
-        body {
-        background-image: url('https://media.discordapp.net/attachments/1039308604148293682/1152384610685169694/360_F_185054754_4fTfc14FT7uLYtNnpAF3WhMfUWwha4eV.png'); /* Replace with the URL of your grid pattern image */
-        background-size: 50px 50px; /* Set the size of each grid square */
-        background-repeat: repeat; /* Repeat the pattern in both directions */
-        background-attachment: fixed; /* Fixed background */
-        }
-        /* Style for the user image */
-        #userImage {
-            max-width: 100%;
-            margin-top: 20px;
-        }
-
-        /* Style for the more info button and details */
-        #moreInfoButton {
-            background-color: #333;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 25px; /* Rounded corners */
-            cursor: pointer;
-            margin-top: 20px;
-        }
-
-        #moreInfoButton:hover {
-            background-color: #555;
-        }
-
-        #moreInfoDetails {
-            margin-top: 20px;
-            padding: 15px;
-            background-color: #f0f0f0; /* Gray background */
-            border-radius: 5px; /* Rounded corners */
-            display: none;
-            overflow-y: auto; /* Enable vertical scrolling */
-            max-height: 200px; /* Limit the maximum height */
-        }
-
-        #moreInfoDetails p {
-            margin-bottom: 10px;
-            font-size: 18px;
-            color: #333;
-        }
+       body.scrolled {
+       /* Set the scroll behavior to 'smooth' for a smooth scrolling effect */
+       scroll-behavior: smooth;
+       /* Add your background color and other styles for the top scrollbar here */
+       background-color: #f5f5f5;
+       /* Add any other styles you want */
+       }
+       /* Add a padding to the top of the body to account for the scrollbar */
+       body.scrolled::before {
+       content: ''; /* Create an empty pseudo-element */
+       height: 8px; /* Height of the scrollbar */
+       display: block;
+       }
+       footer {
+       background-color: #333;
+       color: #fff;
+       padding: 10px 0;
+       text-align: center;
+       position: absolute;
+       bottom: 0;
+       width: 100%;
+       }
+       footer div {
+       margin-bottom: 10px;
+       }
+       footer a {
+       text-decoration: none;
+       color: #fff;
+       margin: 0 10px;
+       transition: color 0.3s ease;
+       }
+       footer a:hover {
+       color: #FF5733; /* Change color on hover */
+       }
+       ::-webkit-scrollbar {
+       width: 8px; /* Width of the scrollbar */
+       height: 8px; /* Height of the scrollbar */
+       }
+       ::-webkit-scrollbar-thumb {
+       background: #555; /* Color of the scrollbar thumb */
+       border-radius: 4px; /* Rounded corners of the thumb */
+       }
+       ::-webkit-scrollbar-thumb:hover {
+       background: #333; /* Color on hover */
+       }
+       /* H    ide the default scrollbar track */
+       ::-webkit-scrollbar-track {
+       background: transparent;
+       }
+       .main-content {
+       margin-left: 280px; /* Adjust the margin width to match the width of your advertisement box */
+       }
+       .ad-image {
+       width: 100%; /* Make the image width 100% of its container */
+       height: auto; /* Allow the height to adjust proportionally */
+       }
+       body {
+       font-family: Arial, sans-serif;
+       background-color: #f5f5f5;
+       margin: 0;
+       padding: 0;
+       }
+       h1 {
+       background-color: #333;
+       color: #fff;
+       padding: 20px;
+       text-align: center;
+       }
+       .container {
+       max-width: 600px;
+       margin: 0 auto;
+       padding: 20px;
+       background-color: #fff;
+       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+       border-radius: 5px;
+       text-align: center; /* Center align the container */
+       overflow: hidden; /* Hide the default scrollbar */
+       }
+       .container::-webkit-scrollbar {
+       width: 12px; /* Width of the custom scrollbar */
+       }
+       .container::-webkit-scrollbar-thumb {
+       background-color: #333; /* Color of the scrollbar thumb */
+       border-radius: 10px; /* Rounded corners of the thumb */
+       }
+       .middle-header {
+       color: #333;
+       padding: 10px 0;
+       text-align: center;
+       margin-bottom: 20px;
+       display: none;
+       }
+       .search-bar {
+       display: flex;
+       flex-direction: column;
+       align-items: center; /* Center vertically */
+       }
+       .search-bar label {
+       font-weight: bold;
+       }
+       .search-bar input[type="text"] {
+       width: 100%;
+       padding: 10px;
+       margin-bottom: 10px;
+       border: 1px solid #ccc;
+       border-radius: 25px; /* Rounded corners */
+       padding-left: 15px; /* Add some padding to the left for better visual */
+       text-align: center; /* Center-align the text */
+       }
+       .search-bar button {
+       background-color: #333;
+       color: #fff;
+       border: none;
+       padding: 10px 20px;
+       border-radius: 25px; /* Rounded corners */
+       cursor: pointer;
+       }
+       .search-bar button:hover {
+       background-color: #555;
+       }
+       #loadingMessage {
+       display: none;
+       margin-top: 20px;
+       }
+       #userInfo {
+       margin-top: 20px;
+       background-color: #f0f0f0; /* Gray background */
+       padding: 15px;
+       border-radius: 5px; /* Rounded corners */
+       text-align: center; /* Center-align text */
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       }
+       #userInfo p {
+       margin-bottom: 10px;
+       font-size: 18px;
+       color: #333;
+       }
+       /* Footer styles */
+       footer {
+       background-color: #333;
+       color: #fff;
+       padding: 10px 0;
+       text-align: center;
+       position: fixed;
+       bottom: 0;
+       width: 100%;
+       }
+       footer div {
+       margin-bottom: 10px;
+       }
+       footer a {
+       text-decoration: none;
+       color: #fff;
+       margin: 0 10px;
+       transition: color 0.3s ease;
+       }
+       footer a:hover {
+       color: #FF5733; /* Change color on hover */
+       }
+       body {
+       background-image: url('https://media.discordapp.net/attachments/1039308604148293682/1152384610685169694/360_F_185054754_4fTfc14FT7uLYtNnpAF3WhMfUWwha4eV.png'); /* Replace with the URL of your grid pattern image */
+       background-size: 50px 50px; /* Set the size of each grid square */
+       background-repeat: repeat; /* Repeat the pattern in both directions */
+       background-attachment: fixed; /* Fixed background */
+       }
+       /* Style for the user image */
+       #userImage {
+       max-width: 100%;
+       margin-top: 20px;
+       }
+       /* Style for the more info button and details */
+       #moreInfoButton {
+       background-color: #333;
+       color: #fff;
+       border: none;
+       padding: 10px 20px;
+       border-radius: 25px; /* Rounded corners */
+       cursor: pointer;
+       margin-top: 20px;
+       }
+       #moreInfoButton:hover {
+       background-color: #555;
+       }
+       #moreInfoDetails {
+       margin-top: 20px;
+       padding: 15px;
+       background-color: #f0f0f0; /* Gray background */
+       border-radius: 5px; /* Rounded corners */
+       display: none;
+       overflow-y: auto; /* Enable vertical scrolling */
+       max-height: 200px; /* Limit the maximum height */
+       }
+       #moreInfoDetails p {
+       margin-bottom: 10px;
+       font-size: 18px;
+       color: #333;
+       }
+       .button-container {
+       position: absolute;
+       bottom: 7px; /* Adjust as needed */
+       left: 50%;
+       transform: translateX(-55%);
+       }
+       /* Add the same button styling as your other buttons */
+       .ad-button {
+       background-color: #333;
+       color: #fff;
+       border: none;
+       padding: 10px 40px;
+       border-radius: 25px;
+       cursor: pointer;
+       }
+       .ad-button:hover {
+       background-color: #555;
+       }
+       .advertisement-right {
+       width: 280px; /* Adjust the width as needed */
+       height: 400px; /* Adjust the height as needed */
+       background-color: #333; /* Background color for the advertisement box */
+       color: #fff; /* Text color */
+       padding: 10px;
+       position: fixed; /* Fixed position on the left side */
+       right: 20px; /* Adjust the left position as needed */
+       top: 20%; /* Adjust the top position as needed */
+       border-radius: 10px; /* Rounded corners */
+       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Box shadow for a 3D effect */
+       float: left;
+       }
+       .ad-button {
+       background-color: #333;
+       color: #fff;
+       border: none;
+       padding: 10px 20px;
+       border-radius: 25px;
+       cursor: pointer;
+       text-decoration: none; /* Remove underlines for links */
+       display: inline-block; /* Make links inline elements */
+       margin: -1px; /* Add some spacing between the buttons */
+       }
+       .ad-button:hover {
+       background-color: #555;
+       }
+       /* Remove underline from links */
+       .ad-button {
+       text-decoration: none;
+       }
+       .discord-logo {
+       width: 20px; /* Adjust width as needed */
+       height: 16px; /* Adjust height as needed */
+       margin-right: 1px;
+       vertical-align: middle;
+       }
+       .copy-icon {
+       width: 20px; /* Adjust width as needed */
+       height: 20px; /* Adjust height as needed */
+       margin-right: 1px; /* Add some spacing between the icon and text */
+       vertical-align: middle; /* Align the icon vertically with the text */
+       }
+       .advertisement-left {
+       width: 280px; /* Adjust the width as needed */
+       height: 400px; /* Adjust the height as needed */
+       background-color: #333; /* Background color for the advertisement box */
+       color: #fff; /* Text color */
+       padding: 10px;
+       position: fixed; /* Fixed position on the left side */
+       left: 20px; /* Adjust the left position as needed */
+       top: 20%; /* Adjust the top position as needed */
+       border-radius: 10px; /* Rounded corners */
+       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Box shadow for a 3D effect */
+       float: left;
+       }
     </style>
-</head>
-<body>
+ </head>
+ <body>
+    <div class="advertisement-left">
+    <!-- Advertisement content goes here -->
+    <img src="https://media.discordapp.net/attachments/1039308604148293682/1152588483957887006/1213709.png?width=384&height=384" alt="Advertisement" class="ad-image">
+    <p>Donate to me if you can. It will greatly benefit me. Anything is welcome,<br>of course.</p>
+    <center>
+       <div class="button-container">
+          <button id="copyButton" class="ad-button">
+          <img src="https://cdn.discordapp.com/attachments/1039308604148293682/1152601876383146044/free-sol-5382327-4498199.png" alt="Copy Icon" class="copy-icon"> Copy Token
+          </button>
+    </center>
+    </div>
+    <div class="advertisement-right">
+       <!-- Advertisement content goes here -->
+       <img src="https://cdn.discordapp.com/attachments/1039308604148293682/1152596243952963664/26f5c85c76444b5b6c218835eba2b69c.png" alt="Advertisement" class="ad-image">
+       <p>Try out my Discord bot on your Discord server.</p>
+       <br>
+       <center><a href="https://discord.com/api/oauth2/authorize?client_id=1072538244572516462&permissions=139586825280&scope=bot%20applications.commands" id="learnMoreLink" class="ad-button">
+          <img src="https://media.discordapp.net/attachments/1039308604148293682/1152599367388242061/discord-black-logo-733DD6B9B0-seeklogo.com.png" alt="Discord Logo" class="discord-logo"> Invite Bot
+          </a>
+       </center>
+    </div>
     <h1>Ev.io User Information</h1>
     <div class="container">
-        <!-- Updated class for the search bar -->
-        <div class="search-bar">
-            <label for="usernameInput">Enter Username:</label>
-            <input type="text" id="usernameInput">
-            <button id="fetchUserButton">Fetch User Info</button>
-        </div>
-        <div id="loadingMessage">Loading...</div>
-        <div class="middle-header" id="middleHeader" style="display: none;"></div>
-        <div id="userInfo"></div>
-        <!-- More info button and details -->
-        <center><button id="moreInfoButton">More Info</button></center>
-        <div id="moreInfoDetails"></div>
-        <br><br><br><br><br><br>
-        <!-- Image element to display the user image -->
+       <!-- Updated class for the search bar -->
+       <div class="search-bar">
+          <label for="usernameInput">Enter Username:</label>
+          <input type="text" id="usernameInput">
+          <button id="fetchUserButton">Fetch User Info</button>
+       </div>
+       <div id="loadingMessage">Loading...</div>
+       <div class="middle-header" id="middleHeader" style="display: none;"></div>
+       <div id="userInfo"></div>
+       <!-- More info button and details -->
+       <center><button id="moreInfoButton">More Info</button></center>
+       <div id="moreInfoDetails"></div>
+       <br><br><br><br><br><br>
+       <!-- Image element to display the user image -->
     </div>
-
     <!-- Footer -->
     <footer>
-    <div>
-        <a href="uisettings.html">UI/Settings Mod List</a> |
-        <a href="aimtester.html">Aim Tester</a>
-    </div>
-    Made By Iminthebibleson<br>If you need any bugs or things you think I should add, please contact me
+       <div>
+          <a href="uisettings.html">UI/Settings Mod List</a> |
+          <a href="aimtester.html">Aim Tester</a>
+       </div>
+       Made By Iminthebibleson<br>If you need any bugs or things you think I should add, please contact me
     </footer>
-
     <script>
-        const fetchUserButton = document.getElementById('fetchUserButton');
-        const usernameInput = document.getElementById('usernameInput');
-        const loadingMessage = document.getElementById('loadingMessage');
-        const userInfoDiv = document.getElementById('userInfo');
-        const middleHeader = document.getElementById('middleHeader');
-        const userImage = document.getElementById('userImage');
-        const moreInfoButton = document.getElementById('moreInfoButton');
-        const moreInfoDetails = document.getElementById('moreInfoDetails');
-        let user; // Store user data
-
-        // Function to fetch user info
-        const fetchUserInfo = () => {
-            const username = usernameInput.value.trim();
-            if (username === '') {
-                alert('Please enter a username.');
-                return;
-            }
-
-            // Display loading message while fetching data
-            loadingMessage.style.display = 'block';
-            userInfoDiv.innerHTML = '';
-            middleHeader.style.display = 'none';
-            moreInfoDetails.style.display = 'none';
-
-            // Make a GET request to the API
-            fetch(`https://ev.io/stats-by-un/${encodeURIComponent(username)}`)
-                .then(response => response.json())
-                .then(data => {
-                    // Hide loading message
-                    loadingMessage.style.display = 'none';
-
-                    if (data.length === 0) {
-                        userInfoDiv.innerHTML = '<p>User not found.</p>';
-                        moreInfoButton.style.display = 'none'; // Hide more info button if user not found
-                    } else {
-                        user = data[0]; // Store user data
-                        middleHeader.style.display = 'block';
-                        middleHeader.innerHTML = `<h2>User Information for ${user.name[0].value}</h2>`;
-                        const uidUrl = `https://ev.io/user/${user.uid[0].value}`;
-                        const crosshairUrl = `${user.field_custom_crosshair[0].url}`;
-                        userInfoDiv.innerHTML = `
-                            <p><strong>Username:</strong> ${user.name[0].value}</p>
-                            <p><strong>User URL:</strong> <a href="${uidUrl}" target="_blank">https://ev.io/user/${user.uid[0].value}</a></p>
-                            <p><strong>Kills:</strong> ${user.field_kills[0].value}</p>
-                            <p><strong>Deaths:</strong> ${user.field_deaths[0].value}</p>
-                            <p><strong>KD:</strong> ${user.field_k_d[0].value}</p>
-                            <p><strong>Rank:</strong> ${user.field_rank[0].value}</p>
-                            <p><strong>Score:</strong> ${user.field_score[0].value}</p>
-                            <p><strong>Crosshair:</strong> <a href="${crosshairUrl}" target="_blank">Users Crosshair</a></p>
-                        `;
-                        moreInfoButton.style.display = 'block'; // Show more info button
-                    }
-                })
-                .catch(error => {
-                    loadingMessage.style.display = 'none';
-                    userInfoDiv.innerHTML = '<p>Error fetching user information.</p>';
-                    moreInfoButton.style.display = 'none'; // Hide more info button on error
-                    console.error('Error:', error);
-                });
-        };
-
-        // Function to show more user details
-        const showMoreInfo = () => {
-            if (usernameInput.value.trim() === '') {
-                alert('Please enter a username.');
-                return;
-            }
-            moreInfoDetails.style.display = 'block';
-            if (user) {
-                moreInfoDetails.innerHTML = `
-                    <p><strong>Abilities Layout:</strong> ${user.field_abilities_loadout[0].value}</p>
-                    <p><strong>Total Games:</strong> ${user.field_total_games[0].value}</p>\
-                    <p><strong>Wallet Address:</strong> ${user.field_wallet_address[0].value}</p>
-                    <p><strong>Weekly Score:</strong> ${user.field_weekly_score[0].value}</p>
-                    <p><strong>CP Earned Weekly:</strong> ${user.field_cp_earned_weekly[0].value}</p>
-                    <p><strong>CP Lifetime Earned:</strong> ${user.field_lifetime_cp_earned[0].value}</p>
-                    <p><strong>Ev Coins:</strong> ${user.field_ev_coins[0].value}</p>
-                    <!-- Add more details as needed -->
-                `;
-            }
-        };
-
-        fetchUserButton.addEventListener('click', fetchUserInfo);
-        moreInfoButton.addEventListener('click', showMoreInfo);
-
-        // Listen for Enter key press in the username input field
-        usernameInput.addEventListener('keyup', event => {
-            if (event.key === 'Enter') {
-                fetchUserInfo();
-            }
-        });
+       window.addEventListener('scroll', function () {
+         // Get the scroll position
+         const scrollY = window.scrollY || window.pageYOffset;
+       
+         // Check if the scroll position is greater than a threshold value
+         if (scrollY > 100) {
+           // Add a class to the body element to apply custom styles
+           document.body.classList.add('scrolled');
+         } else {
+           // Remove the class when the scroll position is less than the threshold
+           document.body.classList.remove('scrolled');
+         }
+       });
+       
+       const copyButton = document.getElementById('copyButton');
+       
+       function copyTextToClipboard() {
+           const textToCopy = "Gcu5atSNzKDmkqH98JRp87XFhRY8Kgwp49HXMxvp8DmW"; // Replace with your text
+           const textArea = document.createElement("textarea");
+           textArea.value = textToCopy;
+           document.body.appendChild(textArea);
+           textArea.select();
+           document.execCommand("copy");
+           document.body.removeChild(textArea);
+           alert("Text copied to clipboard: " + textToCopy);
+       }
+       
+       // Add click event listener to the copy button
+       document.getElementById("copyButton").addEventListener("click", copyTextToClipboard);
+       
+       const fetchUserButton = document.getElementById('fetchUserButton');
+       const usernameInput = document.getElementById('usernameInput');
+       const loadingMessage = document.getElementById('loadingMessage');
+       const userInfoDiv = document.getElementById('userInfo');
+       const middleHeader = document.getElementById('middleHeader');
+       const userImage = document.getElementById('userImage');
+       const moreInfoButton = document.getElementById('moreInfoButton');
+       const moreInfoDetails = document.getElementById('moreInfoDetails');
+       let user; // Store user data
+       
+       // Function to fetch user info
+       const fetchUserInfo = () => {
+           const username = usernameInput.value.trim();
+           if (username === '') {
+               alert('Please enter a username.');
+               return;
+           }
+       
+           // Display loading message while fetching data
+           loadingMessage.style.display = 'block';
+           userInfoDiv.innerHTML = '';
+           middleHeader.style.display = 'none';
+           moreInfoDetails.style.display = 'none';
+       
+           // Make a GET request to the API
+           fetch(`https://ev.io/stats-by-un/${encodeURIComponent(username)}`)
+               .then(response => response.json())
+               .then(data => {
+                   // Hide loading message
+                   loadingMessage.style.display = 'none';
+       
+                   if (data.length === 0) {
+                       userInfoDiv.innerHTML = '<p>User not found.</p>';
+                       moreInfoButton.style.display = 'none'; // Hide more info button if user not found
+                   } else {
+                       user = data[0]; // Store user data
+                       middleHeader.style.display = 'block';
+                       middleHeader.innerHTML = `<h2>User Information for ${user.name[0].value}</h2>`;
+                       const uidUrl = `https://ev.io/user/${user.uid[0].value}`;
+                       const crosshairUrl = `${user.field_custom_crosshair[0].url}`;
+                       userInfoDiv.innerHTML = `
+                           <p><strong>Username:</strong> ${user.name[0].value}</p>
+                           <p><strong>User URL:</strong> <a href="${uidUrl}" target="_blank">https://ev.io/user/${user.uid[0].value}</a></p>
+                           <p><strong>Kills:</strong> ${user.field_kills[0].value}</p>
+                           <p><strong>Deaths:</strong> ${user.field_deaths[0].value}</p>
+                           <p><strong>KD:</strong> ${user.field_k_d[0].value}</p>
+                           <p><strong>Rank:</strong> ${user.field_rank[0].value}</p>
+                           <p><strong>Score:</strong> ${user.field_score[0].value}</p>
+                           <p><strong>Crosshair:</strong> <a href="${crosshairUrl}" target="_blank">Users Crosshair</a></p>
+                       `;
+                       moreInfoButton.style.display = 'block'; // Show more info button
+                   }
+               })
+               .catch(error => {
+                   loadingMessage.style.display = 'none';
+                   userInfoDiv.innerHTML = '<p>Error fetching user information.</p>';
+                   moreInfoButton.style.display = 'none'; // Hide more info button on error
+                   console.error('Error:', error);
+               });
+       };
+       
+       // Function to show more user details
+       const showMoreInfo = () => {
+           if (usernameInput.value.trim() === '') {
+               alert('Please enter a username.');
+               return;
+           }
+           moreInfoDetails.style.display = 'block';
+           if (user) {
+               moreInfoDetails.innerHTML = `
+                   <p><strong>Abilities Layout:</strong> ${user.field_abilities_loadout[0].value}</p>
+                   <p><strong>Total Games:</strong> ${user.field_total_games[0].value}</p>\
+                   <p><strong>Wallet Address:</strong> ${user.field_wallet_address[0].value}</p>
+                   <p><strong>Weekly Score:</strong> ${user.field_weekly_score[0].value}</p>
+                   <p><strong>CP Earned Weekly:</strong> ${user.field_cp_earned_weekly[0].value}</p>
+                   <p><strong>CP Lifetime Earned:</strong> ${user.field_lifetime_cp_earned[0].value}</p>
+                   <p><strong>Ev Coins:</strong> ${user.field_ev_coins[0].value}</p>
+                   <!-- Add more details as needed -->
+               `;
+           }
+       };
+       
+       fetchUserButton.addEventListener('click', fetchUserInfo);
+       moreInfoButton.addEventListener('click', showMoreInfo);
+       
+       // Listen for Enter key press in the username input field
+       usernameInput.addEventListener('keyup', event => {
+           if (event.key === 'Enter') {
+               fetchUserInfo();
+           }
+       });
     </script>
-</body>
-</html>
+ </body>
+ </html>
