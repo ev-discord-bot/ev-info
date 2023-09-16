@@ -1,243 +1,179 @@
+<!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta content="My Portfolio" property="og:title">
-      <meta content="Check out my other work!" property="og:description">
-      <meta content="https://your-portfolio-image-url.com" property="og:image">
-      <meta content="#8B0000" data-react-helmet="true" name="theme-color">
-      <title>Iminthebibleson | My Work</title>
-      <link rel="icon" href="https://media.discordapp.net/attachments/1039308604148293682/1108820053547307008/9999ef6602e13b05d3921152a7986df6.webp" type="image/x-icon">
-      <style>
-
-        ::-webkit-scrollbar {
-          width: 10px;
-        }
-
-        /* Track */
-        ::-webkit-scrollbar-track {
-          box-shadow: inset 0 0 5px grey; 
-          border-radius: 10px;
-        }
-
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-          background: #5A5A5A; 
-          border-radius: 10px;
-        }
-
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-          background: #333; 
-        }
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="My Portfolio" property="og:title">
+    <meta content="Check out my other work!" property="og:description">
+    <meta content="https://your-portfolio-image-url.com" property="og:image">
+    <meta content="#8B0000" data-react-helmet="true" name="theme-color">
+    <title>Iminthebibleson | My Work</title>
+    <link rel="icon" href="https://media.discordapp.net/attachments/1039308604148293682/1108820053547307008/9999ef6602e13b05d3921152a7986df6.webp" type="image/x-icon">
+    <style>
+        /* Reset some default styles */
         body, h1, h2, p, ul, li {
-         margin: 0;
-         padding: 0;
-         }
-         /* Global styles */
-         body {
-         font-family: Arial, sans-serif;
-         background-color: #f5f5f5;
-         }
-         h1 {
-         background-color: #333;
-         color: #fff;
-         padding: 20px;
-         text-align: center;
-         }
-         p {
-         background-color: none;
-         color: #ffff;
-         padding: 5px;
-         text-align: center;
-         }
-         .container {
-         max-width: 960px;
-         margin: 0 auto;
-         padding: 20px;
-         background-color: #fff;
-         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-         border-radius: 5px;
-         text-align: center;
-         overflow: hidden;
-         }
-         /* Footer styles */
-         footer {
-         background-color: #333;
-         color: #fff;
-         padding: 10px 0;
-         text-align: center;
-         position: fixed;
-         bottom: 0;
-         width: 100%;
-         }
-         footer div {
-         margin-bottom: 10px;
-         }
-         footer a {
-         text-decoration: none;
-         color: #fff;
-         margin: 0 10px;
-         transition: color 0.3s ease;
-         }
-         footer a:hover {
-         color: #FF5733; /* Change color on hover */
-         }
-         .container {
-         max-width: 600px;
-         margin: 0 auto;
-         padding: 20px;
-         background-color: #fff;
-         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-         border-radius: 5px;
-         text-align: center; /* Center align the container */
-         overflow: hidden; /* Hide the default scrollbar */
-         }
-         .container::-webkit-scrollbar {
-         width: 12px; /* Width of the custom scrollbar */
-         }
-         .container::-webkit-scrollbar-thumb {
-         background-color: #333; /* Color of the scrollbar thumb */
-         border-radius: 10px; /* Rounded corners of the thumb */
-         }
-         /* Ad styles */
-         .ad-container {
-         background-color: #333;
-         padding: 20px;
-         margin: 20px 0;
-         border: 1px solid #ddd;
-         border-radius: 5px;
-         }
-         .ad-image {
-         max-width: 50%;
-         height: auto;
-         }
-         .modern-hr {
-         border: none;
-         height: 2px; /* Adjust the height as needed */
-         background: linear-gradient(to right, #ccc, #333, #ccc); /* Gradient background */
-         margin: 20px 0; /* Adjust margin as needed */
-         }
-         body {
-         background-image: url('https://media.discordapp.net/attachments/1039308604148293682/1152384610685169694/360_F_185054754_4fTfc14FT7uLYtNnpAF3WhMfUWwha4eV.png'); /* Replace with the URL of your grid pattern image */
-         background-size: 50px 50px; /* Set the size of each grid square */
-         background-repeat: repeat; /* Repeat the pattern in both directions */
-         background-attachment: fixed; /* Fixed background */
-         }
-         .learn-more-button {
-         background-color: none;
-         color: #fff;
-         border: none;
-         padding: 10px 20px;
-         border-radius: 5px;
-         text-decoration: none;
-         font-weight: bold;
-         transition: background-color 0.3s ease;
-         cursor: pointer;
-         }
-         .learn-more-button:hover {
-         background-color: #555;
-         }
-         .ad-button {
-         background-color: #333;
-         color: #fff;
-         border: none;
-         padding: 10px 20px;
-         border-radius: 25px;
-         cursor: pointer;
-         text-decoration: none;
-         /* Remove underlines for links */
-         display: inline-block;
-         /* Make links inline elements */
-         margin: -1px;
-         /* Add some spacing between the buttons */
-         }
-         .ad-button:hover {
-         background-color: #555;
-         }
-         /* Remove underline from links */
-         .ad-button {
-         text-decoration: none;
-         }
-         .discord-logo {
-         width: 20px;
-         /* Adjust width as needed */
-         height: 16px;
-         /* Adjust height as needed */
-         margin-right: 1px;
-         vertical-align: middle;
-         }
-         .copy-icon {
-         width: 20px;
-         /* Adjust width as needed */
-         height: 20px;
-         /* Adjust height as needed */
-         margin-right: 1px;
-         /* Add some spacing between the icon and text */
-         vertical-align: middle;
-         /* Align the icon vertically with the text */
-         }
-         .button-container {
-         position: absolute;
-         bottom: 7px;
-         /* Adjust as needed */
-         left: 50%;
-         transform: translateX(-55%);
-         }
-      </style>
-   </head>
-   <body>
-      <h1>My Work</h1>
-      <div class="container">
-         <!-- Ad container 1 -->
-         <div class="ad-container">
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        p {
+            background-color: none;
+            color: #ffff;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* Footer styles */
+        footer {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        }
+
+        footer div {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #FF5733; /* Change color on hover */
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            text-align: center; /* Center align the container */
+            overflow: hidden; /* Hide the default scrollbar */
+        }
+
+        .container::-webkit-scrollbar {
+            width: 12px; /* Width of the custom scrollbar */
+        }
+
+        .container::-webkit-scrollbar-thumb {
+            background-color: #333; /* Color of the scrollbar thumb */
+            border-radius: 10px; /* Rounded corners of the thumb */
+        }
+
+        /* Ad styles */
+        .ad-container {
+            background-color: #333;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .ad-image {
+            max-width: 50%;
+            height: auto;
+        }
+
+        .modern-hr {
+           border: none;
+           height: 2px; /* Adjust the height as needed */
+           background: linear-gradient(to right, #ccc, #333, #ccc); /* Gradient background */
+           margin: 20px 0; /* Adjust margin as needed */
+       }
+
+       body {
+        background-image: url('https://media.discordapp.net/attachments/1039308604148293682/1152384610685169694/360_F_185054754_4fTfc14FT7uLYtNnpAF3WhMfUWwha4eV.png'); /* Replace with the URL of your grid pattern image */
+        background-size: 50px 50px; /* Set the size of each grid square */
+        background-repeat: repeat; /* Repeat the pattern in both directions */
+        background-attachment: fixed; /* Fixed background */
+        }
+
+        .learn-more-button {
+            background-color: none;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .learn-more-button:hover {
+            background-color: #555;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <h1>My Work</h1>
+
+    <div class="container">
+        <!-- Ad container 1 -->
+        <div class="ad-container">
             <img class="ad-image" src="https://media.discordapp.net/attachments/1039308604148293682/1152596243952963664/26f5c85c76444b5b6c218835eba2b69c.png?width=680&height=680" alt="Ad 1">
-            <p>Try out my Discord bot on your Discord server.</p>
-            <br>
-            <center>
-            <a href="https://discord.com/api/oauth2/authorize?client_id=1072538244572516462&permissions=139586825280&scope=bot%20applications.commands" id="learnMoreLink" class="ad-button">
-            <img src="https://media.discordapp.net/attachments/1039308604148293682/1152599367388242061/discord-black-logo-733DD6B9B0-seeklogo.com.png" alt="Discord Logo" class="discord-logo"> Invite Bot
-            </a>
-         </div>
-         <hr class="modern-hr">
-         <!-- Ad container 2 -->
-         <div class="ad-container">
+            <p>Try out my Discord bot on your Discord server.</p><br>
+            <a class="learn-more-button" href="https://discord.com/api/oauth2/authorize?client_id=1072538244572516462&permissions=139586825280&scope=bot%20applications.commands">Invite Discord Bot</a>
+        </div>
+
+        <hr class="modern-hr">
+
+        <!-- Ad container 2 -->
+        <div class="ad-container">
             <img class="ad-image" src="https://media.discordapp.net/attachments/1039308604148293682/1152588483957887006/1213709.png?width=384&height=384" alt="Ad 2">
-            <br>
-            <p>Donate to me if you can. It will greatly benefit me. Anything is welcome, of course.</p>
-            <button id="copyButton" class="ad-button">
-               <img src="https://cdn.discordapp.com/attachments/1039308604148293682/1152601876383146044/free-sol-5382327-4498199.png" alt="Copy Icon" class="copy-icon"> Copy Token
-            </button>
-         </div>
-      </div>
-      <br><br><br><br>
-      </div>
-      <!-- Footer -->
-      <footer>
-         <div>
+            <p>Donate to me if you can. It will greatly benefit me. Anything is welcome, of course.<br><br>Wallet Token<br>Gcu5atSNzKDmkqH98JRp87XFhRY8Kgwp49HXMxvp8DmW</p>
+        </div>
+        <br><br><br><br>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div>
             <a href="index.html">Home</a> |
             <a href="uisettings.html">UI/Settings Mod List</a> |
             <a href="aimtester.html">Aim Tester</a>
-         </div>
-         Made By Iminthebibleson<br>If you need any bugs or things you think I should add, please contact me
-      </footer>
-      <script>
-         const copyButton = document.getElementById('copyButton');
-         
-         function copyTextToClipboard() {
-             const textToCopy = "Gcu5atSNzKDmkqH98JRp87XFhRY8Kgwp49HXMxvp8DmW"; // Replace with your text
-             const textArea = document.createElement("textarea");
-             textArea.value = textToCopy;
-             document.body.appendChild(textArea);
-             textArea.select();
-             document.execCommand("copy");
-             document.body.removeChild(textArea);
-             alert("Text copied to clipboard: " + textToCopy);
-         }
-         
-         // Add click event listener to the copy button
-         document.getElementById("copyButton").addEventListener("click", copyTextToClipboard);
-      </script>
-   </body>
+        </div>
+        Made By Iminthebibleson<br>If you need any bugs or things you think I should add, please contact me
+    </footer>
+
+    <script>
+        // Your JavaScript code here, if needed
+    </script>
+</body>
 </html>
