@@ -1,0 +1,384 @@
+.search-bar input[type="text"] {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 25px;
+	/* Rounded corners */
+	padding-left: 15px;
+	/* Add some padding to the left for better visual */
+	text-align: center;
+	/* Center-align the text */
+}
+
+body {
+	background-image: url('https://media.discordapp.net/attachments/1039308604148293682/1152384610685169694/360_F_185054754_4fTfc14FT7uLYtNnpAF3WhMfUWwha4eV.png');
+	/* Replace with the URL of your grid pattern image */
+	background-size: 50px 50px;
+	/* Set the size of each grid square */
+	background-repeat: repeat;
+	/* Repeat the pattern in both directions */
+	background-attachment: fixed;
+	/* Fixed background */
+}
+
+footer {
+	background-color: #333;
+	color: #fff;
+	padding: 10px 0;
+	text-align: center;
+	position: relative;
+	/* or position: absolute; */
+	bottom: 0;
+	width: 100%;
+}
+
+footer div {
+	margin-bottom: 10px;
+}
+
+footer a {
+	text-decoration: none;
+	color: #fff;
+	margin: 0 10px;
+	transition: color 0.3s ease;
+}
+
+footer a:hover {
+	color: #FF5733;
+	/* Change color on hover */
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px grey;
+	border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #5A5A5A;
+	border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #333;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f5f5f5;
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+}
+
+.container {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	border-radius: 25px;
+	text-align: center;
+	/* Center align the container */
+	overflow: hidden;
+	/* Hide the default scrollbar */
+}
+
+.container::-webkit-scrollbar {
+	width: 12px;
+	/* Width of the custom scrollbar */
+}
+
+.container::-webkit-scrollbar-thumb {
+	background-color: #333;
+	/* Color of the scrollbar thumb */
+	border-radius: 10px;
+	/* Rounded corners of the thumb */
+}
+
+.middle-header {
+	color: #333;
+	padding: 10px 0;
+	text-align: center;
+	margin-bottom: 20px;
+	display: none;
+}
+
+.search-bar {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* Center vertically */
+}
+
+.search-bar label {
+	font-weight: bold;
+}
+
+.search-bar input[type="text"] {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 25px;
+	/* Rounded corners */
+	padding-left: 15px;
+	/* Add some padding to the left for better visual */
+	text-align: center;
+	/* Center-align the text */
+}
+
+.search-bar button {
+	background-color: #333;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 25px;
+	/* Rounded corners */
+	cursor: pointer;
+}
+
+.search-bar button:hover {
+	background-color: #555;
+}
+
+#loadingMessage {
+	display: none;
+	margin-top: 20px;
+}
+
+#userInfo {
+	margin-top: 20px;
+	background-color: #f0f0f0;
+	/* Gray background */
+	padding: 15px;
+	border-radius: 25px;
+	/* Rounded corners */
+	text-align: center;
+	/* Center-align text */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#userInfo p {
+	margin-bottom: -5px;
+	font-size: 15px;
+	color: #333;
+}
+
+/* Footer styles */
+footer {
+	background-color: #333;
+	color: #fff;
+	padding: 10px 0;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+footer div {
+	margin-bottom: 10px;
+}
+
+footer a {
+	text-decoration: none;
+	color: #fff;
+	margin: 0 10px;
+	transition: color 0.3s ease;
+}
+
+footer a:hover {
+	color: #FF5733;
+	/* Change color on hover */
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	background-color: #f5f5f5;
+	color: #333;
+}
+
+#userImage {
+	max-width: 100%;
+	margin-top: 20px;
+}
+
+#moreInfoButton {
+	background-color: #333;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 25px;
+	/* Rounded corners */
+	cursor: pointer;
+	margin-top: 20px;
+}
+
+#moreInfoButton:hover {
+	background-color: #555;
+}
+
+#moreInfoDetails {
+	margin-top: 20px;
+	padding: 15px;
+	background-color: #f0f0f0;
+	/* Gray background */
+	border-radius: 25px;
+	/* Rounded corners */
+	display: none;
+	overflow-y: auto;
+	/* Enable vertical scrolling */
+	max-height: 200px;
+	/* Limit the maximum height */
+}
+
+#moreInfoDetails p {
+	margin-bottom: -5px;
+	font-size: 15px;
+	color: #333;
+}
+
+.tab {
+	overflow: hidden;
+	border-radius: 25px;
+	background-color: #333;
+	max-width: 387px;
+	/* Set the background color for the tab container */
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+	background-color: inherit;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 16px 16px;
+	transition: 0.3s;
+	font-size: 17px;
+	border-radius: 0px;
+	color: white;
+	/* Set the text color for tab buttons */
+	display: flex;
+	justify-content: center;
+	/* Center the text horizontally */
+	align-items: center;
+	/* Center the text vertically */
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+	background-color: #555;
+	/* Set the hover background color */
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+	background-color: #5A5A5A;
+	color: white;
+	/* Set the text color for the active tab button */
+}
+
+/* Style the tab content */
+.tabcontent {
+	display: none;
+	padding: 10px;
+	
+	/* Increase padding for better spacing */
+	border-top: none;
+	color: #333;
+	/* Set text color for tab content */
+	background-color: white;
+	/* Set background color for tab content */
+}
+
+#nftIdInput {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 25px;
+	/* Rounded corners */
+	padding-left: 15px;
+	/* Add some padding to the left for better visual */
+	text-align: center;
+	/* Center-align the text */
+}
+
+#searchButton {
+	background-color: #333;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 25px;
+}
+
+#searchButton:hover {
+	background-color: #555;
+}
+
+#output {
+	margin-top: 20px;
+	background-color: #f0f0f0;
+	padding: 15px;
+	border-radius: 25px;
+	text-align: center;
+}
+
+#output p {
+	margin-bottom: -5px;
+	font-size: 15px;
+	color: #333;
+}
+
+.link-list {
+	list-style: none;
+	padding: 0;
+	margin: 3;
+}
+
+/* Style the list items */
+.link-list li {
+	margin-bottom: 15px;
+}
+
+/* Style the links */
+.link-list a {
+	text-decoration: none;
+	color: white;
+	/* Text color */
+	background-color: #333;
+	/* Background color */
+	padding: 10px 20px;
+	/* Spacing around the text */
+	border-radius: 25px;
+	/* Rounded corners */
+	display: inline-block;
+	transition: background-color 0.3s;
+}
+
+/* Change link color on hover */
+.link-list a:hover {
+	background-color: #5A5A5A;
+	color: white;
+}
+
+/* Center the links horizontally */
+.link-list li {
+	text-align: center;
+}
