@@ -11,12 +11,21 @@
 </head>
 <body>
    <h1>Ev.io User Information</h1>
+   <div class="scroll-left">
+      <p>This Website Took So Long To Make 💀</p>
+   </div>
    <div class="container">
-      <center><div class="tab">
-         <button class="tablinks" onclick="openCity(event, 'User_info')" id="defaultOpen">User Info</button>
-         <button class="tablinks" onclick="openCity(event, 'nftid')">Nft Info</button>
-         <button class="tablinks" onclick="openCity(event, 'links')">Links Related To Ev.io</button>
-      </div></center>
+      <center>
+         <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'User_info')" id="defaultOpen">User Info</button>
+            <button class="tablinks" onclick="openCity(event, 'nftid')">Nft Info</button>
+            <button class="tablinks" onclick="openCity(event, 'randomcrosshair')">Random Crosshair</button>
+            <button class="tablinks" onclick="openCity(event, 'cryptocurrency')">Crypto Currency</button>
+            <button class="tablinks" onclick="openCity(event, 'earnrate')">Earn Rate</button>
+            <button class="tablinks" onclick="openCity(event, 'nftdrops')">Nft Drops</button>
+            <button class="tablinks" onclick="openCity(event, 'links')">Links Related To Ev.io</button>
+         </div>
+      </center>
       <div id="User_info" class="tabcontent">
          <div class="search-bar">
             <label for="usernameInput">Enter Username:</label>
@@ -38,6 +47,33 @@
          </div>
          <div id="loadingMessage">Loading...</div>
          <div id="output"></div>
+      </div>
+      <div id="cryptocurrency" class="tabcontent">
+         <div class="crypto-info">
+            <p id="usd">1 SOL = USD Loading...</p>
+            <p id="inr">1 SOL = INR Loading...</p>
+            <p id="php">1 SOL = PHP Loading...</p>
+            <p id="gbp">1 SOL = GBP Loading...</p>
+         </div>
+      </div>
+      <div id="randomcrosshair" class="tabcontent">
+         <button id="random-button">Pick Random Crosshair</button>
+         <center><br><a id="download-button" class="hidden" download="crosshair.png">Download Crosshair</a></br></center>
+         <p id="loadingText" class="hidden">Loading...</p>
+         <p id="username" class="hidden"></p>
+         <img id="crosshair-image" class="hidden" alt="Crosshair">
+      </div>
+      <div id="earnrate" class="tabcontent">
+         <button id="earnRateButton">Get Earn Rate</button>
+         <div id="earnRateInfo"></div>
+         <script src="evinfo.js"></script>
+      </div>
+      <div id="nftdrops" class="tabcontent">
+         <center>
+            <button class="custom-button" id="fetchData">Fetch NFT Drops</button>
+            <div id="nftDrops" class="nft-content"></div>
+         </center>
+         <div id="nftImageContainer"></div>
       </div>
       <div id="links" class="tabcontent">
          <ul class="link-list">

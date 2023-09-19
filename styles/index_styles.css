@@ -70,13 +70,6 @@ footer a:hover {
 	background: #333;
 }
 
-body {
-	font-family: Arial, sans-serif;
-	background-color: #f5f5f5;
-	margin: 0;
-	padding: 0;
-}
-
 h1 {
 	background-color: #333;
 	color: #fff;
@@ -211,6 +204,8 @@ body {
 	font-family: 'Poppins', sans-serif;
 	background-color: #f5f5f5;
 	color: #333;
+	margin: 0;
+	padding: 0;
 }
 
 #userImage {
@@ -257,7 +252,7 @@ body {
 	overflow: hidden;
 	border-radius: 25px;
 	background-color: #333;
-	max-width: 387px;
+	max-width: 518px;
 	/* Set the background color for the tab container */
 }
 
@@ -298,7 +293,7 @@ body {
 .tabcontent {
 	display: none;
 	padding: 10px;
-	
+	margin: 0;
 	/* Increase padding for better spacing */
 	border-top: none;
 	color: #333;
@@ -381,4 +376,163 @@ body {
 /* Center the links horizontally */
 .link-list li {
 	text-align: center;
+}
+
+#crosshair-container {
+	margin-top: 20px;
+}
+
+#crosshair-image {
+	max-width: 100%;
+}
+
+#random-button {
+	background-color: #333;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 25px;
+	/* Rounded corners */
+	cursor: pointer;
+	margin-top: 15px;
+}
+
+#random-button:hover {
+	background-color: #555;
+}
+
+#download-button {
+	background-color: #333;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 25px;
+	cursor: pointer;
+	margin-top: 10px;
+	max-width: 160px;
+	text-align: center;
+	align-items: center;
+	text-decoration: none;
+}
+
+#download-button:hover {
+	background-color: #555;
+}
+
+
+img {
+	max-width: 100%;
+	margin-top: 20px;
+}
+
+.scroll-left {
+	height: 50px;
+	overflow: hidden;
+	position: relative;
+}
+
+.scroll-left p {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	line-height: 50px;
+	text-align: center;
+	/* Starting position */
+	-moz-transform: translateX(100%);
+	-webkit-transform: translateX(100%);
+	transform: translateX(100%);
+	/* Apply animation to this element */
+	-moz-animation: scroll-left 10s linear infinite;
+	-webkit-animation: scroll-left 10s linear infinite;
+	animation: scroll-left 10s linear infinite;
+}
+
+/* Move it (define the animation) */
+@-moz-keyframes scroll-left {
+	0% {
+		-moz-transform: translateX(100%);
+	}
+
+	100% {
+		-moz-transform: translateX(-100%);
+	}
+}
+
+@-webkit-keyframes scroll-left {
+	0% {
+		-webkit-transform: translateX(100%);
+	}
+
+	100% {
+		-webkit-transform: translateX(-100%);
+	}
+}
+
+@keyframes scroll-left {
+	0% {
+		-moz-transform: translateX(100%);
+		/* Browser bug fix */
+		-webkit-transform: translateX(100%);
+		/* Browser bug fix */
+		transform: translateX(100%);
+	}
+
+	100% {
+		-moz-transform: translateX(-100%);
+		/* Browser bug fix */
+		-webkit-transform: translateX(-100%);
+		/* Browser bug fix */
+		transform: translateX(-100%);
+	}
+}
+
+#skinsInfo {
+	margin-top: 20px;
+}
+
+/* Add these styles to your existing CSS file */
+#earnRateButton {
+	background-color: #333;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 25px;
+	cursor: pointer;
+}
+
+#earnRateButton:hover {
+	background-color: #555;
+}
+
+#nftDrops {
+	margin-top: 20px;
+	text-align: left;
+}
+
+button:hover {
+	background-color: #555;
+}
+
+.custom-button {
+	background-color: #333;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 25px;
+	cursor: pointer;
+	margin-top: 20px;
+	margin: 0 auto;
+	text-align: center;
+	font-family: 'Popin', Arial, sans-serif;
+	/* Use Popin font for button text */
+}
+
+.custom-button:hover {
+	background-color: #555;
+}
+
+.nft-content {
+	margin-top: 20px;
+	text-align: left;
 }
