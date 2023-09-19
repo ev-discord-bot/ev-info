@@ -37,7 +37,9 @@
          <div id="userInfo"></div>
          <!-- More info button and details -->
          <center><button id="moreInfoButton">More Info</button></center>
-         <div id="moreInfoDetails"></div>
+         <div class="earn-rate-info">
+            <div id="moreInfoDetails"></div>
+         </div>
       </div>
       <div id="nftid" class="tabcontent">
          <div class="search-bar">
@@ -49,24 +51,29 @@
          <div id="output"></div>
       </div>
       <div id="cryptocurrency" class="tabcontent">
-         <div class="crypto-info">
-            <p id="usd">1 SOL = USD Loading...</p>
-            <p id="inr">1 SOL = INR Loading...</p>
-            <p id="php">1 SOL = PHP Loading...</p>
-            <p id="gbp">1 SOL = GBP Loading...</p>
+         <div class="earn-rate-info">
+            <div class="crypto-info">
+               <p id="usd">1 SOL = USD Loading...</p>
+               <p id="inr">1 SOL = INR Loading...</p>
+               <p id="php">1 SOL = PHP Loading...</p>
+               <p id="gbp">1 SOL = GBP Loading...</p>
+            </div>
          </div>
       </div>
       <div id="randomcrosshair" class="tabcontent">
          <button id="random-button">Pick Random Crosshair</button>
-         <center><br><a id="download-button" class="hidden" download="crosshair.png">Download Crosshair</a></br></center>
+         <center><br><a id="download-button" class="hidden" download="crosshair.png" target="_blank">Download Crosshair</a></br></center>
          <p id="loadingText" class="hidden">Loading...</p>
-         <p id="username" class="hidden"></p>
-         <img id="crosshair-image" class="hidden" alt="Crosshair">
+         <div class="earn-rate-info">
+            <p id="username" class="hidden"></p>
+            <img id="crosshair-image" class="hidden" alt="Crosshair">
+         </div>
       </div>
       <div id="earnrate" class="tabcontent">
          <button id="earnRateButton">Get Earn Rate</button>
-         <div id="earnRateInfo"></div>
-         <script src="evinfo.js"></script>
+         <div class="earn-rate-info">
+            <div id="earnRateInfo"></div>
+         </div>
       </div>
       <div id="nftdrops" class="tabcontent">
          <center>
