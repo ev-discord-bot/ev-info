@@ -74,6 +74,39 @@ const fetchUserInfo = () => {
                            <p><strong>Score:</strong> ${user.field_score[0].value}</p>
                            <p><strong>Crosshair:</strong> <a href="${crosshairUrl}" target="_blank">Users Crosshair</a></p>
                        `;
+
+                const skinId = user.field_eq_skin[0].target_id;
+                if (skinId) {
+                    fetch(`https://ev.io/node/${skinId}?_format=json`)
+                        .then(response => response.json())
+                        .then(skinData => {
+                            const skinImage = skinData.field_large_thumb[0].url;
+                            const skinName = skinData.title[0].value;
+                            const skinInfo = document.createElement('div');
+                            skinInfo.innerHTML = `
+                                        <p><strong>Skin Name:</strong> ${skinName}</p>
+                                        <img src="${skinImage}" alt="${skinName} Skin" style="max-width: 300px;"> <!-- Adjust max-width as needed -->
+                                    `;
+                            userInfoDiv.appendChild(skinInfo);
+                        })
+                        .catch(error => console.error('Error fetching skin data:', error));
+                }
+
+                if (user) {
+                    userInfoDiv.style.display = 'block';
+                    userInfoDiv.innerHTML = `
+                                    <p><strong>Abilities Layout:</strong> ${user.field_abilities_loadout[0].value}</p>
+                                    <p><strong>Total Games:</strong> ${user.field_total_games[0].value}</p>
+                                    <p><strong>Wallet Address:</strong> ${user.field_wallet_address[0].value}</p>
+                                    <p><strong>Weekly Score:</strong> ${user.field_weekly_score[0].value}</p>
+                                    <p><strong>CP Earned Weekly:</strong> ${user.field_cp_earned_weekly[0].value}</p>
+                                    <p><strong>CP Lifetime Earned:</strong> ${user.field_lifetime_cp_earned[0].value}</p>
+                                    <p><strong>Ev Coins:</strong> ${user.field_ev_coins[0].value}</p>
+                                    <!-- Add more details as needed -->
+                                `;
+                }
+
+
                 moreInfoButton.style.display = 'block'; // Show more info button
             }
         })
@@ -87,24 +120,27 @@ const fetchUserInfo = () => {
 
 // Function to show more user details
 const showMoreInfo = () => {
-    if (usernameInput.value.trim() === '') {
+    const username = usernameInput.value.trim();
+    if (username === '') {
         alert('Please enter a username.');
         return;
     }
-    moreInfoDetails.style.display = 'block';
+
     if (user) {
+        moreInfoDetails.style.display = 'block';
         moreInfoDetails.innerHTML = `
-                   <p><strong>Abilities Layout:</strong> ${user.field_abilities_loadout[0].value}</p>
-                   <p><strong>Total Games:</strong> ${user.field_total_games[0].value}</p>\
-                   <p><strong>Wallet Address:</strong> ${user.field_wallet_address[0].value}</p>
-                   <p><strong>Weekly Score:</strong> ${user.field_weekly_score[0].value}</p>
-                   <p><strong>CP Earned Weekly:</strong> ${user.field_cp_earned_weekly[0].value}</p>
-                   <p><strong>CP Lifetime Earned:</strong> ${user.field_lifetime_cp_earned[0].value}</p>
-                   <p><strong>Ev Coins:</strong> ${user.field_ev_coins[0].value}</p>
-                   <!-- Add more details as needed -->
-               `;
+            <p><strong>Abilities Layout:</strong> ${user.field_abilities_loadout[0].value}</p>
+            <p><strong>Total Games:</strong> ${user.field_total_games[0].value}</p>
+            <p><strong>Wallet Address:</strong> ${user.field_wallet_address[0].value}</p>
+            <p><strong>Weekly Score:</strong> ${user.field_weekly_score[0].value}</p>
+            <p><strong>CP Earned Weekly:</strong> ${user.field_cp_earned_weekly[0].value}</p>
+            <p><strong>CP Lifetime Earned:</strong> ${user.field_lifetime_cp_earned[0].value}</p>
+            <p><strong>Ev Coins:</strong> ${user.field_ev_coins[0].value}</p>
+            <!-- Add more details as needed -->
+        `;
     }
 };
+
 
 fetchUserButton.addEventListener('click', fetchUserInfo);
 moreInfoButton.addEventListener('click', showMoreInfo);
