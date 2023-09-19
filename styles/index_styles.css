@@ -564,3 +564,68 @@ button:hover {
 	flex-direction: column;
 	align-items: center;
 }
+
+/* Style the custom dropdown container */
+.custom-dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+/* Style the custom button that triggers the dropdown */
+.custom-dropbtn {
+	background-color: #404040;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 25px;
+	/* Rounded corners */
+	cursor: pointer;
+}
+
+/* Style the custom dropdown content (hidden by default) */
+.custom-dropdown-content {
+	display: none;
+	position: fixed;
+	background-color: #fff;
+	min-width: 160px;
+	box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+	z-index: 12;
+	border-radius: 15px;
+	border: 1px solid #ccc;
+}
+
+/* Style the custom links inside the dropdown */
+.custom-dropdown-content a {
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	color: #333;
+	transition: background-color 0.3s;
+}
+
+/* Change color of custom dropdown links on hover */
+.custom-dropdown-content a:hover {
+	background-color: #f2f2f2;
+	color: #555;
+}
+
+/* Show the custom dropdown content when the custom button is hovered over */
+.custom-dropdown:hover .custom-dropdown-content {
+	display: block;
+}
+
+/* Adjust the custom button and text styles */
+.custom-dropdown .custom-dropbtn {
+	font-family: 'Poppins', sans-serif;
+	/* Use your custom font */
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.custom-dropdown .custom-dropdown-content {
+	font-family: 'Poppins', sans-serif;
+	/* Use your custom font */
+	font-size: 14px;
+}
+
+/* Add more custom styles as needed */
