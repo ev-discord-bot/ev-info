@@ -429,4 +429,185 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const fetchUserButton = document.getElementById('fetchUserButtonTabs');
+    const usernameInput = document.getElementById('usernameInputTabs');
+    const loadingMessage = document.getElementById('loadingMessageTabs');
+    const tabButtons = document.querySelectorAll('.custom-tab-button');
+    const tabs = document.querySelectorAll('.custom-tab');
+
+    // Function to fetch equipped skins
+    const fetchEquippedSkins = () => {
+        const username = usernameInput.value.trim();
+        if (username === '') {
+            alert('Please enter an ev.io username.');
+            return;
+        }
+
+        // Display loading message while fetching data
+        loadingMessage.style.display = 'block';
+
+        // Hide all tabs
+        tabs.forEach(tab => {
+            tab.style.display = 'none';
+        });
+
+        // Make a GET request to the ev.io API
+        fetch(`https://ev.io/stats-by-un/${encodeURIComponent(username)}`)
+            .then(response => response.json())
+            .then(data => {
+                // Hide loading message
+                loadingMessage.style.display = 'none';
+
+                if (data.length === 0) {
+                    // Display a message for no user found
+                    tabs.forEach(tab => {
+                        tab.innerHTML = '<p>User not found.</p>';
+                    });
+                } else {
+                    console.log('User data:', data); // Log user data to console
+
+                    const user = data[0]; // Store user data
+
+                    // Fetch and display Character Skin
+                    // Fetch and display Character Skin
+                    const characterSkinId = user.field_eq_skin[0]?.target_id;
+                    if (characterSkinId) {
+                        fetch(`https://ev.io/node/${characterSkinId}?_format=json`)
+                            .then(response => response.json())
+                            .then(skinData => {
+                                const skinName = skinData.title[0].value;
+                                const skinIcon = skinData.field_large_thumb[0].url;
+                                displaySkin('CharacterTab', skinName, skinIcon); // Use 'CharacterTab' instead of 'Character'
+                            })
+                            .catch(error => console.error('Error fetching character skin:', error));
+                    } else {
+                        // Display a message for no character skin
+                        displayNoSkin('CharacterTab'); // Use 'CharacterTab' instead of 'Character'
+                    }
+
+                    // Fetch and display Assault Rifle Skin
+                    const arSkinId = user.field_auto_rifle_skin[0]?.target_id;
+                    if (arSkinId) {
+                        fetch(`https://ev.io/node/${arSkinId}?_format=json`)
+                            .then(response => response.json())
+                            .then(skinData => {
+                                const skinName = skinData.title[0].value;
+                                const skinIcon = skinData.field_weapon_skin_thumb[0].url;
+                                displaySkin('AssaultRifleTab', skinName, skinIcon); // Use 'AssaultRifleTab' instead of 'AssaultRifle'
+                            })
+                            .catch(error => console.error('Error fetching AR skin:', error));
+                    } else {
+                        // Display a message for no AR skin
+                        displayNoSkin('AssaultRifleTab'); // Use 'AssaultRifleTab' instead of 'AssaultRifle'
+                    }
+
+                    const hcSkinId = user.field_hand_cannon_skin[0]?.target_id;
+                    if (hcSkinId) {
+                        fetch(`https://ev.io/node/${hcSkinId}?_format=json`)
+                            .then(response => response.json())
+                            .then(skinData => {
+                                const skinName = skinData.title[0].value;
+                                const skinIcon = skinData.field_weapon_skin_thumb[0].url;
+                                displaySkin('HandCannonTab', skinName, skinIcon); // Use 'AssaultRifleTab' instead of 'AssaultRifle'
+                            })
+                            .catch(error => console.error('Error fetching HC skin:', error));
+                    } else {
+                        // Display a message for no AR skin
+                        displayNoSkin('HandCannonTab'); // Use 'AssaultRifleTab' instead of 'AssaultRifle'
+                    }
+
+                    const lrSkinId = user.field_laser_rifle_skin[0]?.target_id;
+                    if (lrSkinId) {
+                        fetch(`https://ev.io/node/${lrSkinId}?_format=json`)
+                            .then(response => response.json())
+                            .then(skinData => {
+                                const skinName = skinData.title[0].value;
+                                const skinIcon = skinData.field_weapon_skin_thumb[0].url;
+                                displaySkin('LaserRifleTab', skinName, skinIcon); // Use 'AssaultRifleTab' instead of 'AssaultRifle'
+                            })
+                            .catch(error => console.error('Error fetching LR skin:', error));
+                    } else {
+                        // Display a message for no AR skin
+                        displayNoSkin('LaserRifleTab'); // Use 'AssaultRifleTab' instead of 'AssaultRifle'
+                    }
+
+                    const brSkinId = user.field_burst_rifle_skin[0]?.target_id;
+                    if (brSkinId) {
+                        fetch(`https://ev.io/node/${brSkinId}?_format=json`)
+                            .then(response => response.json())
+                            .then(skinData => {
+                                const skinName = skinData.title[0].value;
+                                const skinIcon = skinData.field_weapon_skin_thumb[0].url;
+                                displaySkin('BurstRifleTab', skinName, skinIcon); // Use 'AssaultRifleTab' instead of 'AssaultRifle'
+                            })
+                            .catch(error => console.error('Error fetching BR skin:', error));
+                    } else {
+                        // Display a message for no AR skin
+                        displayNoSkin('BurstRifleTab'); // Use 'AssaultRifleTab' instead of 'AssaultRifle'
+                    }
+
+
+                }
+            })
+            .catch(error => {
+                loadingMessage.style.display = 'none';
+                tabs.forEach(tab => {
+                    tab.innerHTML = '<p>Error fetching user information.</p>';
+                });
+                console.error('Error:', error);
+            });
+    };
+
+    // Function to display skin information in the specified tab
+    const displaySkin = (tabId, skinName, skinIcon) => {
+        const tab = document.getElementById(tabId);
+        tab.innerHTML = `
+            <h2>Equipped ${tabId.replace('Tab', '')} Skin</h2>
+            <p><strong>Skin Name:</strong> ${skinName}</p>
+            <img src="${skinIcon}" alt="${skinName} Skin" style="max-width: 300px;">
+            <hr class="modern-hr">
+        `;
+
+        // Display the tab
+        tab.style.display = 'block';
+    };
+
+    // Function to display a message for no skin in the specified tab
+    const displayNoSkin = (tabId) => {
+        const tab = document.getElementById(tabId);
+        tab.innerHTML = '<p>No skin equipped for this category.</p>';
+
+        // Display the tab
+        tab.style.display = 'block';
+    };
+
+    const handleEnterKey = (event) => {
+        if (event.key === 'Enter') {
+            // Trigger a click event on the "Show Equipped Skins" button
+            fetchUserButton.click();
+        }
+    };
+
+    fetchUserButton.addEventListener('click', fetchEquippedSkins);
+    usernameInput.addEventListener('keydown', handleEnterKey);
+
+    // Add click event listeners to tab buttons
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Hide all tabs
+            tabs.forEach(tab => {
+                tab.style.display = 'none';
+            });
+
+            // Show the selected tab
+            const tabId = button.getAttribute('data-tab');
+            const tab = document.getElementById(tabId);
+            tab.style.display = 'block';
+        });
+    });
+
+    fetchUserButton.addEventListener('click', fetchEquippedSkins);
+});
+
 document.getElementById("defaultOpen").click();

@@ -19,11 +19,12 @@
          <div class="tab">
             <button class="tablinks" onclick="openCity(event, 'User_info')" id="defaultOpen">User Info</button>
             <button class="tablinks" onclick="openCity(event, 'nftid')">Nft Info</button>
-            <button class="tablinks" onclick="openCity(event, 'randomcrosshair')">Random Crosshair</button>
+            <button class="tablinks" onclick="openCity(event, 'randomcrosshair')">RandomCrosshair</button>
             <button class="tablinks" onclick="openCity(event, 'cryptocurrency')">Crypto Currency</button>
             <button class="tablinks" onclick="openCity(event, 'earnrate')">Earn Rate</button>
             <button class="tablinks" onclick="openCity(event, 'nftdrops')">Nft Drops</button>
-            <button class="tablinks" onclick="openCity(event, 'links')">Links Related To Ev.io</button>
+            <button class="tablinks" onclick="openCity(event, 'equipped')">Equipped Skins</button>
+            <button class="tablinks" onclick="openCity(event, 'links')">Links Related<br>To Ev.io</button>
          </div>
       </center>
       <div id="User_info" class="tabcontent">
@@ -81,6 +82,32 @@
             <div id="nftDrops" class="nft-content"></div>
          </center>
          <div id="nftImageContainer"></div>
+      </div>
+      <div id="equipped" class="tabcontent">
+         <label for="usernameInputTabs">Enter Username:</label>
+         <div class="search-bar">
+            <input type="text" id="usernameInputTabs">
+         </div>
+         <div class="search-bar">
+            <button id="fetchUserButtonTabs">Show Equipped Skins</button>
+         </div>
+         <div id="userInfo">
+            <div id="loadingMessageTabs" style="display: none;">Loading...</div>
+            <!-- Tabs for Skin Categories -->
+            <div class="button-container">
+               <button class="custom-tab-button" data-tab="CharacterTab">Character</button>
+               <button class="custom-tab-button" data-tab="AssaultRifleTab">Assault Rifle</button>
+               <button class="custom-tab-button" data-tab="HandCannonTab">Hand Cannon</button>
+               <button class="custom-tab-button" data-tab="LaserRifleTab">Laser Rifle</button>
+               <button class="custom-tab-button" data-tab="BurstRifleTab">Burst Rifle</button>
+            </div>
+            <!-- Skin Category Containers -->
+            <div id="CharacterTab" class="custom-tab"></div>
+            <div id="AssaultRifleTab" class="custom-tab"></div>
+            <div id="HandCannonTab" class="custom-tab"></div>
+            <div id="LaserRifleTab" class="custom-tab"></div>
+            <div id="BurstRifleTab" class="custom-tab"></div>
+         </div>
       </div>
       <div id="links" class="tabcontent">
          <div class="custom-dropdown">
