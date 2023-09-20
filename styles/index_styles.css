@@ -559,10 +559,10 @@ button:hover {
 	color: #fff;
 	border: none;
 	padding: 10px 20px;
-	border-radius: 5px;
+	border-radius: 25px;
 	cursor: pointer;
-	margin: 6px;
-	margin-right: 10px;
+	margin: 2px;
+	margin-right: 3px;
 }
 .custom-tab-button:hover {
 	background-color: #555;

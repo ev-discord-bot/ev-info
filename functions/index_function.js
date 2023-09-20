@@ -547,6 +547,21 @@ document.addEventListener("DOMContentLoaded", () => {
                         displayNoSkin('BurstRifleTab'); // Use 'AssaultRifleTab' instead of 'AssaultRifle'
                     }
 
+                    const sweeperSkinId = user.field_sweeper_skin[0]?.target_id;
+                    if (sweeperSkinId) {
+                        fetch(`https://ev.io/node/${sweeperSkinId}?_format=json`)
+                            .then(response => response.json())
+                            .then(skinData => {
+                                const skinName = skinData.title[0].value;
+                                const skinIcon = skinData.field_weapon_skin_thumb[0].url;
+                                displaySkin('SweeperTab', skinName, skinIcon); // Use 'AssaultRifleTab' instead of 'AssaultRifle'
+                            })
+                            .catch(error => console.error('Error fetching BR skin:', error));
+                    } else {
+                        // Display a message for no AR skin
+                        displayNoSkin('SweeperTab'); // Use 'AssaultRifleTab' instead of 'AssaultRifle'
+                    }
+
                     const swordSkinId = user.field_sword_skin[0]?.target_id;
                     if (swordSkinId) {
                         fetch(`https://ev.io/node/${swordSkinId}?_format=json`)
