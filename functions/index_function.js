@@ -640,3 +640,24 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.getElementById("defaultOpen").click();
+
+var isAudioPlaying = false;
+
+function playAudio() {
+    if (!isAudioPlaying) {
+        // Replace the URL with the audio file URL you want to play
+        var audioUrl = "https://cdn.discordapp.com/attachments/972952855210238015/1124542374165618778/Rick_Roll_Sound_Effect.mp3";
+        var audioElement = new Audio(audioUrl);
+        audioElement.play();
+        isAudioPlaying = true;
+        
+        // Disable the click event while the audio is playing
+        document.querySelector('.audio-text').style.pointerEvents = 'none';
+        
+        // Add an event listener to reset the flag when audio ends
+        audioElement.addEventListener('ended', function() {
+            isAudioPlaying = false;
+            document.querySelector('.audio-text').style.pointerEvents = 'auto';
+        });
+    }
+}
