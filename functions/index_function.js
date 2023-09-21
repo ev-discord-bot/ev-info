@@ -80,18 +80,17 @@ const fetchUserInfo = () => {
                     fetch(`https://ev.io/node/${skinId}?_format=json`)
                         .then(response => response.json())
                         .then(skinData => {
-                            const skinImage = skinData.field_large_thumb[0].url;
+                            const skinImage = skinData.field_wallet_image[0].url;
                             const skinName = skinData.title[0].value;
                             const skinInfo = document.createElement('div');
                             skinInfo.innerHTML = `
-                                        <p><strong>Skin Name:</strong> ${skinName}</p>
-                                        <img src="${skinImage}" alt="${skinName} Skin" style="max-width: 300px;"> <!-- Adjust max-width as needed -->
-                                    `;
+                                       <p><strong>Skin Name:</strong> ${skinName}</p>
+                                       <img src="${skinImage}" alt="${skinName} Skin" style="max-width: 200px; border-radius: 10px;"> <!-- Adjust max-width and border-radius as needed -->
+                                   `;
                             userInfoDiv.appendChild(skinInfo);
                         })
                         .catch(error => console.error('Error fetching skin data:', error));
                 }
-
                 if (user) {
                     userInfoDiv.style.display = 'block';
                     userInfoDiv.innerHTML = `
