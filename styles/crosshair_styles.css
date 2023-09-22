@@ -24,12 +24,22 @@ body {
 }
 
 h1 {
-	background-color: #333;
-	color: #fff;
-	padding: 20px;
-	text-align: center;
-	border-bottom-left-radius: 25px 25px;
-	border-bottom-right-radius: 25px 25px;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-bottom-left-radius: 25px 25px;
+    border-bottom-right-radius: 25px 25px;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(255, 87, 51, 0.8);
+    }
 }
 
 body {
@@ -92,29 +102,41 @@ body {
 }
 
 footer {
-	background-color: #333;
-	color: #fff;
-	padding: 10px 0;
-	text-align: center;
-	position: fixed;
-	bottom: 0;
-	width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top-left-radius: 25px 25px;
+    border-top-right-radius: 25px 25px;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(255, 87, 51, 0.8);
+    }
 }
 
 footer div {
-	margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 footer a {
-	text-decoration: none;
-	color: #fff;
-	margin: 0 10px;
-	transition: color 0.3s ease;
+    text-decoration: none;
+    color: #fff;
+    margin: 0 10px;
+    transition: color 0.3s ease;
 }
 
 footer a:hover {
-	color: #FF5733;
-	/* Change color on hover */
+    color: #FF5733;
+    /* Change color on hover */
 }
 
 .custom-text {
@@ -144,4 +166,115 @@ footer a:hover {
 
 .custom-button:hover {
 	background-color: #555;
+}
+
+.modern-hr {
+	border: none;
+	height: 2px;
+	/* Adjust the height as needed */
+	background: linear-gradient(to right, #ccc, #333, #ccc);
+	/* Gradient background */
+	margin: 20px 0;
+	/* Adjust margin as needed */
+}
+
+@property --rotate {
+	syntax: "<angle>";
+	initial-value: 132deg;
+	inherits: false;
+}
+
+:root {
+	--rotate: 132deg;
+	--card-width: 513px;
+	--card-height: 65vh;
+}
+
+.card {
+	background: none;
+	max-width: var(--card-width);
+	margin: 0 auto;
+	padding: 5px;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	display: flex;
+	cursor: pointer;
+	animation: spin 2.5s linear infinite;
+}
+
+.card::before {
+	content: "";
+	width: 104%;
+	height: 102%;
+	padding: -1px;
+	border-radius: 30px;
+	margin: 0 auto;
+	background-image: linear-gradient(var(--rotate),
+			#ff0000, #000000 43%, #ff0000, #000000 43%, #f00);
+	position: absolute;
+	z-index: -1;
+	top: -1%;
+	left: -2%;
+}
+
+.card::after {
+	position: absolute;
+	content: "";
+	top: 1-px;
+	left: 0;
+	right: 0;
+	z-index: -20;
+	height: 115%;
+	margin: 0 auto;
+	width: 110%;
+	margin: 300 auto;
+	transform: scale(0.8);
+	filter: blur(calc(var(--card-height) / 6));
+	background-image: linear-gradient(var(--rotate),
+			#ff0000, #000000 43%, #ff0000, #000000 43%, #ff0000);
+	opacity: 1;
+	transition: opacity 0.5s;
+	animation: spin 2.5s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		--rotate: 0deg;
+	}
+
+	100% {
+		--rotate: 360deg;
+	}
+}
+
+@keyframes spin {
+	0% {
+		--rotate: 0deg;
+	}
+
+	100% {
+		--rotate: 360deg;
+	}
+}
+
+.glowing-text {
+    background-color: none;
+    color: white;
+    padding: 0px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    animation: glow 2s ease-in-out infinite alternate;
+    text-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(255, 87, 51, 0.8);
+    }
 }
