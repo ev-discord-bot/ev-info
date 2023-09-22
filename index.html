@@ -12,130 +12,134 @@
 <body>
    <h1>Ev.io User Information</h1>
    <div class="scroll-left">
-      <p onclick="playAudio()">This Website Took So Long To Make 💀</p>
+      <p onclick="playAudio()" style="color:#ffffff;">This Website Took So Long To Make 💀 | Now In DarkMode!!</p>
    </div>
-   <div class="container">
-      <center>
-         <div class="tab">
-            <button class="tablinks" onclick="openCity(event, 'User_info')" id="defaultOpen">User Info</button>
-            <button class="tablinks" onclick="openCity(event, 'nftid')">Nft Info</button>
-            <button class="tablinks" onclick="openCity(event, 'randomcrosshair')">RandomCrosshair</button>
-            <button class="tablinks" onclick="openCity(event, 'cryptocurrency')">Crypto Currency</button>
-            <button class="tablinks" onclick="openCity(event, 'earnrate')">Earn Rate</button>
-            <button class="tablinks" onclick="openCity(event, 'nftdrops')">Nft Drops</button>
-            <button class="tablinks" onclick="openCity(event, 'equipped')">Equipped Skins</button>
-            <button class="tablinks" onclick="openCity(event, 'links')">Links Related<br>To Ev.io</button>
-         </div>
-      </center>
-      <div id="User_info" class="tabcontent">
-         <div class="search-bar">
-            <label for="usernameInput">Enter Username:</label>
-            <input type="text" id="usernameInput">
-            <button id="fetchUserButton">Fetch User Info</button>
-         </div>
-         <div id="loadingMessage">Loading...</div>
-         <div class="middle-header" id="middleHeader" style="display: none;"></div>
-         <div id="userInfo"></div>
-         <!-- More info button and details -->
-         <center><button id="moreInfoButton">More Info</button></center>
-         <div class="earn-rate-info">
-            <div id="moreInfoDetails"></div>
-         </div>
-      </div>
-      <div id="nftid" class="tabcontent">
-         <div class="search-bar">
-            <label for="nftIdInput">Enter NFT ID:</label>
-            <input type="text" id="nftIdInput">
-            <button id="searchButton">Search NFT Info</button>
-         </div>
-         <div id="loadingMessage">Loading...</div>
-         <div id="output"></div>
-      </div>
-      <div id="cryptocurrency" class="tabcontent">
-         <div class="earn-rate-info">
-            <div class="crypto-info">
-               <p id="usd">1 SOL = USD Loading...</p>
-               <p id="inr">1 SOL = INR Loading...</p>
-               <p id="php">1 SOL = PHP Loading...</p>
-               <p id="gbp">1 SOL = GBP Loading...</p>
-            </div>
-         </div>
-      </div>
-      <div id="randomcrosshair" class="tabcontent">
-         <button id="random-button">Pick Random Crosshair</button>
-         <center><br><a id="download-button" class="hidden" download="crosshair.png" target="_blank">Download Crosshair</a></br></center>
-         <p id="loadingText" class="hidden">Loading...</p>
-         <div class="earn-rate-info">
-            <p id="username" class="hidden"></p>
-            <img id="crosshair-image" class="hidden" alt="Crosshair">
-         </div>
-      </div>
-      <div id="earnrate" class="tabcontent">
-         <button id="earnRateButton">Get Earn Rate</button>
-         <div class="earn-rate-info">
-            <div id="earnRateInfo"></div>
-         </div>
-      </div>
-      <div id="nftdrops" class="tabcontent">
+   <div class="card">
+      <div class="container">
          <center>
-            <button class="custom-button" id="fetchData">Fetch NFT Drops</button>
-            <div id="nftDrops" class="nft-content"></div>
+            <div class="tab">
+               <button class="tablinks" onclick="openCity(event, 'User_info')" id="defaultOpen">User Info</button>
+               <button class="tablinks" onclick="openCity(event, 'nftid')">Nft Info</button>
+               <button class="tablinks" onclick="openCity(event, 'randomcrosshair')">RandomCrosshair</button>
+               <button class="tablinks" onclick="openCity(event, 'cryptocurrency')">Crypto Currency</button>
+               <button class="tablinks" onclick="openCity(event, 'earnrate')">Earn Rate</button>
+               <button class="tablinks" onclick="openCity(event, 'nftdrops')">Nft Drops</button>
+               <button class="tablinks" onclick="openCity(event, 'equipped')">Equipped Skins</button>
+               <button class="tablinks" onclick="openCity(event, 'links')">Links Related<br>To Ev.io</button>
+            </div>
          </center>
-         <div id="nftImageContainer"></div>
-      </div>
-      <div id="equipped" class="tabcontent">
-         <label for="usernameInputTabs">Enter Username:</label>
-         <div class="search-bar">
-            <input type="text" id="usernameInputTabs">
-         </div>
-         <div class="search-bar">
-            <button id="fetchUserButtonTabs">Show Equipped Skins</button>
-         </div>
-         <div id="userInfo">
-            <div id="loadingMessageTabs" style="display: none;">Loading...</div>
-            <!-- Tabs for Skin Categories -->
-            <div class="button-container">
-               <button class="custom-tab-button" data-tab="CharacterTab">Character</button>
-               <button class="custom-tab-button" data-tab="AssaultRifleTab">Assault Rifle</button>
-               <button class="custom-tab-button" data-tab="HandCannonTab">Hand Cannon</button>
-               <button class="custom-tab-button" data-tab="LaserRifleTab">Laser Rifle</button>
-               <button class="custom-tab-button" data-tab="BurstRifleTab">Burst Rifle</button>
-               <button class="custom-tab-button" data-tab="SweeperTab">Sweeper</button>
-               <button class="custom-tab-button" data-tab="SwordTab">Sword</button>
+         <div id="User_info" class="tabcontent">
+            <div class="search-bar">
+               <label for="usernameInput">Enter Username:</label>
+               <input type="text" id="usernameInput">
+               <button id="fetchUserButton">Fetch User Info</button>
             </div>
-            <!-- Skin Category Containers -->
-            <div id="CharacterTab" class="custom-tab"></div>
-            <div id="AssaultRifleTab" class="custom-tab"></div>
-            <div id="HandCannonTab" class="custom-tab"></div>
-            <div id="LaserRifleTab" class="custom-tab"></div>
-            <div id="BurstRifleTab" class="custom-tab"></div>
-            <div id="SweeperTab" class="custom-tab"></div>
-            <div id="SwordTab" class="custom-tab"></div>
-         </div>
-      </div>
-      <div id="links" class="tabcontent">
-         <div class="custom-dropdown">
-            <button class="custom-dropbtn">Game Links</button>
-            <div class="custom-dropdown-content" id="myDropdown">
-               <a href="https://ev.io/?game_mode=deathmatch_earn">DeathMatch (Earn)</a>
-               <a href="https://ev.io/?game_mode=sniper_shotgun">Sniper Shotgun</a>
-               <a href="https://ev.io/?game_mode=team_deathmatch">Team DeathMatch</a>
-               <a href="https://ev.io/?game_mode=survival_earn">Survival (Earn)</a>
+            <div id="loadingMessage">Loading...</div>
+            <div class="middle-header" id="middleHeader" style="display: none;"></div>
+            <div id="userInfo"></div>
+            <!-- More info button and details -->
+            <center><button id="moreInfoButton">More Info</button></center>
+            <div class="earn-rate-info">
+               <div id="moreInfoDetails"></div>
             </div>
             <br>
-            <br>
          </div>
-         <ul class="link-list">
-            <li><a href="https://ev.io/user/login" target="_blank">Your Ev.io Account</a></li>
-            <li><a href="https://crosshair.themeta.gg/" target="_blank">Crosshair Generator</a></li>
-            <li><a href="https://ev.io/info" target="_blank">Ev.io Info</a></li>
-            <li><a href="https://arideve.github.io/ev-skin-viewer/" target="_blank">Ev.io Skin Viewer</a></li>
-         </ul>
+         <div id="nftid" class="tabcontent">
+            <div class="search-bar">
+               <label for="nftIdInput">Enter NFT ID:</label>
+               <input type="text" id="nftIdInput">
+               <button id="searchButton">Search NFT Info</button>
+            </div>
+            <div id="loadingMessage">Loading...</div>
+            <div id="output"></div>
+         </div>
+         <div id="cryptocurrency" class="tabcontent">
+            <div class="earn-rate-info">
+               <div class="crypto-info">
+                  <p id="usd">1 SOL = USD Loading...</p>
+                  <p id="inr">1 SOL = INR Loading...</p>
+                  <p id="php">1 SOL = PHP Loading...</p>
+                  <p id="gbp">1 SOL = GBP Loading...</p>
+               </div>
+            </div>
+         </div>
+         <div id="randomcrosshair" class="tabcontent">
+            <button id="random-button">Pick Random Crosshair</button>
+            <center><br><a id="download-button" class="hidden" download="crosshair.png" target="_blank">Download Crosshair</a></br></center>
+            <p id="loadingText" class="hidden">Loading...</p>
+            <div class="earn-rate-info">
+               <p id="username" class="hidden"></p>
+               <img id="crosshair-image" class="hidden" alt="Crosshair">
+            </div>
+         </div>
+         <div id="earnrate" class="tabcontent">
+            <button id="earnRateButton">Get Earn Rate</button>
+            <div class="earn-rate-info">
+               <div id="earnRateInfo"></div>
+            </div>
+         </div>
+         <div id="nftdrops" class="tabcontent">
+            <center>
+               <button class="custom-button" id="fetchData">Fetch NFT Drops</button>
+               <div id="nftDrops" class="nft-content"></div>
+            </center>
+            <div id="nftImageContainer"></div>
+         </div>
+         <div id="equipped" class="tabcontent">
+            <label for="usernameInputTabs">Enter Username:</label>
+            <div class="search-bar">
+               <input type="text" id="usernameInputTabs">
+            </div>
+            <div class="search-bar">
+               <button id="fetchUserButtonTabs">Show Equipped Skins</button>
+            </div>
+            <div id="userInfo">
+               <div id="loadingMessageTabs" style="display: none;">Loading...</div>
+               <!-- Tabs for Skin Categories -->
+               <div class="button-container">
+                  <button class="custom-tab-button" data-tab="CharacterTab">Character</button>
+                  <button class="custom-tab-button" data-tab="AssaultRifleTab">Assault Rifle</button>
+                  <button class="custom-tab-button" data-tab="HandCannonTab">Hand Cannon</button>
+                  <button class="custom-tab-button" data-tab="LaserRifleTab">Laser Rifle</button>
+                  <button class="custom-tab-button" data-tab="BurstRifleTab">Burst Rifle</button>
+                  <button class="custom-tab-button" data-tab="SweeperTab">Sweeper</button>
+                  <button class="custom-tab-button" data-tab="SwordTab">Sword</button>
+               </div>
+               <!-- Skin Category Containers -->
+               <div id="CharacterTab" class="custom-tab"></div>
+               <div id="AssaultRifleTab" class="custom-tab"></div>
+               <div id="HandCannonTab" class="custom-tab"></div>
+               <div id="LaserRifleTab" class="custom-tab"></div>
+               <div id="BurstRifleTab" class="custom-tab"></div>
+               <div id="SweeperTab" class="custom-tab"></div>
+               <div id="SwordTab" class="custom-tab"></div>
+            </div>
+         </div>
+         <div id="links" class="tabcontent">
+            <div class="custom-dropdown">
+               <button class="custom-dropbtn">Game Links</button>
+               <div class="custom-dropdown-content" id="myDropdown">
+                  <a href="https://ev.io/?game_mode=deathmatch_earn">DeathMatch (Earn)</a>
+                  <a href="https://ev.io/?game_mode=sniper_shotgun">Sniper Shotgun</a>
+                  <a href="https://ev.io/?game_mode=team_deathmatch">Team DeathMatch</a>
+                  <a href="https://ev.io/?game_mode=survival_earn">Survival (Earn)</a>
+               </div>
+               <br>
+               <br>
+            </div>
+            <ul class="link-list">
+               <li><a href="https://ev.io/user/login" target="_blank">Your Ev.io Account</a></li>
+               <li><a href="https://crosshair.themeta.gg/" target="_blank">Crosshair Generator</a></li>
+               <li><a href="https://ev.io/info" target="_blank">Ev.io Info</a></li>
+               <li><a href="https://arideve.github.io/ev-skin-viewer/" target="_blank">Ev.io Skin Viewer</a></li>
+            </ul>
+         </div>
+         <!-- Image element to display the user image -->
       </div>
       <br><br><br><br><br><br>
-      <!-- Image element to display the user image -->
    </div>
    <!-- Footer -->
+   <br><br><br><br><br><br><br><br>
    <footer>
       <div>
          <a href="uisettings.html">UI/Settings Mod List</a> |

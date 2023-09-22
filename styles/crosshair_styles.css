@@ -8,7 +8,7 @@ li {
 }
 
 body {
-	background-image: url('https://media.discordapp.net/attachments/1039308604148293682/1152384610685169694/360_F_185054754_4fTfc14FT7uLYtNnpAF3WhMfUWwha4eV.png');
+	background-image: url('https://media.discordapp.net/attachments/1145845203530420368/1154765545611198484/wp10142339.png?width=806&height=477');
 	/* Replace with the URL of your grid pattern image */
 	background-size: 50px 50px;
 	/* Set the size of each grid square */
@@ -28,6 +28,8 @@ h1 {
 	color: #fff;
 	padding: 20px;
 	text-align: center;
+	border-bottom-left-radius: 25px 25px;
+	border-bottom-right-radius: 25px 25px;
 }
 
 body {
@@ -40,7 +42,7 @@ body {
 	max-width: 960px;
 	margin: 0 auto;
 	padding: 20px;
-	background-color: #fff;
+	background-color: #555;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	border-radius: 25px;
 	text-align: center;
@@ -62,7 +64,7 @@ body {
 	/* Set a fixed width for each item */
 	height: 130px;
 	/* Set a fixed height for each item */
-	background-color: #fff;
+	background-color: #333;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	border-radius: 25px;
 	flex-basis: calc(33.33% - 20px);
@@ -118,6 +120,7 @@ footer a:hover {
 .custom-text {
 	font-family: 'Poppins', sans-serif;
 	font-size: 24px;
+	color: white;
 	/* Adjust the font size as needed */
 	font-weight: 700;
 	/* Adjust the font weight as needed */
@@ -126,7 +129,7 @@ footer a:hover {
 }
 
 .custom-button {
-	background-color: #333;
+	background-color: #555;
 	color: #fff;
 	padding: 10px 20px;
 	border-radius: 25px;

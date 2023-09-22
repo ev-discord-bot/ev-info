@@ -2,155 +2,182 @@
 	width: 100%;
 	padding: 10px;
 	margin-bottom: 10px;
-	border: 1px solid #ccc;
+	border: 1px solid #555;
+	color: #f0f0f0;
 	border-radius: 25px;
-   /* Rounded corners */
+	/* Rounded corners */
+
 	padding-left: 15px;
-   /* Add some padding to the left for better visual */
+	/* Add some padding to the left for better visual */
 	text-align: center;
-   /* Center-align the text */
+	/* Center-align the text */
 }
+
 body {
-	background-image: url('https://media.discordapp.net/attachments/1039308604148293682/1152384610685169694/360_F_185054754_4fTfc14FT7uLYtNnpAF3WhMfUWwha4eV.png');
-   /* Replace with the URL of your grid pattern image */
+	background-image: url('https://media.discordapp.net/attachments/1145845203530420368/1154765545611198484/wp10142339.png?width=806&height=477');
+	/* Replace with the URL of your grid pattern image */
 	background-size: 50px 50px;
-   /* Set the size of each grid square */
+	/* Set the size of each grid square */
 	background-repeat: repeat;
-   /* Repeat the pattern in both directions */
+	/* Repeat the pattern in both directions */
 	background-attachment: fixed;
-   /* Fixed background */
+	/* Fixed background */
 }
+
 footer {
 	background-color: #333;
 	color: #fff;
 	padding: 10px 0;
 	text-align: center;
 	position: relative;
-   /* or position: absolute;
+	border-top-left-radius: 25px 25px;
+	border-top-right-radius: 25px 25px;
+	/* or position: absolute;
 	*/
 	bottom: 0;
 	width: 100%;
 }
+
 footer div {
 	margin-bottom: 10px;
 }
+
 footer a {
 	text-decoration: none;
 	color: #fff;
 	margin: 0 10px;
 	transition: color 0.3s ease;
 }
+
 footer a:hover {
 	color: #FF5733;
-   /* Change color on hover */
+	/* Change color on hover */
 }
+
 ::-webkit-scrollbar {
 	width: 10px;
 }
+
 /* Track */
 ::-webkit-scrollbar-track {
 	box-shadow: inset 0 0 5px grey;
 	border-radius: 10px;
 }
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
 	background: #5A5A5A;
 	border-radius: 10px;
 }
+
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
 	background: #333;
 }
+
 h1 {
 	background-color: #333;
 	color: #fff;
 	padding: 20px;
 	text-align: center;
+	border-bottom-left-radius: 25px 25px;
+	border-bottom-right-radius: 25px 25px;
 }
-.container {
-	max-width: 600px;
-	margin: 0 auto;
-	padding: 20px;
-	background-color: #fff;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	border-radius: 25px;
-	text-align: center;
-   /* Center align the container */
-	overflow: hidden;
-   /* Hide the default scrollbar */
-}
+
 .container::-webkit-scrollbar {
 	width: 12px;
-   /* Width of the custom scrollbar */
+	/* Width of the custom scrollbar */
 }
+
 .container::-webkit-scrollbar-thumb {
 	background-color: #333;
-   /* Color of the scrollbar thumb */
+	/* Color of the scrollbar thumb */
 	border-radius: 10px;
-   /* Rounded corners of the thumb */
+	/* Rounded corners of the thumb */
 }
+
 .middle-header {
-	color: #333;
+	color: #ffffff;
+	background-color: #333;
 	padding: 10px 0;
 	text-align: center;
+
 	margin-bottom: 20px;
+
 	display: none;
 }
+
 .search-bar {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-   /* Center vertically */
+
+
+	/* Center vertically */
 }
+
 .search-bar label {
 	font-weight: bold;
+
 }
+
 .search-bar input[type="text"] {
 	width: 100%;
 	padding: 10px;
 	margin-bottom: 10px;
-	border: 1px solid #ccc;
+	background-color: #555;
 	border-radius: 25px;
-   /* Rounded corners */
+	/* Rounded corners */
 	padding-left: 15px;
-   /* Add some padding to the left for better visual */
+	/* Add some padding to the left for better visual */
 	text-align: center;
-   /* Center-align the text */
+	/* Center-align the text */
+
 }
+
 .search-bar button {
-	background-color: #333;
+	background-color: #555;
 	color: #fff;
 	border: none;
 	padding: 10px 20px;
 	border-radius: 25px;
-   /* Rounded corners */
+	/* Rounded corners */
 	cursor: pointer;
 }
+
 .search-bar button:hover {
 	background-color: #555;
 }
+
 #loadingMessage {
 	display: none;
 	margin-top: 20px;
 }
+
 #userInfo {
 	margin-top: 20px;
-	background-color: #f0f0f0;
-   /* Gray background */
+	background-color: #555;
+	color: #ffffff;
+	/* Gray background */
 	padding: 15px;
 	border-radius: 25px;
-   /* Rounded corners */
+	/* Rounded corners */
 	text-align: center;
-   /* Center-align text */
+	/* Center-align text */
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+
+
 }
+
 #userInfo p {
 	margin-bottom: -5px;
 	font-size: 15px;
-	color: #333;
+	color: #ffffff;
+
 }
+
 /* Footer styles */
 footer {
 	background-color: #333;
@@ -161,19 +188,23 @@ footer {
 	bottom: 0;
 	width: 100%;
 }
+
 footer div {
 	margin-bottom: 10px;
 }
+
 footer a {
 	text-decoration: none;
 	color: #fff;
 	margin: 0 10px;
 	transition: color 0.3s ease;
 }
+
 footer a:hover {
 	color: #FF5733;
-   /* Change color on hover */
+	/* Change color on hover */
 }
+
 body {
 	font-family: 'Poppins', sans-serif;
 	background-color: #f5f5f5;
@@ -181,48 +212,59 @@ body {
 	margin: 0;
 	padding: 0;
 }
+
 #userImage {
 	max-width: 100%;
 	margin-top: 20px;
 }
+
 #moreInfoButton {
-	background-color: #333;
+	background-color: #555;
 	color: #fff;
 	border: none;
 	padding: 10px 20px;
 	border-radius: 25px;
-   /* Rounded corners */
+	/* Rounded corners */
 	cursor: pointer;
 	margin-top: 20px;
 }
+
 #moreInfoButton:hover {
 	background-color: #555;
 }
+
 #moreInfoDetails {
 	margin-top: 20px;
 	padding: 15px;
-	background-color: #f0f0f0;
-   /* Gray background */
+	background-color: #555;
+	color: #ffffff;
+	/* Gray background */
 	border-radius: 25px;
-   /* Rounded corners */
+	/* Rounded corners */
 	display: none;
 	overflow-y: auto;
-   /* Enable vertical scrolling */
+	/* Enable vertical scrolling */
 	max-height: 200px;
-   /* Limit the maximum height */
+	/* Limit the maximum height */
 }
+
 #moreInfoDetails p {
 	margin-bottom: -5px;
 	font-size: 15px;
-	color: #333;
+	color: #ffffff;
 }
+
 .tab {
 	overflow: hidden;
-	border-radius: 25px;
+	border-top-left-radius: 25px 25px;
+	border-top-right-radius: 25px 25px;
 	background-color: #333;
-	max-width: 513px;
-   /* Set the background color for the tab container */
+	max-width: 480px;
+	align-items: center;
+	justify-content: center;
+	/* Set the background color for the tab container */
 }
+
 /* Style the buttons inside the tab */
 .tab button {
 	background-color: inherit;
@@ -230,53 +272,61 @@ body {
 	border: none;
 	outline: none;
 	cursor: pointer;
-	padding: 16px 16px;
+	overflow: hidden;
+	display: flex;
+	padding: 16px 11px;
 	transition: 0.3s;
 	font-size: 17px;
 	border-radius: 0px;
 	color: white;
-   /* Set the text color for tab buttons */
+	/* Set the text color for tab buttons */
 	display: flex;
 	justify-content: center;
-   /* Center the text horizontally */
+	/* Center the text horizontally */
 	align-items: center;
-   /* Center the text vertically */
+	/* Center the text vertically */
 }
+
 /* Change background color of buttons on hover */
 .tab button:hover {
 	background-color: #555;
-   /* Set the hover background color */
+	/* Set the hover background color */
 }
+
 /* Create an active/current tablink class */
 .tab button.active {
 	background-color: #5A5A5A;
 	color: white;
-   /* Set the text color for the active tab button */
+	/* Set the text color for the active tab button */
 }
+
 /* Style the tab content */
 .tabcontent {
 	display: none;
 	padding: 10px;
 	margin: 0;
-   /* Increase padding for better spacing */
+	/* Increase padding for better spacing */
 	border-top: none;
-	color: #333;
-   /* Set text color for tab content */
-	background-color: white;
-   /* Set background color for tab content */
+	color: white;
+	/* Set text color for tab content */
+	background-color: #333;
+	border-bottom-left-radius: 25px 25px;
+	border-bottom-right-radius: 25px 25px;
+	/* Set background color for tab content */
 }
+
 #nftIdInput {
 	width: 100%;
 	padding: 10px;
 	margin-bottom: 10px;
-	border: 1px solid #ccc;
+	background-color: #555;
 	border-radius: 25px;
-   /* Rounded corners */
+	/* Rounded corners */
 	padding-left: 15px;
-   /* Add some padding to the left for better visual */
+	/* Add some padding to the left for better visual */
 	text-align: center;
-   /* Center-align the text */
 }
+
 #searchButton {
 	background-color: #333;
 	color: #fff;
@@ -284,97 +334,121 @@ body {
 	padding: 10px 20px;
 	border-radius: 25px;
 }
+
 #searchButton:hover {
 	background-color: #555;
 }
+
 #output {
 	margin-top: 20px;
-	background-color: #f0f0f0;
+	background-color: #555;
+	color: #ffffff;
+	/* Gray background */
 	padding: 15px;
 	border-radius: 25px;
+	/* Rounded corners */
 	text-align: center;
+	/* Center-align text */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
+
 #output p {
 	margin-bottom: -5px;
 	font-size: 15px;
-	color: #333;
+	color: #ffffff;
 }
+
 .link-list {
 	list-style: none;
 	padding: 0;
 	margin: 3;
 }
+
 /* Style the list items */
 .link-list li {
 	margin-bottom: 15px;
 }
+
 /* Style the links */
 .link-list a {
 	text-decoration: none;
 	color: white;
-   /* Text color */
-	background-color: #333;
-   /* Background color */
+	/* Text color */
+	background-color: #555;
+	/* Background color */
 	padding: 10px 20px;
-   /* Spacing around the text */
+	/* Spacing around the text */
 	border-radius: 25px;
-   /* Rounded corners */
+	/* Rounded corners */
 	display: inline-block;
 	transition: background-color 0.3s;
 }
+
 /* Change link color on hover */
 .link-list a:hover {
 	background-color: #5A5A5A;
 	color: white;
 }
+
 /* Center the links horizontally */
 .link-list li {
 	text-align: center;
 }
+
 #crosshair-container {
 	margin-top: 20px;
 }
+
 #crosshair-image {
 	max-width: 100%;
 }
+
 #random-button {
-	background-color: #333;
+	background-color: #555;
 	color: #fff;
 	border: none;
 	padding: 10px 20px;
 	border-radius: 15px;
-   /* Rounded corners */
+	/* Rounded corners */
 	cursor: pointer;
 	margin-top: 15px;
 }
+
 #random-button:hover {
 	background-color: #555;
 }
+
 #download-button {
-	background-color: #333;
+	background-color: #555;
 	color: #fff;
 	border: none;
 	padding: 10px 20px;
 	border-radius: 25px;
 	cursor: pointer;
 	margin-top: 1px;
-	max-width: 160px;
+	max-width: 200px;
 	text-align: center;
 	align-items: center;
 	text-decoration: none;
 }
+
 #download-button:hover {
 	background-color: #555;
 }
+
 img {
 	max-width: 100%;
 	margin-top: 20px;
 }
+
 .scroll-left {
 	height: 50px;
 	overflow: hidden;
 	position: relative;
 }
+
 .scroll-left p {
 	position: absolute;
 	width: 100%;
@@ -382,72 +456,94 @@ img {
 	margin: 0;
 	line-height: 50px;
 	text-align: center;
-   /* Starting position */
+	/* Starting position */
 	-moz-transform: translateX(100%);
 	-webkit-transform: translateX(100%);
 	transform: translateX(100%);
-   /* Apply animation to this element */
+	/* Apply animation to this element */
 	-moz-animation: scroll-left 10s linear infinite;
 	-webkit-animation: scroll-left 10s linear infinite;
 	animation: scroll-left 10s linear infinite;
 }
+
 /* Move it (define the animation) */
 @-moz-keyframes scroll-left {
 	0% {
 		-moz-transform: translateX(100%);
-   }
+	}
+
 	100% {
 		-moz-transform: translateX(-100%);
-   }
+	}
 }
+
 @-webkit-keyframes scroll-left {
 	0% {
 		-webkit-transform: translateX(100%);
-   }
+	}
+
 	100% {
 		-webkit-transform: translateX(-100%);
-   }
+	}
 }
+
 @keyframes scroll-left {
 	0% {
 		-moz-transform: translateX(100%);
-	   /* Browser bug fix */
+		/* Browser bug fix */
 		-webkit-transform: translateX(100%);
-	   /* Browser bug fix */
+		/* Browser bug fix */
 		transform: translateX(100%);
-   }
+	}
+
 	100% {
 		-moz-transform: translateX(-100%);
-	   /* Browser bug fix */
+		/* Browser bug fix */
 		-webkit-transform: translateX(-100%);
-	   /* Browser bug fix */
+		/* Browser bug fix */
 		transform: translateX(-100%);
-   }
+	}
 }
+
 #skinsInfo {
 	margin-top: 20px;
 }
+
 /* Add these styles to your existing CSS file */
 #earnRateButton {
-	background-color: #333;
+	background-color: #555;
 	color: #fff;
 	border: none;
 	padding: 10px 20px;
 	border-radius: 25px;
 	cursor: pointer;
 }
+
 #earnRateButton:hover {
 	background-color: #555;
 }
+
 #nftDrops {
 	margin-top: 20px;
-	text-align: left;
+	background-color: #333;
+	color: #ffffff;
+	/* Gray background */
+	padding: 15px;
+	border-radius: 25px;
+	/* Rounded corners */
+	text-align: center;
+	/* Center-align text */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
+
 button:hover {
 	background-color: #555;
 }
+
 .custom-button {
-	background-color: #333;
+	background-color: #555;
 	color: #fff;
 	border: none;
 	padding: 10px 20px;
@@ -457,29 +553,32 @@ button:hover {
 	margin: 0 auto;
 	text-align: center;
 	font-family: 'Popin', Arial, sans-serif;
-   /* Use Popin font for button text */
+	/* Use Popin font for button text */
 }
+
 .custom-button:hover {
 	background-color: #555;
 }
+
 .nft-content {
 	margin-top: 20px;
 	text-align: left;
 	margin-top: 20px;
 	background-color: #f0f0f0;
-   /* Gray background */
+	/* Gray background */
 	padding: 15px;
 	border-radius: 25px;
-   /* Rounded corners */
+	/* Rounded corners */
 	text-align: center;
-   /* Center-align text */
+	/* Center-align text */
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
+
 .earn-rate-info {
 	margin-top: 20px;
-	background-color: #f0f0f0;
+	background-color: #555;
 	padding: 15px;
 	border-radius: 25px;
 	text-align: center;
@@ -487,11 +586,13 @@ button:hover {
 	flex-direction: column;
 	align-items: center;
 }
+
 /* Style the custom dropdown container */
 .custom-dropdown {
 	position: relative;
 	display: inline-block;
 }
+
 /* Style the custom button that triggers the dropdown */
 .custom-dropbtn {
 	background-color: #404040;
@@ -499,9 +600,10 @@ button:hover {
 	border: none;
 	padding: 10px 20px;
 	border-radius: 25px;
-   /* Rounded corners */
+	/* Rounded corners */
 	cursor: pointer;
 }
+
 /* Style the custom dropdown content (hidden by default) */
 .custom-dropdown-content {
 	display: none;
@@ -513,6 +615,7 @@ button:hover {
 	border-radius: 15px;
 	border: 1px solid #ccc;
 }
+
 /* Style the custom links inside the dropdown */
 .custom-dropdown-content a {
 	padding: 12px 16px;
@@ -521,27 +624,32 @@ button:hover {
 	color: #333;
 	transition: background-color 0.3s;
 }
+
 /* Change color of custom dropdown links on hover */
 .custom-dropdown-content a:hover {
 	background-color: #f2f2f2;
 	color: #555;
 }
+
 /* Show the custom dropdown content when the custom button is hovered over */
 .custom-dropdown:hover .custom-dropdown-content {
 	display: block;
 }
+
 /* Adjust the custom button and text styles */
 .custom-dropdown .custom-dropbtn {
 	font-family: 'Poppins', sans-serif;
-   /* Use your custom font */
+	/* Use your custom font */
 	font-size: 14px;
 	font-weight: bold;
 }
+
 .custom-dropdown .custom-dropdown-content {
 	font-family: 'Poppins', sans-serif;
-   /* Use your custom font */
+	/* Use your custom font */
 	font-size: 14px;
 }
+
 /* Add more custom styles as needed */
 .skin-item {
 	margin: 20px;
@@ -549,11 +657,13 @@ button:hover {
 	padding: 10px;
 	display: inline-block;
 }
+
 .button-container {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	align-items: center;
 }
+
 .custom-tab-button {
 	background-color: #333;
 	color: #fff;
@@ -564,24 +674,122 @@ button:hover {
 	margin: 2px;
 	margin-right: 3px;
 }
+
 .custom-tab-button:hover {
 	background-color: #555;
 }
+
 .modern-hr {
 	border: none;
 	height: 2px;
-   /* Adjust the height as needed */
+	/* Adjust the height as needed */
 	background: linear-gradient(to right, #ccc, #333, #ccc);
-   /* Gradient background */
+	/* Gradient background */
 	margin: 20px 0;
-   /* Adjust margin as needed */
+	/* Adjust margin as needed */
 }
 
+
 #result {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    display: none;
+	margin-top: 20px;
+	padding: 20px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	display: none;
+}
+
+@property --rotate {
+	syntax: "<angle>";
+	initial-value: 132deg;
+	inherits: false;
+}
+
+:root {
+	--rotate: 132deg;
+	--card-width: 513px;
+	--card-height: 65vh;
+}
+
+.card {
+	background: none;
+	max-width: var(--card-width);
+	margin: 0 auto;
+	padding: 5px;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	display: flex;
+	font-size: 1.5em;
+	color: rgb(88 199 250 / 100%);
+	cursor: pointer;
+	font-family: cursive;
+	animation: spin 2.5s linear infinite;
+}
+
+.card::before {
+	content: "";
+	width: 104%;
+	height: 102%;
+	padding: -1px;
+	border-radius: 30px;
+	margin: 0 auto;
+	background-image: linear-gradient(var(--rotate),
+			#ff0000, #000000 43%, #ff0000, #000000 43%, #f00);
+	position: absolute;
+	z-index: -1;
+	top: -1%;
+	left: -2%;
+}
+
+.card::after {
+	position: absolute;
+	content: "";
+	top: 1-px;
+	left: 0;
+	right: 0;
+	z-index: -20;
+	height: 115%;
+	margin: 0 auto;
+	width: 110%;
+	margin: 300 auto;
+	transform: scale(0.8);
+	filter: blur(calc(var(--card-height) / 6));
+	background-image: linear-gradient(var(--rotate),
+			#ff0000, #000000 43%, #ff0000, #000000 43%, #ff0000);
+	opacity: 1;
+	transition: opacity 0.5s;
+	animation: spin 2.5s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		--rotate: 0deg;
+	}
+
+	100% {
+		--rotate: 360deg;
+	}
+}
+
+@keyframes spin {
+	0% {
+		--rotate: 0deg;
+	}
+
+	100% {
+		--rotate: 360deg;
+	}
+}
+
+.container {
+	max-width: 500px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #555;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	border-radius: 25px;
+	text-align: center;
+	overflow: hidden;
 }

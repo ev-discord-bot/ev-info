@@ -29,10 +29,10 @@ p {
 }
 
 .container {
-	max-width: 960px;
+	max-width: 500px;
 	margin: 0 auto;
 	padding: 20px;
-	background-color: #fff;
+	background-color: #555;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	border-radius: 25px;
 	text-align: center;
@@ -70,7 +70,7 @@ footer a:hover {
 	max-width: 600px;
 	margin: 0 auto;
 	padding: 20px;
-	background-color: #fff;
+	background-color: #555;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	border-radius: 25px;
 	text-align: center;
@@ -116,7 +116,7 @@ footer a:hover {
 }
 
 body {
-	background-image: url('https://media.discordapp.net/attachments/1039308604148293682/1152384610685169694/360_F_185054754_4fTfc14FT7uLYtNnpAF3WhMfUWwha4eV.png');
+	background-image: url('https://media.discordapp.net/attachments/1145845203530420368/1154765545611198484/wp10142339.png?width=806&height=477');
 	/* Replace with the URL of your grid pattern image */
 	background-size: 50px 50px;
 	/* Set the size of each grid square */
