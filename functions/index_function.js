@@ -93,20 +93,8 @@ const fetchUserInfo = () => {
                 }
                 if (user) {
                     userInfoDiv.style.display = 'block';
-                    userInfoDiv.innerHTML = `
-                                    <p><strong>Abilities Layout:</strong> ${user.field_abilities_loadout[0].value}</p>
-                                    <p><strong>Total Games:</strong> ${user.field_total_games[0].value}</p>
-                                    <p><strong>Wallet Address:</strong> ${user.field_wallet_address[0].value}</p>
-                                    <p><strong>Weekly Score:</strong> ${user.field_weekly_score[0].value}</p>
-                                    <p><strong>CP Earned Weekly:</strong> ${user.field_cp_earned_weekly[0].value}</p>
-                                    <p><strong>CP Lifetime Earned:</strong> ${user.field_lifetime_cp_earned[0].value}</p>
-                                    <p><strong>Ev Coins:</strong> ${user.field_ev_coins[0].value}</p>
-                                    <!-- Add more details as needed -->
-                                `;
+                    moreInfoButton.style.display = 'block'; // Show more info button
                 }
-
-
-                moreInfoButton.style.display = 'block'; // Show more info button
             }
         })
         .catch(error => {
@@ -127,6 +115,7 @@ const showMoreInfo = () => {
 
     if (user) {
         moreInfoDetails.style.display = 'block';
+        userInfoDiv.style.display = 'none'; // Hide user info div
         moreInfoDetails.innerHTML = `
             <p><strong>Abilities Layout:</strong> ${user.field_abilities_loadout[0].value}</p>
             <p><strong>Total Games:</strong> ${user.field_total_games[0].value}</p>
@@ -140,9 +129,10 @@ const showMoreInfo = () => {
     }
 };
 
-
+// Event listeners
 fetchUserButton.addEventListener('click', fetchUserInfo);
 moreInfoButton.addEventListener('click', showMoreInfo);
+
 
 // Listen for Enter key press in the username input field
 usernameInput.addEventListener('keyup', event => {
