@@ -1,27 +1,8 @@
-.search-bar input[type="text"] {
-	width: 100%;
-	padding: 10px;
-	margin-bottom: 10px;
-	border: 1px solid #555;
-	color: #f0f0f0;
-	border-radius: 25px;
-	/* Rounded corners */
-
-	padding-left: 15px;
-	/* Add some padding to the left for better visual */
-	text-align: center;
-	/* Center-align the text */
-}
-
 body {
 	background-image: url('https://media.discordapp.net/attachments/1145845203530420368/1154765545611198484/wp10142339.png?width=806&height=477');
-	/* Replace with the URL of your grid pattern image */
 	background-size: 50px 50px;
-	/* Set the size of each grid square */
 	background-repeat: repeat;
-	/* Repeat the pattern in both directions */
 	background-attachment: fixed;
-	/* Fixed background */
 }
 
 footer {
@@ -32,8 +13,6 @@ footer {
 	position: relative;
 	border-top-left-radius: 25px 25px;
 	border-top-right-radius: 25px 25px;
-	/* or position: absolute;
-	*/
 	bottom: 0;
 	width: 100%;
 }
@@ -51,58 +30,53 @@ footer a {
 
 footer a:hover {
 	color: #FF5733;
-	/* Change color on hover */
 }
 
 ::-webkit-scrollbar {
 	width: 10px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
 	box-shadow: inset 0 0 5px grey;
 	border-radius: 10px;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
 	background: #5A5A5A;
 	border-radius: 10px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
 	background: #333;
 }
 
 h1 {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    border-bottom-left-radius: 25px 25px;
-    border-bottom-right-radius: 25px 25px;
-    animation: glow 2s ease-in-out infinite alternate;
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+	border-bottom-left-radius: 25px 25px;
+	border-bottom-right-radius: 25px 25px;
+	animation: glow 2s ease-in-out infinite alternate;
 }
 
 @keyframes glow {
-    from {
-        box-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
-    }
-    to {
-        box-shadow: 0 0 20px rgba(255, 87, 51, 0.8);
-    }
+	from {
+		box-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
+	}
+
+	to {
+		box-shadow: 0 0 20px rgba(255, 87, 51, 0.8);
+	}
 }
+
 .container::-webkit-scrollbar {
 	width: 12px;
-	/* Width of the custom scrollbar */
 }
 
 .container::-webkit-scrollbar-thumb {
 	background-color: #333;
-	/* Color of the scrollbar thumb */
 	border-radius: 10px;
-	/* Rounded corners of the thumb */
 }
 
 .middle-header {
@@ -110,53 +84,68 @@ h1 {
 	background-color: #333;
 	padding: 10px 0;
 	text-align: center;
-
 	margin-bottom: 20px;
-
 	display: none;
 }
 
+.search-bar input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #555;
+    color: #f0f0f0;
+	background-color: #555;
+    border-radius: 25px;
+    padding-left: 15px;
+    text-align: center;
+    animation: inputExpand 0.5s ease-in-out, glow 2s ease-in-out infinite alternate;
+    box-shadow: 0 0 5px rgba(85, 85, 85, 0.7);
+}
+
+@keyframes inputExpand {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
+    }
+
+    to {
+        box-shadow: 0 0 20px rgba(255, 87, 51, 0.8);
+    }
+}
+
 .search-bar {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-
-
-	/* Center vertically */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .search-bar label {
-	font-weight: bold;
-
-}
-
-.search-bar input[type="text"] {
-	width: 100%;
-	padding: 10px;
-	margin-bottom: 10px;
-	background-color: #555;
-	border-radius: 25px;
-	/* Rounded corners */
-	padding-left: 15px;
-	/* Add some padding to the left for better visual */
-	text-align: center;
-	/* Center-align the text */
-
+    font-weight: bold;
 }
 
 .search-bar button {
-	background-color: #555;
-	color: #fff;
-	border: none;
-	padding: 10px 20px;
-	border-radius: 25px;
-	/* Rounded corners */
-	cursor: pointer;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
 }
 
 .search-bar button:hover {
-	background-color: #555;
+    background-color: #555;
 }
+
 
 #loadingMessage {
 	display: none;
@@ -167,17 +156,35 @@ h1 {
 	margin-top: 20px;
 	background-color: #555;
 	color: #ffffff;
-	/* Gray background */
 	padding: 15px;
 	border-radius: 25px;
-	/* Rounded corners */
 	text-align: center;
-	/* Center-align text */
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	animation: inputExpand 0.5s ease-in-out, glow 2s ease-in-out infinite alternate;
+    box-shadow: 0 0 5px rgba(85, 85, 85, 0.7);
+}
 
+@keyframes inputExpand {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}
 
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
+    }
+
+    to {
+        box-shadow: 0 0 20px rgba(255, 87, 51, 0.8);
+    }
 }
 
 #userInfo p {
@@ -188,42 +195,43 @@ h1 {
 }
 
 footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    border-top-left-radius: 25px 25px;
-    border-top-right-radius: 25px 25px;
-    animation: glow 2s ease-in-out infinite alternate;
+	background-color: #333;
+	color: #fff;
+	padding: 10px 0;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	border-top-left-radius: 25px 25px;
+	border-top-right-radius: 25px 25px;
+	animation: glow 2s ease-in-out infinite alternate;
 }
 
 @keyframes glow {
-    from {
-        box-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
-    }
-    to {
-        box-shadow: 0 0 20px rgba(255, 87, 51, 0.8);
-    }
+	from {
+		box-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
+	}
+
+	to {
+		box-shadow: 0 0 20px rgba(255, 87, 51, 0.8);
+	}
 }
 
 footer div {
-    margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 
 footer a {
-    text-decoration: none;
-    color: #fff;
-    margin: 0 10px;
-    transition: color 0.3s ease;
+	text-decoration: none;
+	color: #fff;
+	margin: 0 10px;
+	transition: color 0.3s ease;
 }
 
 footer a:hover {
-    color: #FF5733;
-    /* Change color on hover */
+	color: #FF5733;
 }
+
 body {
 	font-family: 'Poppins', sans-serif;
 	background-color: #f5f5f5;
@@ -243,7 +251,6 @@ body {
 	border: none;
 	padding: 10px 20px;
 	border-radius: 25px;
-	/* Rounded corners */
 	cursor: pointer;
 	margin-top: 20px;
 }
@@ -257,15 +264,11 @@ body {
 	padding: 15px;
 	background-color: #555;
 	color: #ffffff;
-	/* Gray background */
 	border-radius: 25px;
-	/* Rounded corners */
 	display: none;
 	overflow-y: auto;
-	/* Enable vertical scrolling */
 	max-height: 230px;
 	max-width: 410px;
-	/* Limit the maximum height */
 }
 
 #moreInfoDetails p {
@@ -282,10 +285,8 @@ body {
 	max-width: 480px;
 	align-items: center;
 	justify-content: center;
-	/* Set the background color for the tab container */
 }
 
-/* Style the buttons inside the tab */
 .tab button {
 	background-color: inherit;
 	float: left;
@@ -299,40 +300,29 @@ body {
 	font-size: 17px;
 	border-radius: 0px;
 	color: white;
-	/* Set the text color for tab buttons */
 	display: flex;
 	justify-content: center;
-	/* Center the text horizontally */
 	align-items: center;
-	/* Center the text vertically */
 }
 
-/* Change background color of buttons on hover */
 .tab button:hover {
 	background-color: #555;
-	/* Set the hover background color */
 }
 
-/* Create an active/current tablink class */
 .tab button.active {
 	background-color: #5A5A5A;
 	color: white;
-	/* Set the text color for the active tab button */
 }
 
-/* Style the tab content */
 .tabcontent {
 	display: none;
 	padding: 10px;
 	margin: 0;
-	/* Increase padding for better spacing */
 	border-top: none;
 	color: white;
-	/* Set text color for tab content */
 	background-color: #333;
 	border-bottom-left-radius: 25px 25px;
 	border-bottom-right-radius: 25px 25px;
-	/* Set background color for tab content */
 }
 
 #nftIdInput {
@@ -341,9 +331,7 @@ body {
 	margin-bottom: 10px;
 	background-color: #555;
 	border-radius: 25px;
-	/* Rounded corners */
 	padding-left: 15px;
-	/* Add some padding to the left for better visual */
 	text-align: center;
 }
 
@@ -363,15 +351,35 @@ body {
 	margin-top: 20px;
 	background-color: #555;
 	color: #ffffff;
-	/* Gray background */
 	padding: 15px;
 	border-radius: 25px;
-	/* Rounded corners */
 	text-align: center;
-	/* Center-align text */
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	animation: inputExpand 0.5s ease-in-out, glow 2s ease-in-out infinite alternate;
+    box-shadow: 0 0 5px rgba(85, 85, 85, 0.7);
+}
+
+@keyframes inputExpand {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
+    }
+
+    to {
+        box-shadow: 0 0 20px rgba(255, 87, 51, 0.8);
+    }
 }
 
 #output p {
@@ -384,35 +392,49 @@ body {
 	list-style: none;
 	padding: 0;
 	margin: 3;
+	animation: inputExpand 0.5s ease-in-out, glow 2s ease-in-out infinite alternate;
 }
 
-/* Style the list items */
+@keyframes inputExpand {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
+    }
+
+    to {
+        box-shadow: 0 0 20px rgba(255, 87, 51, 0.8);
+    }
+}
+
 .link-list li {
 	margin-bottom: 15px;
 }
 
-/* Style the links */
 .link-list a {
 	text-decoration: none;
 	color: white;
-	/* Text color */
 	background-color: #555;
-	/* Background color */
 	padding: 10px 20px;
-	/* Spacing around the text */
 	border-radius: 25px;
-	/* Rounded corners */
 	display: inline-block;
 	transition: background-color 0.3s;
 }
 
-/* Change link color on hover */
 .link-list a:hover {
 	background-color: #5A5A5A;
 	color: white;
 }
 
-/* Center the links horizontally */
 .link-list li {
 	text-align: center;
 }
@@ -431,7 +453,6 @@ body {
 	border: none;
 	padding: 10px 20px;
 	border-radius: 15px;
-	/* Rounded corners */
 	cursor: pointer;
 	margin-top: 15px;
 }
@@ -464,52 +485,48 @@ img {
 }
 
 .scroll-left {
-    height: 50px;
-    overflow: hidden;
-    position: relative;
+	height: 50px;
+	overflow: hidden;
+	position: relative;
 }
 
 .scrolling-text {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    line-height: 50px;
-    text-align: center;
-    /* Starting position */
-    -moz-transform: translateX(100%);
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
-    /* Apply animation to this element */
-    -moz-animation: scroll-left 10s linear infinite;
-    -webkit-animation: scroll-left 10s linear infinite;
-    animation: scroll-left 10s linear infinite;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	line-height: 50px;
+	text-align: center;
+	-moz-transform: translateX(100%);
+	-webkit-transform: translateX(100%);
+	transform: translateX(100%);
+	-moz-animation: scroll-left 10s linear infinite;
+	-webkit-animation: scroll-left 10s linear infinite;
+	animation: scroll-left 10s linear infinite;
 }
 
 .dark-mode-text {
-    background-image: linear-gradient(90deg, #ff0000, #D3D3D3);
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    font-weight: bold;
+	background-image: linear-gradient(90deg, #ff0000, #D3D3D3);
+	color: transparent;
+	background-clip: text;
+	-webkit-background-clip: text;
+	font-weight: bold;
 }
 
-/* Move it (define the animation) */
 @keyframes scroll-left {
-    0% {
-        transform: translateX(100%);
-    }
+	0% {
+		transform: translateX(100%);
+	}
 
-    100% {
-        transform: translateX(-100%);
-    }
+	100% {
+		transform: translateX(-100%);
+	}
 }
 
 #skinsInfo {
 	margin-top: 20px;
 }
 
-/* Add these styles to your existing CSS file */
 #earnRateButton {
 	background-color: #555;
 	color: #fff;
@@ -527,12 +544,9 @@ img {
 	margin-top: 20px;
 	background-color: #333;
 	color: #ffffff;
-	/* Gray background */
 	padding: 15px;
 	border-radius: 25px;
-	/* Rounded corners */
 	text-align: center;
-	/* Center-align text */
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -553,7 +567,6 @@ button:hover {
 	margin: 0 auto;
 	text-align: center;
 	font-family: 'Poppins', Arial, sans-serif;
-	/* Use Popin font for button text */
 }
 
 .custom-button:hover {
@@ -565,12 +578,9 @@ button:hover {
 	text-align: left;
 	margin-top: 20px;
 	background-color: #f0f0f0;
-	/* Gray background */
 	padding: 15px;
 	border-radius: 25px;
-	/* Rounded corners */
 	text-align: center;
-	/* Center-align text */
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -585,15 +595,58 @@ button:hover {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	animation: inputExpand 0.5s ease-in-out, glow 2s ease-in-out infinite alternate;
+    box-shadow: 0 0 5px rgba(85, 85, 85, 0.7);
 }
 
-/* Style the custom dropdown container */
+@keyframes inputExpand {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
+    }
+
+    to {
+        box-shadow: 0 0 20px rgba(255, 87, 51, 0.8);
+    }
+}
+
 .custom-dropdown {
 	position: relative;
 	display: inline-block;
+	animation: inputExpand 0.5s ease-in-out, glow 2s ease-in-out infinite alternate;
 }
 
-/* Style the custom button that triggers the dropdown */
+@keyframes inputExpand {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
+    }
+
+    to {
+        box-shadow: 0 0 20px rgba(255, 87, 51, 0.8);
+    }
+}
+
 .custom-dropbtn {
 	background-color: #404040;
 	color: #fff;
@@ -604,7 +657,6 @@ button:hover {
 	cursor: pointer;
 }
 
-/* Style the custom dropdown content (hidden by default) */
 .custom-dropdown-content {
 	display: none;
 	position: fixed;
@@ -616,7 +668,6 @@ button:hover {
 	border: 1px solid #ccc;
 }
 
-/* Style the custom links inside the dropdown */
 .custom-dropdown-content a {
 	padding: 12px 16px;
 	text-decoration: none;
@@ -625,32 +676,26 @@ button:hover {
 	transition: background-color 0.3s;
 }
 
-/* Change color of custom dropdown links on hover */
 .custom-dropdown-content a:hover {
 	background-color: #f2f2f2;
 	color: #555;
 }
 
-/* Show the custom dropdown content when the custom button is hovered over */
 .custom-dropdown:hover .custom-dropdown-content {
 	display: block;
 }
 
-/* Adjust the custom button and text styles */
 .custom-dropdown .custom-dropbtn {
 	font-family: 'Poppins', sans-serif;
-	/* Use your custom font */
 	font-size: 14px;
 	font-weight: bold;
 }
 
 .custom-dropdown .custom-dropdown-content {
 	font-family: 'Poppins', sans-serif;
-	/* Use your custom font */
 	font-size: 14px;
 }
 
-/* Add more custom styles as needed */
 .skin-item {
 	margin: 20px;
 	border: 1px solid #1F8B4C;
@@ -682,11 +727,8 @@ button:hover {
 .modern-hr {
 	border: none;
 	height: 2px;
-	/* Adjust the height as needed */
 	background: linear-gradient(to right, #ccc, #333, #ccc);
-	/* Gradient background */
 	margin: 20px 0;
-	/* Adjust margin as needed */
 }
 
 
@@ -734,8 +776,7 @@ button:hover {
 	padding: -1px;
 	border-radius: 30px;
 	margin: 0 auto;
-	background-image: linear-gradient(var(--rotate),
-			#ff0000, #000000 43%, #ff0000, #000000 43%, #f00);
+	background-image: linear-gradient(var(--rotate), #ff0000, #000000 43%, #ff0000, #000000 43%, #f00);
 	position: absolute;
 	z-index: -1;
 	top: -1%;
@@ -755,8 +796,7 @@ button:hover {
 	margin: 300 auto;
 	transform: scale(0.8);
 	filter: blur(calc(var(--card-height) / 6));
-	background-image: linear-gradient(var(--rotate),
-			#ff0000, #000000 43%, #ff0000, #000000 43%, #ff0000);
+	background-image: linear-gradient(var(--rotate), #ff0000, #000000 43%, #ff0000, #000000 43%, #ff0000);
 	opacity: 1;
 	transition: opacity 0.5s;
 	animation: spin 2.5s linear infinite;
@@ -794,21 +834,22 @@ button:hover {
 }
 
 .glowing-text {
-    background-color: none;
-    color: white;
-    padding: 0px;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    animation: glow 2s ease-in-out infinite alternate;
-    text-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
+	background-color: none;
+	color: white;
+	padding: 0px;
+	border-radius: 5px;
+	cursor: pointer;
+	text-align: center;
+	animation: glow 2s ease-in-out infinite alternate;
+	text-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
 }
 
 @keyframes glow {
-    from {
-        text-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
-    }
-    to {
-        text-shadow: 0 0 20px rgba(255, 87, 51, 0.8);
-    }
+	from {
+		text-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
+	}
+
+	to {
+		text-shadow: 0 0 20px rgba(255, 87, 51, 0.8);
+	}
 }

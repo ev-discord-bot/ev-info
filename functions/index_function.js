@@ -1,29 +1,3 @@
-const background = document.getElementById('interactive-background');
-const customCursor = document.querySelector('.custom-cursor');
-
-document.addEventListener('mousemove', (e) => {
-    const x = e.clientX;
-    const y = e.clientY;
-
-    // Update custom cursor position
-    customCursor.style.left = x + 'px';
-    customCursor.style.top = y + 'px';
-
-    // Update background color based on cursor position
-    const red = Math.floor((x / window.innerWidth) * 255);
-    const blue = Math.floor((y / window.innerHeight) * 255);
-    background.style.backgroundColor = `rgb(${red}, 0, ${blue})`;
-});
-
-document.addEventListener('mousemove', (e) => {
-    const background = document.getElementById('background');
-    const mouseX = e.clientX / window.innerWidth;
-    const mouseY = e.clientY / window.innerHeight;
-    const translateX = mouseX * 20 - 10; // Adjust the sensitivity
-    const translateY = mouseY * 20 - 10; // Adjust the sensitivity
-    background.style.transform = `translate(${translateX}px, ${translateY}px)`;
-});
-
 const fetchUserButton = document.getElementById('fetchUserButton');
 const usernameInput = document.getElementById('usernameInput');
 const loadingMessage = document.getElementById('loadingMessage');
@@ -32,9 +6,8 @@ const middleHeader = document.getElementById('middleHeader');
 const userImage = document.getElementById('userImage');
 const moreInfoButton = document.getElementById('moreInfoButton');
 const moreInfoDetails = document.getElementById('moreInfoDetails');
-let user; // Store user data
+let user;
 
-// Function to fetch user info
 const fetchUserInfo = () => {
     const username = usernameInput.value.trim();
     if (username === '') {
@@ -42,38 +15,35 @@ const fetchUserInfo = () => {
         return;
     }
 
-    // Display loading message while fetching data
     loadingMessage.style.display = 'block';
     userInfoDiv.innerHTML = '';
     middleHeader.style.display = 'none';
     moreInfoDetails.style.display = 'none';
 
-    // Make a GET request to the API
     fetch(`https://ev.io/stats-by-un/${encodeURIComponent(username)}`)
         .then(response => response.json())
         .then(data => {
-            // Hide loading message
             loadingMessage.style.display = 'none';
 
             if (data.length === 0) {
                 userInfoDiv.innerHTML = '<p>User not found.</p>';
-                moreInfoButton.style.display = 'none'; // Hide more info button if user not found
+                moreInfoButton.style.display = 'none';
             } else {
-                user = data[0]; // Store user data
+                user = data[0];
                 middleHeader.style.display = 'block';
                 middleHeader.innerHTML = `<h2>User Information for ${user.name[0].value}</h2>`;
                 const uidUrl = `https://ev.io/user/${user.uid[0].value}`;
                 const crosshairUrl = `${user.field_custom_crosshair[0].url}`;
                 userInfoDiv.innerHTML = `
-                           <p><strong>Username:</strong> ${user.name[0].value}</p>
-                           <p><strong>User URL:</strong> <a href="${uidUrl}" target="_blank">https://ev.io/user/${user.uid[0].value}</a></p>
-                           <p><strong>Kills:</strong> ${user.field_kills[0].value}</p>
-                           <p><strong>Deaths:</strong> ${user.field_deaths[0].value}</p>
-                           <p><strong>KD:</strong> ${user.field_k_d[0].value}</p>
-                           <p><strong>Rank:</strong> ${user.field_rank[0].value}</p>
-                           <p><strong>Score:</strong> ${user.field_score[0].value}</p>
-                           <p><strong>Crosshair:</strong> <a href="${crosshairUrl}" target="_blank">Users Crosshair</a></p>
-                       `;
+<p><strong>Username:</strong> ${user.name[0].value}</p>
+<p><strong>User URL:</strong> <a href="${uidUrl}" target="_blank">https://ev.io/user/${user.uid[0].value}</a></p>
+<p><strong>Kills:</strong> ${user.field_kills[0].value}</p>
+<p><strong>Deaths:</strong> ${user.field_deaths[0].value}</p>
+<p><strong>KD:</strong> ${user.field_k_d[0].value}</p>
+<p><strong>Rank:</strong> ${user.field_rank[0].value}</p>
+<p><strong>Score:</strong> ${user.field_score[0].value}</p>
+<p><strong>Crosshair:</strong> <a href="${crosshairUrl}" target="_blank">Users Crosshair</a></p>
+`;
 
                 const skinId = user.field_eq_skin[0].target_id;
                 if (skinId) {
@@ -84,28 +54,27 @@ const fetchUserInfo = () => {
                             const skinName = skinData.title[0].value;
                             const skinInfo = document.createElement('div');
                             skinInfo.innerHTML = `
-                                       <p><strong>Skin Name:</strong> ${skinName}</p>
-                                       <img src="${skinImage}" alt="${skinName} Skin" style="max-width: 200px; border-radius: 10px;"> <!-- Adjust max-width and border-radius as needed -->
-                                   `;
+<p><strong>Skin Name:</strong> ${skinName}</p>
+<img src="${skinImage}" alt="${skinName} Skin" style="max-width: 200px; border-radius: 10px;"> <!-- Adjust max-width and border-radius as needed -->
+`;
                             userInfoDiv.appendChild(skinInfo);
                         })
                         .catch(error => console.error('Error fetching skin data:', error));
                 }
                 if (user) {
                     userInfoDiv.style.display = 'block';
-                    moreInfoButton.style.display = 'block'; // Show more info button
+                    moreInfoButton.style.display = 'block';
                 }
             }
         })
         .catch(error => {
             loadingMessage.style.display = 'none';
             userInfoDiv.innerHTML = '<p>Error fetching user information.</p>';
-            moreInfoButton.style.display = 'none'; // Hide more info button on error
+            moreInfoButton.style.display = 'none';
             console.error('Error:', error);
         });
 };
 
-// Function to show more user details
 const showMoreInfo = () => {
     const username = usernameInput.value.trim();
     if (username === '') {
@@ -115,26 +84,24 @@ const showMoreInfo = () => {
 
     if (user) {
         moreInfoDetails.style.display = 'block';
-        userInfoDiv.style.display = 'none'; // Hide user info div
+        userInfoDiv.style.display = 'none';
         moreInfoDetails.innerHTML = `
-            <p><strong>Abilities Layout:</strong> ${user.field_abilities_loadout[0].value}</p>
-            <p><strong>Total Games:</strong> ${user.field_total_games[0].value}</p>
-            <p><strong>Wallet Address:</strong> ${user.field_wallet_address[0].value}</p>
-            <p><strong>Weekly Score:</strong> ${user.field_weekly_score[0].value}</p>
-            <p><strong>CP Earned Weekly:</strong> ${user.field_cp_earned_weekly[0].value}</p>
-            <p><strong>CP Lifetime Earned:</strong> ${user.field_lifetime_cp_earned[0].value}</p>
-            <p><strong>Ev Coins:</strong> ${user.field_ev_coins[0].value}</p>
-            <!-- Add more details as needed -->
-        `;
+<p><strong>Abilities Layout:</strong> ${user.field_abilities_loadout[0].value}</p>
+<p><strong>Total Games:</strong> ${user.field_total_games[0].value}</p>
+<p><strong>Wallet Address:</strong> ${user.field_wallet_address[0].value}</p>
+<p><strong>Weekly Score:</strong> ${user.field_weekly_score[0].value}</p>
+<p><strong>CP Earned Weekly:</strong> ${user.field_cp_earned_weekly[0].value}</p>
+<p><strong>CP Lifetime Earned:</strong> ${user.field_lifetime_cp_earned[0].value}</p>
+<p><strong>Ev Coins:</strong> ${user.field_ev_coins[0].value}</p>
+<!-- Add more details as needed -->
+`;
     }
 };
 
-// Event listeners
 fetchUserButton.addEventListener('click', fetchUserInfo);
 moreInfoButton.addEventListener('click', showMoreInfo);
 
 
-// Listen for Enter key press in the username input field
 usernameInput.addEventListener('keyup', event => {
     if (event.key === 'Enter') {
         fetchUserInfo();
@@ -154,16 +121,11 @@ function openCity(evt, cityName) {
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.className += " active";
 };
-
-
-// NFT-related code...
 const outputDiv = document.getElementById('output');
 const nftIdInput = document.getElementById('nftIdInput');
 const searchButton = document.getElementById('searchButton');
-
 nftIdInput.addEventListener('keyup', (event) => {
     if (event.key === 'Enter') {
-        // Trigger a click on the search button
         searchButton.click();
     }
 });
@@ -176,7 +138,6 @@ searchButton.addEventListener('click', () => {
     }
 
 
-    // Display loading message while fetching data
     loadingMessage.style.display = 'block';
     outputDiv.innerHTML = '';
 
@@ -190,7 +151,6 @@ searchButton.addEventListener('click', () => {
             return response.json();
         })
         .then(data => {
-            // Hide loading message
             loadingMessage.style.display = 'none';
 
             const reset_time = data[0]["field_reset_time"];
@@ -224,33 +184,27 @@ searchButton.addEventListener('click', () => {
                 }
             }
 
-            // Create a container for the info
             const infoContainer = document.createElement('div');
-            infoContainer.style.marginBottom = '20px'; // Add spacing to the info
+            infoContainer.style.marginBottom = '20px';
 
-            // Create an image element for the thumbnail
             const thumbnailImage = document.createElement('img');
             thumbnailImage.src = thumbnail;
-            thumbnailImage.style.maxWidth = '30%'; // Ensure the image fits the container width
-            thumbnailImage.style.borderRadius = '15px'; // Ensure the image fits the container width
+            thumbnailImage.style.maxWidth = '30%';
+            thumbnailImage.style.borderRadius = '15px';
 
-            // Append the thumbnail image to the info container
             infoContainer.appendChild(thumbnailImage);
             const uidUrl = `https://ev.io/node/${game_node_id}`;
-            // Display the extracted data on the web page
             infoContainer.innerHTML += `
-                    <p><strong>Skin Name:</strong> ${skin_name}</p>
-                    <p><strong>Game Node URL:</strong> <a href="${uidUrl}" target="_blank">${uidUrl}</a></p>
-                    <p><strong>Weapon Type:</strong> ${weapon_type}</p>
-                    <p><strong>Reset Time:</strong> ${reset_time}</p>
-                    <p><strong>Collection:</strong> ${collection}</p>
-                `;
+    <p><strong>Skin Name:</strong> ${skin_name}</p>
+    <p><strong>Game Node URL:</strong> <a href="${uidUrl}" target="_blank">${uidUrl}</a></p>
+    <p><strong>Weapon Type:</strong> ${weapon_type}</p>
+    <p><strong>Reset Time:</strong> ${reset_time}</p>
+    <p><strong>Collection:</strong> ${collection}</p>
+    `;
 
-            // Append the info container to the output div
             outputDiv.appendChild(infoContainer);
         })
         .catch(error => {
-            // Hide loading message on error
             loadingMessage.style.display = 'none';
             console.error('Error:', error);
             outputDiv.innerHTML = '<p>Invalid ID</p>';
@@ -290,7 +244,6 @@ const proPlayers = [
     "Faramura",
     "Q1234",
     "TurboChang ",
-    // Add more pro players here
 ];
 
 function getRandomPlayer() {
@@ -331,7 +284,6 @@ document.getElementById('random-button').addEventListener('click', () => {
     fetchAndDisplayCrosshair();
 });
 
-// Initially fetch and display a random crosshair when the page loads
 fetchAndDisplayCrosshair();
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -352,7 +304,6 @@ function fetchCryptocurrencyInfo() {
             document.getElementById('php').textContent = `1 SOL = ${php} PHP`;
             document.getElementById('gbp').textContent = `1 SOL = ${gbp} GBP`;
 
-            // Fetch other data and update corresponding elements here
         })
         .catch(error => {
             console.error('Error:', error);
@@ -373,10 +324,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const field_earnings_cap = data[0]['field_earnings_cap'];
 
                 const infoHTML = `
-                   <h2>Current Earn Rate</h2>
-                   <p>The E Earn Rate Per 100 Score is: <strong>${field_e_earn_rate_per_100_score}</strong></p>
-                   <p>The Earnings Cap is: <strong>${field_earnings_cap}</strong></p>
-               `;
+    <h2>Current Earn Rate</h2>
+    <p>The E Earn Rate Per 100 Score is: <strong>${field_e_earn_rate_per_100_score}</strong></p>
+    <p>The Earnings Cap is: <strong>${field_earnings_cap}</strong></p>
+    `;
 
                 earnRateInfo.innerHTML = infoHTML;
             })
@@ -397,17 +348,18 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch('https://ev.io/nft-drops')
             .then(response => response.json())
             .then(data => {
-                // Assuming the API response is an array of NFT drops
                 const nftDropsList = data.map(nft => `
-                   <center><div class="nft-drop">
-                       <h2>${nft.type}</h2>
-                       <p>Name: ${nft.title}</p>
-                       <p>Tier: ${nft.field_tier}</p>
-                       <p>Drop Chance: ${nft.field_drop_chance}</p>
-                       <p>Quantity Left: ${nft.field_quantity_left}</p></center>
+    <center>
+        <div class="nft-drop">
+            <h2>${nft.type}</h2>
+            <p>Name: ${nft.title}</p>
+            <p>Tier: ${nft.field_tier}</p>
+            <p>Drop Chance: ${nft.field_drop_chance}</p>
+            <p>Quantity Left: ${nft.field_quantity_left}</p>
+    </center>
 
-                   </div>
-               `).join('');
+    </div>
+    `).join('');
 
                 nftDrops.innerHTML = nftDropsList;
             })
@@ -425,7 +377,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const tabButtons = document.querySelectorAll('.custom-tab-button');
     const tabs = document.querySelectorAll('.custom-tab');
 
-    // Function to fetch equipped skins
     const fetchEquippedSkins = () => {
         const username = usernameInput.value.trim();
         if (username === '') {
@@ -433,33 +384,26 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // Display loading message while fetching data
         loadingMessage.style.display = 'block';
 
-        // Hide all tabs
         tabs.forEach(tab => {
             tab.style.display = 'none';
         });
 
-        // Make a GET request to the ev.io API
         fetch(`https://ev.io/stats-by-un/${encodeURIComponent(username)}`)
             .then(response => response.json())
             .then(data => {
-                // Hide loading message
                 loadingMessage.style.display = 'none';
 
                 if (data.length === 0) {
-                    // Display a message for no user found
                     tabs.forEach(tab => {
                         tab.innerHTML = '<p>User not found.</p>';
                     });
                 } else {
-                    console.log('User data:', data); // Log user data to console
+                    console.log('User data:', data);
 
-                    const user = data[0]; // Store user data
+                    const user = data[0];
 
-                    // Fetch and display Character Skin
-                    // Fetch and display Character Skin
                     const characterSkinId = user.field_eq_skin[0]?.target_id;
                     if (characterSkinId) {
                         fetch(`https://ev.io/node/${characterSkinId}?_format=json`)
@@ -467,15 +411,13 @@ document.addEventListener("DOMContentLoaded", () => {
                             .then(skinData => {
                                 const skinName = skinData.title[0].value;
                                 const skinIcon = skinData.field_large_thumb[0].url;
-                                displaySkin('CharacterTab', skinName, skinIcon); // Use 'CharacterTab' instead of 'Character'
+                                displaySkin('CharacterTab', skinName, skinIcon);
                             })
                             .catch(error => console.error('Error fetching character skin:', error));
                     } else {
-                        // Display a message for no character skin
-                        displayNoSkin('CharacterTab'); // Use 'CharacterTab' instead of 'Character'
+                        displayNoSkin('CharacterTab');
                     }
 
-                    // Fetch and display Assault Rifle Skin
                     const arSkinId = user.field_auto_rifle_skin[0]?.target_id;
                     if (arSkinId) {
                         fetch(`https://ev.io/node/${arSkinId}?_format=json`)
@@ -483,12 +425,11 @@ document.addEventListener("DOMContentLoaded", () => {
                             .then(skinData => {
                                 const skinName = skinData.title[0].value;
                                 const skinIcon = skinData.field_weapon_skin_thumb[0].url;
-                                displaySkin('AssaultRifleTab', skinName, skinIcon); // Use 'AssaultRifleTab' instead of 'AssaultRifle'
+                                displaySkin('AssaultRifleTab', skinName, skinIcon);
                             })
                             .catch(error => console.error('Error fetching AR skin:', error));
                     } else {
-                        // Display a message for no AR skin
-                        displayNoSkin('AssaultRifleTab'); // Use 'AssaultRifleTab' instead of 'AssaultRifle'
+                        displayNoSkin('AssaultRifleTab');
                     }
 
                     const hcSkinId = user.field_hand_cannon_skin[0]?.target_id;
@@ -498,12 +439,11 @@ document.addEventListener("DOMContentLoaded", () => {
                             .then(skinData => {
                                 const skinName = skinData.title[0].value;
                                 const skinIcon = skinData.field_weapon_skin_thumb[0].url;
-                                displaySkin('HandCannonTab', skinName, skinIcon); // Use 'AssaultRifleTab' instead of 'AssaultRifle'
+                                displaySkin('HandCannonTab', skinName, skinIcon);
                             })
                             .catch(error => console.error('Error fetching HC skin:', error));
                     } else {
-                        // Display a message for no AR skin
-                        displayNoSkin('HandCannonTab'); // Use 'AssaultRifleTab' instead of 'AssaultRifle'
+                        displayNoSkin('HandCannonTab');
                     }
 
                     const lrSkinId = user.field_laser_rifle_skin[0]?.target_id;
@@ -513,12 +453,11 @@ document.addEventListener("DOMContentLoaded", () => {
                             .then(skinData => {
                                 const skinName = skinData.title[0].value;
                                 const skinIcon = skinData.field_weapon_skin_thumb[0].url;
-                                displaySkin('LaserRifleTab', skinName, skinIcon); // Use 'AssaultRifleTab' instead of 'AssaultRifle'
+                                displaySkin('LaserRifleTab', skinName, skinIcon);
                             })
                             .catch(error => console.error('Error fetching LR skin:', error));
                     } else {
-                        // Display a message for no AR skin
-                        displayNoSkin('LaserRifleTab'); // Use 'AssaultRifleTab' instead of 'AssaultRifle'
+                        displayNoSkin('LaserRifleTab');
                     }
 
                     const brSkinId = user.field_burst_rifle_skin[0]?.target_id;
@@ -528,12 +467,11 @@ document.addEventListener("DOMContentLoaded", () => {
                             .then(skinData => {
                                 const skinName = skinData.title[0].value;
                                 const skinIcon = skinData.field_weapon_skin_thumb[0].url;
-                                displaySkin('BurstRifleTab', skinName, skinIcon); // Use 'AssaultRifleTab' instead of 'AssaultRifle'
+                                displaySkin('BurstRifleTab', skinName, skinIcon);
                             })
                             .catch(error => console.error('Error fetching BR skin:', error));
                     } else {
-                        // Display a message for no AR skin
-                        displayNoSkin('BurstRifleTab'); // Use 'AssaultRifleTab' instead of 'AssaultRifle'
+                        displayNoSkin('BurstRifleTab');
                     }
 
                     const sweeperSkinId = user.field_sweeper_skin[0]?.target_id;
@@ -543,12 +481,11 @@ document.addEventListener("DOMContentLoaded", () => {
                             .then(skinData => {
                                 const skinName = skinData.title[0].value;
                                 const skinIcon = skinData.field_weapon_skin_thumb[0].url;
-                                displaySkin('SweeperTab', skinName, skinIcon); // Use 'AssaultRifleTab' instead of 'AssaultRifle'
+                                displaySkin('SweeperTab', skinName, skinIcon);
                             })
                             .catch(error => console.error('Error fetching BR skin:', error));
                     } else {
-                        // Display a message for no AR skin
-                        displayNoSkin('SweeperTab'); // Use 'AssaultRifleTab' instead of 'AssaultRifle'
+                        displayNoSkin('SweeperTab');
                     }
 
                     const swordSkinId = user.field_sword_skin[0]?.target_id;
@@ -558,12 +495,11 @@ document.addEventListener("DOMContentLoaded", () => {
                             .then(skinData => {
                                 const skinName = skinData.title[0].value;
                                 const skinIcon = skinData.field_weapon_skin_thumb[0].url;
-                                displaySkin('SwordTab', skinName, skinIcon); // Use 'AssaultRifleTab' instead of 'AssaultRifle'
+                                displaySkin('SwordTab', skinName, skinIcon);
                             })
                             .catch(error => console.error('Error fetching BR skin:', error));
                     } else {
-                        // Display a message for no AR skin
-                        displayNoSkin('SwordTab'); // Use 'AssaultRifleTab' instead of 'AssaultRifle'
+                        displayNoSkin('SwordTab');
                     }
 
 
@@ -578,32 +514,27 @@ document.addEventListener("DOMContentLoaded", () => {
             });
     };
 
-    // Function to display skin information in the specified tab
     const displaySkin = (tabId, skinName, skinIcon) => {
         const tab = document.getElementById(tabId);
         tab.innerHTML = `
-            <h2>Equipped ${tabId.replace('Tab', '')} Skin</h2>
-            <p><strong>Skin Name:</strong> ${skinName}</p>
-            <img src="${skinIcon}" alt="${skinName} Skin" style="max-width: 300px;">
-            <hr class="modern-hr">
-        `;
+    <h2>Equipped ${tabId.replace('Tab', '')} Skin</h2>
+    <p><strong>Skin Name:</strong> ${skinName}</p>
+    <img src="${skinIcon}" alt="${skinName} Skin" style="max-width: 300px;">
+    <hr class="modern-hr">
+    `;
 
-        // Display the tab
         tab.style.display = 'block';
     };
 
-    // Function to display a message for no skin in the specified tab
     const displayNoSkin = (tabId) => {
         const tab = document.getElementById(tabId);
         tab.innerHTML = '<p>No skin equipped for this category.</p>';
 
-        // Display the tab
         tab.style.display = 'block';
     };
 
     const handleEnterKey = (event) => {
         if (event.key === 'Enter') {
-            // Trigger a click event on the "Show Equipped Skins" button
             fetchUserButton.click();
         }
     };
@@ -611,15 +542,12 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchUserButton.addEventListener('click', fetchEquippedSkins);
     usernameInput.addEventListener('keydown', handleEnterKey);
 
-    // Add click event listeners to tab buttons
     tabButtons.forEach(button => {
         button.addEventListener('click', () => {
-            // Hide all tabs
             tabs.forEach(tab => {
                 tab.style.display = 'none';
             });
 
-            // Show the selected tab
             const tabId = button.getAttribute('data-tab');
             const tab = document.getElementById(tabId);
             tab.style.display = 'block';
@@ -635,19 +563,17 @@ var isAudioPlaying = false;
 
 function playAudio() {
     if (!isAudioPlaying) {
-        // Replace the URL with the audio file URL you want to play
         var audioUrl = "https://cdn.discordapp.com/attachments/972952855210238015/1124542374165618778/Rick_Roll_Sound_Effect.mp3";
         var audioElement = new Audio(audioUrl);
         audioElement.play();
+        var darkModeText = document.querySelector('.dark-mode-text');
+        darkModeText.textContent = "Get Ricked Rolled Lmao";
         isAudioPlaying = true;
-        
-        // Disable the click event while the audio is playing
-        document.querySelector('.audio-text').style.pointerEvents = 'none';
-        
-        // Add an event listener to reset the flag when audio ends
+        document.querySelector('.scrolling-text').style.pointerEvents = 'none';
         audioElement.addEventListener('ended', function() {
+            darkModeText.textContent = "Now In DarkMode!!";
             isAudioPlaying = false;
-            document.querySelector('.audio-text').style.pointerEvents = 'auto';
+            document.querySelector('.scrolling-text').style.pointerEvents = 'auto';
         });
     }
 }

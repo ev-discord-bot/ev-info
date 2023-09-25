@@ -1,19 +1,19 @@
 <head>
    <meta content="Ev.io User Info" property="og:title" />
    <meta content="Ev.io User Info In A Website!" property="og:description" />
-   <meta content="https://media.discordapp.net/attachments/1039308604148293682/1108820053547307008/9999ef6602e13b05d3921152a7986df6.webp" property="og:image" />
+   <meta content="https://media.discordapp.net/attachments/1039308604148293682/1155548421315383406/icon.png" property="og:image" />
    <meta content="#8B0000" data-react-helmet="true" name="theme-color" />
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>iminthebibleson | Ev.io User Info</title>
-   <link rel="icon" href="https://media.discordapp.net/attachments/1039308604148293682/1108820053547307008/9999ef6602e13b05d3921152a7986df6.webp" type="image/x-icon">
+   <link rel="icon" href="https://media.discordapp.net/attachments/1039308604148293682/1155548421315383406/icon.png" type="image/x-icon">
    <link rel="stylesheet" href="/styles/index_styles.css">
 </head>
 <body>
    <h1>Ev.io User Information</h1>
    <div class="scroll-left">
-      <p onclick="playAudio()" class="scrolling-text" style="color: white;">This Website Took So Long To Make 💀 | <span class="dark-mode-text">Now In DarkMode!!</span></p>
-  </div>  
+      <p onclick="playAudio();" class="scrolling-text" style="color: white;">This Website Took So Long To Make 💀 | <span id="darkModeText" class="dark-mode-text">Now In DarkMode!!</span></p>
+  </div>
    <div class="card">
       <div class="container">
          <center>
@@ -37,7 +37,6 @@
             <div id="loadingMessage">Loading...</div>
             <div class="middle-header" id="middleHeader" style="display: none;"></div>
             <div id="userInfo"></div>
-            <!-- More info button and details -->
             <center><button id="moreInfoButton">More Info</button></center>
             <div class="earn-rate-info">
                <div id="moreInfoDetails"></div>
@@ -95,7 +94,6 @@
             </div>
             <div id="userInfo">
                <div id="loadingMessageTabs" style="display: none;">Loading...</div>
-               <!-- Tabs for Skin Categories -->
                <div class="button-container">
                   <button class="custom-tab-button" data-tab="CharacterTab">Character</button>
                   <button class="custom-tab-button" data-tab="AssaultRifleTab">Assault Rifle</button>
@@ -105,7 +103,6 @@
                   <button class="custom-tab-button" data-tab="SweeperTab">Sweeper</button>
                   <button class="custom-tab-button" data-tab="SwordTab">Sword</button>
                </div>
-               <!-- Skin Category Containers -->
                <div id="CharacterTab" class="custom-tab"></div>
                <div id="AssaultRifleTab" class="custom-tab"></div>
                <div id="HandCannonTab" class="custom-tab"></div>
@@ -134,11 +131,9 @@
                <li><a href="https://arideve.github.io/ev-skin-viewer/" target="_blank">Ev.io Skin Viewer</a></li>
             </ul>
          </div>
-         <!-- Image element to display the user image -->
       </div>
       <br><br><br><br><br><br>
    </div>
-   <!-- Footer -->
    <br><br><br><br><br><br><br><br>
    <footer>
       <div>
