@@ -1,12 +1,29 @@
 body {
-	background-image: url('https://media.discordapp.net/attachments/1145845203530420368/1154765545611198484/wp10142339.png?width=806&height=477');
-	background-size: 50px 50px;
-	background-repeat: repeat;
-	background-attachment: fixed;
+	background: black;
+	padding: 0;
+	justify-content: center;
+	align-items: center;
+	background-color: #333;
 }
 
-footer {
+.image {
+	background-image: url("https://media.discordapp.net/attachments/1039308604148293682/1161383768775467138/landscape-vector-art-vector-minimalism-simple-hd-wallpaper-797028ad312a7d0b5607c8ef7081c6cd.png");
+	filter: blur(1px);
+	height: 100vh;
 	background-color: #333;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+footer {
+	background-color: rgba(15, 15, 15, 0.65);
 	color: #fff;
 	padding: 10px 0;
 	text-align: center;
@@ -15,6 +32,7 @@ footer {
 	border-top-right-radius: 25px 25px;
 	bottom: 0;
 	width: 100%;
+	opacity: 1;
 }
 
 footer div {
@@ -29,7 +47,7 @@ footer a {
 }
 
 footer a:hover {
-	color: #FF5733;
+	color: #ADD8E6;
 }
 
 ::-webkit-scrollbar {
@@ -51,13 +69,13 @@ footer a:hover {
 }
 
 h1 {
-	background-color: #333;
+	background-color: rgba(15, 15, 15, 0.65);
 	color: #fff;
 	padding: 20px;
 	text-align: center;
 	border-bottom-left-radius: 25px 25px;
 	border-bottom-right-radius: 25px 25px;
-	animation: glow 2s ease-in-out infinite alternate;
+	opacity: 1;
 }
 
 @keyframes glow {
@@ -81,7 +99,7 @@ h1 {
 
 .middle-header {
 	color: #ffffff;
-	background-color: #333;
+	background-color: rgba(15, 15, 15, 0);
 	padding: 10px 0;
 	text-align: center;
 	margin-bottom: 20px;
@@ -89,61 +107,39 @@ h1 {
 }
 
 .search-bar input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #555;
-    color: #f0f0f0;
-	background-color: #555;
-    border-radius: 25px;
-    padding-left: 15px;
-    text-align: center;
-    animation: inputExpand 0.5s ease-in-out, glow 2s ease-in-out infinite alternate;
-    box-shadow: 0 0 5px rgba(85, 85, 85, 0.7);
-}
-
-@keyframes inputExpand {
-    0% {
-        width: 0;
-        opacity: 0;
-    }
-    100% {
-        width: 100%;
-        opacity: 1;
-    }
-}
-
-@keyframes glow {
-    from {
-        box-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
-    }
-
-    to {
-        box-shadow: 0 0 20px rgba(255, 87, 51, 0.8);
-    }
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+	color: #f0f0f0;
+	background-color: rgba(15, 15, 15, 0.65);
+	border-radius: 25px;
+	padding-left: 15px;
+	text-align: center;
+	box-shadow: 0 0 5px rgba(85, 85, 85, 0.7);
 }
 
 .search-bar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .search-bar label {
-    font-weight: bold;
+	font-weight: bold;
+	padding: 10px;
 }
 
 .search-bar button {
-    background-color: #555;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 25px;
-    cursor: pointer;
+	background-color: rgba(15, 15, 15, 0.65);
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 25px;
+	cursor: pointer;
 }
 
 .search-bar button:hover {
-    background-color: #555;
+	background-color: rgba(15, 15, 20);
 }
 
 
@@ -154,7 +150,7 @@ h1 {
 
 #userInfo {
 	margin-top: 20px;
-	background-color: #555;
+	background-color: rgba(15, 15, 15, 0.65);
 	color: #ffffff;
 	padding: 15px;
 	border-radius: 25px;
@@ -162,29 +158,7 @@ h1 {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	animation: inputExpand 0.5s ease-in-out, glow 2s ease-in-out infinite alternate;
-    box-shadow: 0 0 5px rgba(85, 85, 85, 0.7);
-}
-
-@keyframes inputExpand {
-    0% {
-        width: 0;
-        opacity: 0;
-    }
-    100% {
-        width: 100%;
-        opacity: 1;
-    }
-}
-
-@keyframes glow {
-    from {
-        box-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
-    }
-
-    to {
-        box-shadow: 0 0 20px rgba(255, 87, 51, 0.8);
-    }
+	box-shadow: 0 0 5px rgba(85, 85, 85, 0.7);
 }
 
 #userInfo p {
@@ -195,7 +169,7 @@ h1 {
 }
 
 footer {
-	background-color: #333;
+	background-color: rgba(15, 15, 15, 0.65);
 	color: #fff;
 	padding: 10px 0;
 	text-align: center;
@@ -204,17 +178,6 @@ footer {
 	width: 100%;
 	border-top-left-radius: 25px 25px;
 	border-top-right-radius: 25px 25px;
-	animation: glow 2s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-	from {
-		box-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
-	}
-
-	to {
-		box-shadow: 0 0 20px rgba(255, 87, 51, 0.8);
-	}
 }
 
 footer div {
@@ -229,7 +192,7 @@ footer a {
 }
 
 footer a:hover {
-	color: #FF5733;
+	color: #ADD8E6;
 }
 
 body {
@@ -246,7 +209,7 @@ body {
 }
 
 #moreInfoButton {
-	background-color: #555;
+	background-color: rgba(15, 15, 15, 0.65);
 	color: #fff;
 	border: none;
 	padding: 10px 20px;
@@ -256,13 +219,13 @@ body {
 }
 
 #moreInfoButton:hover {
-	background-color: #555;
+	background-color: rgba(15, 15, 20);
 }
 
 #moreInfoDetails {
 	margin-top: 20px;
 	padding: 15px;
-	background-color: #555;
+	background-color: rgba(15, 15, 15, 0);
 	color: #ffffff;
 	border-radius: 25px;
 	display: none;
@@ -277,42 +240,57 @@ body {
 	color: #ffffff;
 }
 
-.tab {
+.tabs {
+	max-width: 600px;
+	margin: 0 auto;
+	border-radius: 20px;
 	overflow: hidden;
-	border-top-left-radius: 25px 25px;
-	border-top-right-radius: 25px 25px;
-	background-color: #333;
-	max-width: 480px;
-	align-items: center;
-	justify-content: center;
+	background: rgba(10, 20, 30, .2);
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 10px;
+	padding: 20px;
 }
 
-.tab button {
-	background-color: inherit;
-	float: left;
+.tab-list .tab {
+	border: 1px solid transparent;
+	border-radius: 25px;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+	padding: 10px;
+	margin: 2.5px;
+	color: rgba(255, 255, 255, .6);
+	background: rgba(0, 0, 0, 0.1);
+	transition: background 0.5s ease;
+}
+
+.tab-list .tab.active {
+	color: white;
+	background: rgba(15, 15, 15, 0.5);
+	border: 1px solid rgba(255, 255, 255, .6);
+}
+
+.tab-list .tab:hover {
+	background: rgba(15, 15, 20);
+}
+
+.button {
+	display: inline-block;
+	padding: .5rem 1rem;
+	background-color: #4CAF50;
+	color: white;
 	border: none;
-	outline: none;
+	border-radius: 10px;
 	cursor: pointer;
-	overflow: hidden;
-	display: flex;
-	padding: 16px 11px;
-	transition: 0.3s;
-	font-size: 17px;
-	border-radius: 0px;
-	color: white;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	margin-bottom: 1rem;
+	transition: background-color 0.3s ease;
 }
 
-.tab button:hover {
-	background-color: #555;
+.button:hover {
+	background-color: #45a049;
 }
 
-.tab button.active {
-	background-color: #5A5A5A;
-	color: white;
-}
 
 .tabcontent {
 	display: none;
@@ -320,23 +298,22 @@ body {
 	margin: 0;
 	border-top: none;
 	color: white;
-	background-color: #333;
-	border-bottom-left-radius: 25px 25px;
-	border-bottom-right-radius: 25px 25px;
+	background-color: rgba(15, 15, 15, 0.65);
+	border-radius: 25px;
 }
 
 #nftIdInput {
 	width: 100%;
 	padding: 10px;
 	margin-bottom: 10px;
-	background-color: #555;
+	background-color: rgba(15, 15, 15, 0.65);
 	border-radius: 25px;
 	padding-left: 15px;
 	text-align: center;
 }
 
 #searchButton {
-	background-color: #333;
+	background-color: rgba(15, 15, 15, 0.65);
 	color: #fff;
 	border: none;
 	padding: 10px 20px;
@@ -344,12 +321,12 @@ body {
 }
 
 #searchButton:hover {
-	background-color: #555;
+	background-color: rgba(15, 15, 20);
 }
 
 #output {
 	margin-top: 20px;
-	background-color: #555;
+	background-color: rgba(15, 15, 15, 0.65);
 	color: #ffffff;
 	padding: 15px;
 	border-radius: 25px;
@@ -357,29 +334,6 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	animation: inputExpand 0.5s ease-in-out, glow 2s ease-in-out infinite alternate;
-    box-shadow: 0 0 5px rgba(85, 85, 85, 0.7);
-}
-
-@keyframes inputExpand {
-    0% {
-        width: 0;
-        opacity: 0;
-    }
-    100% {
-        width: 100%;
-        opacity: 1;
-    }
-}
-
-@keyframes glow {
-    from {
-        box-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
-    }
-
-    to {
-        box-shadow: 0 0 20px rgba(255, 87, 51, 0.8);
-    }
 }
 
 #output p {
@@ -392,28 +346,6 @@ body {
 	list-style: none;
 	padding: 0;
 	margin: 3;
-	animation: inputExpand 0.5s ease-in-out, glow 2s ease-in-out infinite alternate;
-}
-
-@keyframes inputExpand {
-    0% {
-        width: 0;
-        opacity: 0;
-    }
-    100% {
-        width: 100%;
-        opacity: 1;
-    }
-}
-
-@keyframes glow {
-    from {
-        box-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
-    }
-
-    to {
-        box-shadow: 0 0 20px rgba(255, 87, 51, 0.8);
-    }
 }
 
 .link-list li {
@@ -423,7 +355,7 @@ body {
 .link-list a {
 	text-decoration: none;
 	color: white;
-	background-color: #555;
+	background-color: rgba(15, 15, 15, 0.65);
 	padding: 10px 20px;
 	border-radius: 25px;
 	display: inline-block;
@@ -431,7 +363,7 @@ body {
 }
 
 .link-list a:hover {
-	background-color: #5A5A5A;
+	background-color: rgba(15, 15, 15, 1);
 	color: white;
 }
 
@@ -448,7 +380,7 @@ body {
 }
 
 #random-button {
-	background-color: #555;
+	background-color: rgba(15, 15, 15, 0.65);
 	color: #fff;
 	border: none;
 	padding: 10px 20px;
@@ -458,11 +390,11 @@ body {
 }
 
 #random-button:hover {
-	background-color: #555;
+	background-color: rgba(15, 15, 20);
 }
 
 #download-button {
-	background-color: #555;
+	background-color: rgba(15, 15, 15, 0.65);
 	color: #fff;
 	border: none;
 	padding: 10px 20px;
@@ -476,7 +408,7 @@ body {
 }
 
 #download-button:hover {
-	background-color: #555;
+	background-color: rgba(15, 15, 20);
 }
 
 img {
@@ -486,15 +418,18 @@ img {
 
 .scroll-left {
 	height: 50px;
+	margin-top: -4%;
+	padding: 15px;
 	overflow: hidden;
 	position: relative;
 }
 
 .scrolling-text {
 	position: absolute;
+	padding: 10px;
 	width: 100%;
 	height: 100%;
-	margin: 0;
+	margin: 17	px;
 	line-height: 50px;
 	text-align: center;
 	-moz-transform: translateX(100%);
@@ -506,7 +441,7 @@ img {
 }
 
 .dark-mode-text {
-	background-image: linear-gradient(90deg, #ff0000, #D3D3D3);
+	background-image: linear-gradient(90deg, #ADD8E6, #00008B);
 	color: transparent;
 	background-clip: text;
 	-webkit-background-clip: text;
@@ -528,7 +463,7 @@ img {
 }
 
 #earnRateButton {
-	background-color: #555;
+	background-color: rgba(15, 15, 15, 0.65);
 	color: #fff;
 	border: none;
 	padding: 10px 20px;
@@ -537,15 +472,15 @@ img {
 }
 
 #earnRateButton:hover {
-	background-color: #555;
+	background-color: rgba(15, 15, 20);
 }
 
 #nftDrops {
-	margin-top: 20px;
-	background-color: #333;
+	background-color: rgba(15, 15, 15, 0.65);
 	color: #ffffff;
 	padding: 15px;
-	border-radius: 25px;
+	border-bottom-left-radius: 25px 25px;
+	border-bottom-right-radius: 25px 25px;
 	text-align: center;
 	display: flex;
 	flex-direction: column;
@@ -557,7 +492,7 @@ button:hover {
 }
 
 .custom-button {
-	background-color: #555;
+	background-color: rgba(15, 15, 15, 0.65);
 	color: #fff;
 	border: none;
 	padding: 10px 20px;
@@ -570,7 +505,7 @@ button:hover {
 }
 
 .custom-button:hover {
-	background-color: #555;
+	background-color: rgba(15, 15, 20);
 }
 
 .nft-content {
@@ -588,97 +523,53 @@ button:hover {
 
 .earn-rate-info {
 	margin-top: 20px;
-	background-color: #555;
+	background-color: rgba(15, 15, 15, 0.65);
 	padding: 15px;
 	border-radius: 25px;
 	text-align: center;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	animation: inputExpand 0.5s ease-in-out, glow 2s ease-in-out infinite alternate;
-    box-shadow: 0 0 5px rgba(85, 85, 85, 0.7);
+	box-shadow: 0 0 5px rgba(85, 85, 85, 0.7);
 }
 
-@keyframes inputExpand {
-    0% {
-        width: 0;
-        opacity: 0;
-    }
-    100% {
-        width: 100%;
-        opacity: 1;
-    }
-}
-
-@keyframes glow {
-    from {
-        box-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
-    }
-
-    to {
-        box-shadow: 0 0 20px rgba(255, 87, 51, 0.8);
-    }
-}
 
 .custom-dropdown {
 	position: relative;
 	display: inline-block;
-	animation: inputExpand 0.5s ease-in-out, glow 2s ease-in-out infinite alternate;
 }
 
-@keyframes inputExpand {
-    0% {
-        width: 0;
-        opacity: 0;
-    }
-    100% {
-        width: 100%;
-        opacity: 1;
-    }
-}
-
-@keyframes glow {
-    from {
-        box-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
-    }
-
-    to {
-        box-shadow: 0 0 20px rgba(255, 87, 51, 0.8);
-    }
-}
 
 .custom-dropbtn {
-	background-color: #404040;
+	background-color: rgba(15, 15, 15, 0.65);
 	color: #fff;
 	border: none;
 	padding: 10px 20px;
 	border-radius: 25px;
-	/* Rounded corners */
 	cursor: pointer;
 }
 
 .custom-dropdown-content {
 	display: none;
 	position: fixed;
-	background-color: #fff;
+	background-color: rgba(15, 15, 15, 0.65);
 	min-width: 160px;
+	color: white;
 	box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
 	z-index: 12;
 	border-radius: 15px;
-	border: 1px solid #ccc;
 }
 
 .custom-dropdown-content a {
 	padding: 12px 16px;
 	text-decoration: none;
 	display: block;
-	color: #333;
+	color: #f0f0f0;
 	transition: background-color 0.3s;
 }
 
 .custom-dropdown-content a:hover {
-	background-color: #f2f2f2;
-	color: #555;
+	background-color: rgba(15, 15, 20);
 }
 
 .custom-dropdown:hover .custom-dropdown-content {
@@ -710,7 +601,7 @@ button:hover {
 }
 
 .custom-tab-button {
-	background-color: #333;
+	background-color: rgba(15, 15, 15, 0.65);
 	color: #fff;
 	border: none;
 	padding: 10px 20px;
@@ -721,7 +612,7 @@ button:hover {
 }
 
 .custom-tab-button:hover {
-	background-color: #555;
+	background-color: rgba(15, 15, 20);
 }
 
 .modern-hr {
@@ -736,120 +627,16 @@ button:hover {
 	margin-top: 20px;
 	padding: 20px;
 	background-color: #fff;
-	border: 1px solid #ccc;
 	border-radius: 5px;
 	display: none;
 }
 
-@property --rotate {
-	syntax: "<angle>";
-	initial-value: 132deg;
-	inherits: false;
-}
-
-:root {
-	--rotate: 132deg;
-	--card-width: 513px;
-	--card-height: 65vh;
-}
-
-.card {
-	background: none;
-	max-width: var(--card-width);
-	margin: 0 auto;
-	padding: 5px;
-	position: relative;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	display: flex;
-	font-size: 1.5em;
-	color: rgb(88 199 250 / 100%);
-	cursor: pointer;
-	animation: spin 2.5s linear infinite;
-}
-
-.card::before {
-	content: "";
-	width: 104%;
-	height: 102%;
-	padding: -1px;
-	border-radius: 30px;
-	margin: 0 auto;
-	background-image: linear-gradient(var(--rotate), #ff0000, #000000 43%, #ff0000, #000000 43%, #f00);
-	position: absolute;
-	z-index: -1;
-	top: -1%;
-	left: -2%;
-}
-
-.card::after {
-	position: absolute;
-	content: "";
-	top: 1-px;
-	left: 0;
-	right: 0;
-	z-index: -20;
-	height: 115%;
-	margin: 0 auto;
-	width: 110%;
-	margin: 300 auto;
-	transform: scale(0.8);
-	filter: blur(calc(var(--card-height) / 6));
-	background-image: linear-gradient(var(--rotate), #ff0000, #000000 43%, #ff0000, #000000 43%, #ff0000);
-	opacity: 1;
-	transition: opacity 0.5s;
-	animation: spin 2.5s linear infinite;
-}
-
-@keyframes spin {
-	0% {
-		--rotate: 0deg;
-	}
-
-	100% {
-		--rotate: 360deg;
-	}
-}
-
-@keyframes spin {
-	0% {
-		--rotate: 0deg;
-	}
-
-	100% {
-		--rotate: 360deg;
-	}
-}
-
 .container {
-	max-width: 500px;
+	max-width: 480px;
 	margin: 0 auto;
-	padding: 20px;
-	background-color: #555;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	padding: 18px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 	border-radius: 25px;
 	text-align: center;
 	overflow: hidden;
-}
-
-.glowing-text {
-	background-color: none;
-	color: white;
-	padding: 0px;
-	border-radius: 5px;
-	cursor: pointer;
-	text-align: center;
-	animation: glow 2s ease-in-out infinite alternate;
-	text-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
-}
-
-@keyframes glow {
-	from {
-		text-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
-	}
-
-	to {
-		text-shadow: 0 0 20px rgba(255, 87, 51, 0.8);
-	}
 }

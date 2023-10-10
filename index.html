@@ -10,22 +10,26 @@
    <link rel="stylesheet" href="/styles/index_styles.css">
 </head>
 <body>
+   <div class="image"></div>
    <h1>Ev.io User Information</h1>
    <div class="scroll-left">
-      <p onclick="playAudio();" class="scrolling-text" style="color: white;">This Website Took So Long To Make 💀 | <span id="darkModeText" class="dark-mode-text">Now In DarkMode!!</span></p>
-  </div>
+      <p onclick="playAudio();" class="scrolling-text" style="color: white;">This Website Took So Long To Make 💀 | <span id="darkModeText" class="dark-mode-text">Now In Different Theme!!</span></p>
+   </div>
    <div class="card">
       <div class="container">
          <center>
             <div class="tab">
-               <button class="tablinks" onclick="openCity(event, 'User_info')" id="defaultOpen">User Info</button>
-               <button class="tablinks" onclick="openCity(event, 'nftid')">Nft Info</button>
-               <button class="tablinks" onclick="openCity(event, 'randomcrosshair')">RandomCrosshair</button>
-               <button class="tablinks" onclick="openCity(event, 'cryptocurrency')">Crypto Currency</button>
-               <button class="tablinks" onclick="openCity(event, 'earnrate')">Earn Rate</button>
-               <button class="tablinks" onclick="openCity(event, 'nftdrops')">Nft Drops</button>
-               <button class="tablinks" onclick="openCity(event, 'equipped')">Equipped Skins</button>
-               <button class="tablinks" onclick="openCity(event, 'links')">Links Related<br>To Ev.io</button>
+               <nav class="tab-list">
+                  <button class="tab" onclick="openCity(event, 'User_info')" id="defaultOpen">User Info</button>
+                  <button class="tab" onclick="openCity(event, 'nftid')">Nft Info</button>
+                  <button class="tab" onclick="openCity(event, 'randomcrosshair')">Random Crosshair</button>
+                  <button class="tab" onclick="openCity(event, 'cryptocurrency')">Crypto Currency</button>
+                  <button class="tab" onclick="openCity(event, 'earnrate')">Earn Rate</button>
+                  <button class="tab" onclick="openCity(event, 'nftdrops')">Nft Drops</button>
+                  <button class="tab" onclick="openCity(event, 'equipped')">Equipped Skins</button>
+                  <button class="tab" onclick="openCity(event, 'links')">Links To Ev.io</button>
+               </nav>
+               <br>
             </div>
          </center>
          <div id="User_info" class="tabcontent">
@@ -132,9 +136,9 @@
             </ul>
          </div>
       </div>
-      <br><br><br><br><br><br>
+      <br><br><br><br>
    </div>
-   <br><br><br><br><br><br><br><br>
+   <br><br><br><br><br>
    <footer>
       <div>
          <a href="uisettings.html">UI/Settings Mod List</a> |

@@ -1,23 +1,25 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
 footer {
-    background-color: #333;
+    background-color: rgba(15, 15, 15, 0.65);
     color: #fff;
     padding: 10px 0;
     text-align: center;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
+    opacity: 1;
+    margin-top: auto;
     border-top-left-radius: 25px 25px;
     border-top-right-radius: 25px 25px;
-    animation: glow 2s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-    from {
-        box-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
-    }
-    to {
-        box-shadow: 0 0 20px rgba(255, 87, 51, 0.8);
-    }
 }
 
 footer div {
@@ -32,9 +34,9 @@ footer a {
 }
 
 footer a:hover {
-    color: #FF5733;
-    /* Change color on hover */
+    color: #ADD8E6;
 }
+
 
 .modern-hr {
 	border: none;
@@ -80,7 +82,7 @@ a {
 .modern-link {
 	display: inline-block;
 	padding: 10px 20px;
-	background-color: #333;
+	background-color: rgba(15, 15, 15, 0.65);
 	color: #fff;
 	border-radius: 25px;
 	text-align: center;
@@ -88,15 +90,19 @@ a {
 	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-h1 {
-    background-color: #333;
+header {
+    background-color: rgba(15, 15, 15, 0.65);
     color: #fff;
-    padding: 20px;
+    padding: 10px 0;
     text-align: center;
     border-bottom-left-radius: 25px 25px;
     border-bottom-right-radius: 25px 25px;
     animation: glow 2s ease-in-out infinite alternate;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
+
 
 @keyframes glow {
     from {
@@ -158,7 +164,7 @@ h1 {
 }
 
 .download-link {
-	background-color: #333;
+	background-color: rgba(15, 15, 15, 0.65);
 	color: #fff;
 	padding: 5px 10px;
 	border-radius: 25px;
@@ -217,103 +223,26 @@ h1 {
 	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-body {
-	background-image: url('https://media.discordapp.net/attachments/1145845203530420368/1154765545611198484/wp10142339.png?width=806&height=477');
-	/* Replace with the URL of your grid pattern image */
-	background-size: 50px 50px;
-	/* Set the size of each grid square */
-	background-repeat: repeat;
-	/* Repeat the pattern in both directions */
-	background-attachment: fixed;
-	/* Fixed background */
-}
-
-@property --rotate {
-	syntax: "<angle>";
-	initial-value: 132deg;
-	inherits: false;
-}
-
-:root {
-	--rotate: 132deg;
-	--card-width: 513px;
-	--card-height: 65vh;
-}
-
-.card {
-	background: none;
-	max-width: var(--card-width);
-	margin: 0 auto;
-	padding: 5px;
-	position: relative;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	display: flex;
-	cursor: pointer;
-	animation: spin 2.5s linear infinite;
-}
-
-.card::before {
-	content: "";
-	width: 104%;
-	height: 102%;
-	padding: -1px;
-	border-radius: 30px;
-	margin: 0 auto;
-	background-image: linear-gradient(var(--rotate),
-			#ff0000, #000000 43%, #ff0000, #000000 43%, #f00);
-	position: absolute;
-	z-index: -1;
-	top: -1%;
-	left: -2%;
-}
-
-.card::after {
-	position: absolute;
-	content: "";
-	top: 1-px;
+.image {
+	background-image: url("https://media.discordapp.net/attachments/1039308604148293682/1161383768775467138/landscape-vector-art-vector-minimalism-simple-hd-wallpaper-797028ad312a7d0b5607c8ef7081c6cd.png");
+	filter: blur(1px);
+	height: 100vh;
+	background-color: #333;
+	width: 100%;
+	position: fixed;
+	top: 0;
 	left: 0;
-	right: 0;
-	z-index: -20;
-	height: 115%;
-	margin: 0 auto;
-	width: 110%;
-	margin: 300 auto;
-	transform: scale(0.8);
-	filter: blur(calc(var(--card-height) / 6));
-	background-image: linear-gradient(var(--rotate),
-			#ff0000, #000000 43%, #ff0000, #000000 43%, #ff0000);
-	opacity: 1;
-	transition: opacity 0.5s;
-	animation: spin 2.5s linear infinite;
-}
-
-@keyframes spin {
-	0% {
-		--rotate: 0deg;
-	}
-
-	100% {
-		--rotate: 360deg;
-	}
-}
-
-@keyframes spin {
-	0% {
-		--rotate: 0deg;
-	}
-
-	100% {
-		--rotate: 360deg;
-	}
+	z-index: -1;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .container {
 	max-width: 600px;
 	margin: 0 auto;
 	padding: 20px;
-	background-color: #555;
+	background-color: rgba(15, 15, 15, 0.65);
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	border-radius: 25px;
 	text-align: center;
