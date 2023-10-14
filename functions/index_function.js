@@ -577,3 +577,5 @@ function playAudio() {
         });
     }
 }
+
+// Get all tab element

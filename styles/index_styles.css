@@ -7,8 +7,8 @@ body {
 }
 
 .image {
-	background-image: url("https://media.discordapp.net/attachments/1039308604148293682/1161383768775467138/landscape-vector-art-vector-minimalism-simple-hd-wallpaper-797028ad312a7d0b5607c8ef7081c6cd.png");
-	filter: blur(1px);
+	background-image: url("https://media.discordapp.net/attachments/1039308604148293682/1162026947090600027/Z.png");
+	filter: blur(2px);
 	height: 100vh;
 	background-color: #333;
 	width: 100%;
@@ -139,7 +139,7 @@ h1 {
 }
 
 .search-bar button:hover {
-	background-color: rgba(15, 15, 20);
+	background-color: rgba(255, 165, 0, 0.3);
 }
 
 
@@ -219,7 +219,7 @@ body {
 }
 
 #moreInfoButton:hover {
-	background-color: rgba(15, 15, 20);
+	background-color: rgba(255, 165, 0, 0.3);
 }
 
 #moreInfoDetails {
@@ -260,31 +260,13 @@ body {
 	text-decoration: none;
 	padding: 10px;
 	margin: 2.5px;
-	color: rgba(255, 255, 255, .6);
+	color: rgba(255, 255, 255);
 	background: rgba(0, 0, 0, 0.1);
 	transition: background 0.5s ease;
 }
 
-.tab-list .tab.active {
-	color: white;
-	background: rgba(15, 15, 15, 0.5);
-	border: 1px solid rgba(255, 255, 255, .6);
-}
-
 .tab-list .tab:hover {
-	background: rgba(15, 15, 20);
-}
-
-.button {
-	display: inline-block;
-	padding: .5rem 1rem;
-	background-color: #4CAF50;
-	color: white;
-	border: none;
-	border-radius: 10px;
-	cursor: pointer;
-	margin-bottom: 1rem;
-	transition: background-color 0.3s ease;
+	background: rgba(255, 165, 0, 0.3);
 }
 
 .button:hover {
@@ -321,7 +303,7 @@ body {
 }
 
 #searchButton:hover {
-	background-color: rgba(15, 15, 20);
+	background-color: rgba(255, 165, 0, 0.3);
 }
 
 #output {
@@ -390,7 +372,7 @@ body {
 }
 
 #random-button:hover {
-	background-color: rgba(15, 15, 20);
+	background-color: rgba(255, 165, 0, 0.3);
 }
 
 #download-button {
@@ -408,7 +390,7 @@ body {
 }
 
 #download-button:hover {
-	background-color: rgba(15, 15, 20);
+	background-color: rgba(255, 165, 0, 0.3);
 }
 
 img {
@@ -441,7 +423,7 @@ img {
 }
 
 .dark-mode-text {
-	background-image: linear-gradient(90deg, #ADD8E6, #00008B);
+	background-image: linear-gradient(90deg, #ffff, #FFA500);
 	color: transparent;
 	background-clip: text;
 	-webkit-background-clip: text;
@@ -472,7 +454,7 @@ img {
 }
 
 #earnRateButton:hover {
-	background-color: rgba(15, 15, 20);
+	background-color: rgba(255, 165, 0, 0.3);
 }
 
 #nftDrops {
@@ -505,7 +487,7 @@ button:hover {
 }
 
 .custom-button:hover {
-	background-color: rgba(15, 15, 20);
+	background-color: rgba(255, 165, 0, 0.3);
 }
 
 .nft-content {
@@ -569,7 +551,7 @@ button:hover {
 }
 
 .custom-dropdown-content a:hover {
-	background-color: rgba(15, 15, 20);
+	background-color: rgba(255, 165, 0, 0.3);
 }
 
 .custom-dropdown:hover .custom-dropdown-content {
@@ -612,7 +594,7 @@ button:hover {
 }
 
 .custom-tab-button:hover {
-	background-color: rgba(15, 15, 20);
+	background-color: rgba(255, 165, 0, 0.3);
 }
 
 .modern-hr {
