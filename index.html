@@ -14,16 +14,18 @@
       </div>
       <div class="row g-0">
          <div class="col-12">
-            <a class="logo-container" href="#"><img class="logo-image"
-               src="https://cdn.discordapp.com/attachments/1039308604148293682/1171560968950657175/Mediamodifier-Design_2.svg"
-               alt="logo"></a>
+            <a class="logo-container" href="#">
+               <img id="logo-image" onclick="playAudio();" class="logo-image"
+                 src="https://cdn.discordapp.com/attachments/1039308604148293682/1171560968950657175/Mediamodifier-Design_2.svg"
+                 alt="logo">
+             </a>
          </div>
       </div>
       <div class="sidebar-list">
          <ul class="list-group">
             <li class="list-group-item">
                <span> <i class="fa-solid fa-arrows-rotate"></i> </span> Updates
-               <span class="badge update-badge rounded-pill">1</span>
+               <span class="badge update-badge rounded-pill">2</span>
             </li>
          </ul>
          <ul class="list-group">
@@ -104,15 +106,13 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             </ul>
             <ul class="navbar-nav mb-2">
+               <li class="list-group-item">
+                  <span> <i class="fa-solid fa-bug fa-bounce" style="color: #ffffff;"></i> </span><a style="color: #ffffff;">Found a bug?</a><br style="color: #ffffff;"><a style="color: #ffffff;">Dm Me On Discord:</a> <span style="text-decoration: underline; color: #ffffff;">gio.the.dog</span></li>
             <li class="nav-item">
                <div class="notification">
-                  <div data-bs-toggle="dropdown" aria-expanded="false">
-                     <span class="notification-number">2</span>
-                     <svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell">
-                        <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"></path>
-                     </svg>
-                     <span class="text"> Notifications </span>
+                  <div data-bs-toggle="dropdown" >
+                     <span class="notification-number">3</span>
+                     <i class="fa-solid fa-bell fa-lg" style="color: #ffffff;"></i>
                   </div>
                   <ul class="notification-list dropdown-menu">
                      <!-- * -->
@@ -156,6 +156,25 @@
                               </button>
                            </li>
                         </ul>
+                        <!-- * -->
+                        <ul class="list-group">
+                           <li>
+                              <button class="dropdown-item d-flex" type="button">
+                                 <img
+                                    src="https://media.discordapp.net/attachments/1039308604148293682/1171561733308022784/d0569b5fef9bf2e470c431a62f101f1e.png"
+                                    alt="">
+                                 <div class="update">
+                                    <div class="notification-msg">
+                                       Tweaked things abit and made it abit better i hope
+                                    </div>
+                                    <div class="date-time">
+                                       <i class="fa-regular fa-clock"></i>
+                                       <span>4:42 PM - 11 13, 2023</span>
+                                    </div>
+                                 </div>
+                              </button>
+                           </li>
+                        </ul>
                      </ul>
                </div>
                </li>
@@ -174,21 +193,6 @@
 <div class="content-area">
 <div class="row">
 <div class="col-12">
-<div class="app-tabs">
-<span class="app-current-page">All Apps</span>
-<ul id="pills-tab" class="nav nav-pills" role="tablist">
-<li class="nav-item" role="presentation">
-<button class="nav-link active" id="tab_fwe6dsff5e_tab" data-bs-toggle="pill"
-   data-bs-target="#tab_fwe6dsff5e" type="button" role="tab" aria-controls="tab_fwe6dsff5e"
-   aria-selected="true">User Info</button>
-</li>
-<li class="nav-item" role="presentation">
-<button class="nav-link" id="tab2_tab" data-bs-toggle="pill"
-   data-bs-target="#tab2" type="button" role="tab" aria-controls="tab2"
-   aria-selected="false">My Other Work</button>
-</li>
-</ul>
-</div>
 <div id="pills-tabContent" class="tab-content app-tab-content">
 <div id="tab_fwe6dsff5e" class="tab-pane fade show active" role="tabpanel"
    aria-labelledby="tab_fwe6dsff5e_tab">
@@ -205,7 +209,7 @@
 <button id="fetchUserButton" class="search-bar-button">Fetch User Info</button>
 <div id="loadingMessage">Loading...</div>
 <div class="middle-header" id="middleHeader" style="display: none;"></div>
-<div id="userInfo"></div>
+<div class="userInfo"id="userInfo"></div>
 <center><br><button id="moreInfoButton" class="search-bar-button">More Info</button></center>
 <div class="userInfo" id="moreInfoDetails"></div>
 <br>
@@ -230,64 +234,67 @@
 <hr>
 <br>
 <div class="row list-item">
-<button class="search-bar-button" id="random-button">Pick Random Crosshair</button>
-<center><br><a id="download-button" class="hidden" download="crosshair.png" target="_blank" style="color: #ffffff;">Download Crosshair</a></br></center>
-<center>
-<p id="loadingText" class="hidden">Loading...</p>
-<div class="earn-rate-info">
-<p id="username" class="hidden"></p>
-<img id="crosshair-image" class="hidden" alt="Crosshair">
-</div>
-<center>
-</div>
+   <center><label for="usernameInputTabs">Enter Username:</label></center>
+   <input class="form-control me-2" type="text" id="usernameInputTabs">
+   <div class="search-bar"><br>
+   <center>
+   <button class="search-bar-button" id="fetchUserButtonTabs">Show Equipped Skins</button>
+   </center>
+   </div>
+   <div id="userInfo">
+   <div id="loadingMessageTabs" style="display: none;">Loading...</div>
+   <div class="button-container">
+   <button class="custom-tab-button" data-tab="CharacterTab">Character</button>
+   <button class="custom-tab-button" data-tab="AssaultRifleTab">Assault Rifle</button>
+   <button class="custom-tab-button" data-tab="HandCannonTab">Hand Cannon</button>
+   <button class="custom-tab-button" data-tab="LaserRifleTab">Laser Rifle</button>
+   <button class="custom-tab-button" data-tab="BurstRifleTab">Burst Rifle</button>
+   <button class="custom-tab-button" data-tab="SweeperTab">Sweeper</button>
+   <button class="custom-tab-button" data-tab="SwordTab">Sword</button>
+   </div>
+   <div id="CharacterTab" class="custom-tab"></div>
+   <div id="AssaultRifleTab" class="custom-tab"></div>
+   <div id="HandCannonTab" class="custom-tab"></div>
+   <div id="LaserRifleTab" class="custom-tab"></div>
+   <div id="BurstRifleTab" class="custom-tab"></div>
+   <div id="SweeperTab" class="custom-tab"></div>
+   <div id="SwordTab" class="custom-tab"></div>
+   </div></div>
 <br>
 <hr>
 <br>
 <div class="row list-item">
-<button class="search-bar-button"id="earnRateButton">Get Earn Rate</button><br>
-<center>
-<div class="earn-rate-info">
-<div id="earnRateInfo"></div>
-</center>
+   <button class="search-bar-button" id="random-button">Pick Random Crosshair</button>
+   <center><br><a id="download-button" class="hidden" download="crosshair.png" target="_blank" style="color: #ffffff;">Download Crosshair</a></br></center>
+   <center>
+   <p id="loadingText" class="hidden">Loading...</p>
+   <div class="earn-rate-info">
+   <p id="username" class="hidden"></p>
+   <img id="crosshair-image" class="hidden" alt="Crosshair">
+   </div>
+   <center>
+   </div>
+<br>
+<hr>
+<br>
+
+<div class="row list-item">
+<div id="nft-drops"></div>
+
 </div>
+
 <br>
 <hr>
 <br>
 <div class="row list-item">
-<center>
-<button class="search-bar-button" id="fetchData">Fetch NFT Drops</button>
-<div id="nftDrops" class="nft-content"></div>
-</center>
-<div id="nftImageContainer"></div>
+
+   <div id="Earn-Rate"></div>
+
+
+
 </div>
-<br>
-<hr>
-<br>
-<div class="row list-item">
-<center><label for="usernameInputTabs">Enter Username:</label></center>
-<input class="form-control me-2" type="text" id="usernameInputTabs">
-<div class="search-bar"><br>
-<button class="search-bar-button" id="fetchUserButtonTabs">Show Equipped Skins</button>
-</div>
-<div id="userInfo">
-<div id="loadingMessageTabs" style="display: none;">Loading...</div>
-<div class="button-container">
-<button class="custom-tab-button" data-tab="CharacterTab">Character</button>
-<button class="custom-tab-button" data-tab="AssaultRifleTab">Assault Rifle</button>
-<button class="custom-tab-button" data-tab="HandCannonTab">Hand Cannon</button>
-<button class="custom-tab-button" data-tab="LaserRifleTab">Laser Rifle</button>
-<button class="custom-tab-button" data-tab="BurstRifleTab">Burst Rifle</button>
-<button class="custom-tab-button" data-tab="SweeperTab">Sweeper</button>
-<button class="custom-tab-button" data-tab="SwordTab">Sword</button>
-</div>
-<div id="CharacterTab" class="custom-tab"></div>
-<div id="AssaultRifleTab" class="custom-tab"></div>
-<div id="HandCannonTab" class="custom-tab"></div>
-<div id="LaserRifleTab" class="custom-tab"></div>
-<div id="BurstRifleTab" class="custom-tab"></div>
-<div id="SweeperTab" class="custom-tab"></div>
-<div id="SwordTab" class="custom-tab"></div>
-</div></div>
+
+
 <br>
 <hr>
 <br>
@@ -308,31 +315,6 @@
 </div>
 </div>
 </div>
-<div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2_tab">
-<div class="container-fluid">
-<div id="pills-tabContent" class="tab-content app-tab-content">
-<center><div class="ad-container">
-<img class="ad-image" src="https://media.discordapp.net/attachments/1039308604148293682/1152596243952963664/26f5c85c76444b5b6c218835eba2b69c.png?width=680&height=680" alt="Ad 1">
-<p>Try out my Discord bot on your Discord server.</p>
-<br>
-<a class="search-bar-button" href="https://discord.com/api/oauth2/authorize?client_id=1072538244572516462&permissions=139586825280&scope=bot%20applications.commands">Invite Discord Bot</a>
-</div>
-<hr class="modern-hr">
-<div class="ad-container">
-<img class="ad-image" src="https://media.discordapp.net/attachments/1039308604148293682/1152588483957887006/1213709.png?width=384&height=384" alt="Ad 2">
-<p>Donate to me if you can. It will greatly benefit me. Anything is welcome, of course.<br /><br />Wallet Token<br /><span style="text-decoration: underline;"><strong>3JEWbC33yrHfUKLJQxFhpBeLdD7H5LkoBus49F2zaRsa</strong></span><br><br>(updated Token)</p></div>
-<hr>
-<div class="ad-container">
-<img class="ad-image" src="https://media.discordapp.net/attachments/1039308604148293682/1152596243952963664/26f5c85c76444b5b6c218835eba2b69c.png?width=680&height=680" alt="Ad 1">
-<p>try out my broswer extension for ev.io that changes up the way ev.io is abit</p>
-<br>
-<a class="search-bar-button" href="https://github.com/ev-discord-bot/ev-extension">Try Out my extension for ev.io</a>
-</div>
-</center>
-</div>
-</div>
-<div class="block-focus" onclick="sidebar_toggler()"></div>
-</div>
 <div id="video_container" class="video-bg"></div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
@@ -345,4 +327,4 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"
    integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A=="
    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="index.js"></script>
+<script src="functions/index_function.js"></script>

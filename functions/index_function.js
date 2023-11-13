@@ -266,64 +266,54 @@ document.getElementById('random-button').addEventListener('click', () => {
 
 fetchAndDisplayCrosshair();
 
-document.addEventListener('DOMContentLoaded', () => {
-   const earnRateButton = document.getElementById('earnRateButton');
-   const earnRateInfo = document.getElementById('earnRateInfo');
 
-   earnRateButton.addEventListener('click', () => {
-      earnRateInfo.innerHTML = 'Loading...';
+const EarnRateContainer = document.getElementById('Earn-Rate');
 
-      fetch('https://ev.io/vars')
-         .then(response => response.json())
-         .then(data => {
-            const field_e_earn_rate_per_100_score = data[0]['field_e_earn_rate_per_100_score'];
-            const field_earnings_cap = data[0]['field_earnings_cap'];
+window.addEventListener('load', async () => {
+  EarnRateContainer.innerHTML = 'Fetching Earn Rate...';
 
-            const infoHTML = `<br><br>
-    <h2>Current Earn Rate</h2>
-    <p>The E Earn Rate Per 100 Score is: <strong>${field_e_earn_rate_per_100_score}</strong></p>
-    <p>The Earnings Cap is: <strong>${field_earnings_cap}</strong></p>
+  try {
+    const response = await fetch('https://ev.io/vars');
+    const EarnRatepData = await response.json();
+    const field_e_earn_rate_per_100_score = EarnRatepData[0]['field_e_earn_rate_per_100_score'];
+    const field_earnings_cap = EarnRatepData[0]['field_earnings_cap'];
+    const earnRateDataHtml = `
+      <center>
+      <h2>Current Earn Rate</h2>
+      <p>The E Earn Rate Per 100 Score is: <strong>${field_e_earn_rate_per_100_score}</strong></p>
+      <p>The Earnings Cap is: <strong>${field_earnings_cap}</strong></p>
+      </center>
     `;
-
-            earnRateInfo.innerHTML = infoHTML;
-         })
-         .catch(error => {
-            console.error('Error:', error);
-            earnRateInfo.innerHTML = 'An error occurred while fetching data.';
-         });
-   });
+    EarnRateContainer.innerHTML = earnRateDataHtml;
+  } catch (error) {
+    console.error('Error:', error);
+    EarnRateContainer.innerHTML = 'An error occurred while fetching Earn Rate.';
+  }
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-   const fetchDataButton = document.getElementById('fetchData');
-   const nftDrops = document.getElementById('nftDrops');
 
-   fetchDataButton.addEventListener('click', () => {
-      nftDrops.innerHTML = 'Fetching NFT Drops...';
-
-      fetch('https://ev.io/nft-drops')
-         .then(response => response.json())
-         .then(data => {
-            const nftDropsList = data.map(nft => `
-    <center><br>
-        <div class="nft-drop">
-            <h2>${nft.type}</h2>
-            <p>Name: ${nft.title}</p>
-            <p>Tier: ${nft.field_tier}</p>
-            <p>Drop Chance: ${nft.field_drop_chance}</p>
-            <p>Quantity Left: ${nft.field_quantity_left}</p>
-    </center>
-
-    </div>
+const nftDropsContainer = document.getElementById('nft-drops');
+window.addEventListener('load', async () => {
+  nftDropsContainer.innerHTML = 'Fetching NFT Drops...';
+  try {
+    const response = await fetch('https://ev.io/nft-drops');
+    const nftDropData = await response.json();
+    const nftDropsList = nftDropData.map(nft => `
+      <center>
+          <div class="nft-drop">
+              <h2>${nft.type}</h2>
+              <p>Name: ${nft.title}</p>
+              <p>Tier: ${nft.field_tier}</p>
+              <p>Drop Chance: ${nft.field_drop_chance}</p>
+              <p>Quantity Left: ${nft.field_quantity_left}</p>
+          </div>
+      </center>
     `).join('');
-
-            nftDrops.innerHTML = nftDropsList;
-         })
-         .catch(error => {
-            console.error('Error:', error);
-            nftDrops.innerHTML = 'An error occurred while fetching NFT drops.';
-         });
-   });
+    nftDropsContainer.innerHTML = nftDropsList;
+  } catch (error) {
+    console.error('Error:', error);
+    nftDropsContainer.innerHTML = 'An error occurred while fetching NFT drops.';
+  }
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -535,7 +525,6 @@ function fetchCryptocurrencyInfo() {
       });
 };
 
-
 function sidebar_toggler() {
    var SidebarToggler = document.querySelector("#SiteContainer");
    SidebarToggler.classList.toggle("sidebar-show");
@@ -550,3 +539,35 @@ window.addEventListener("resize", (e) => {
       doSomething();
    }
 });
+
+var isAudioPlaying = false;
+
+function playAudio() {
+  if (!isAudioPlaying) {
+    var audioUrl = "https://cdn.discordapp.com/attachments/972952855210238015/1124542374165618778/Rick_Roll_Sound_Effect.mp3";
+    var audioElement = new Audio(audioUrl);
+    audioElement.play();
+
+    // Change the SVG image
+    document.querySelector('#logo-image').src = "https://cdn.discordapp.com/attachments/1039308604148293682/1173756837418508308/Mediamodifier-Design_2.svg";
+
+    isAudioPlaying = true;
+    document.querySelector('.scrolling-text').style.pointerEvents = 'none';
+
+    audioElement.addEventListener('ended', function() {
+      // Change the SVG image back
+      document.querySelector('#logo-image').src = "https://cdn.discordapp.com/attachments/1039308604148293682/1171560968950657175/Mediamodifier-Design_2.svg";
+
+      // Pause the audio element
+      audioElement.pause();
+
+      // Enable the click event for the scrolling-text
+      document.querySelector('.scrolling-text').style.pointerEvents = 'auto';
+    });
+
+    // Add an event listener to reset the flag when the user clicks on the SVG image
+    document.querySelector('#logo-image').addEventListener('click', function() {
+      isAudioPlaying = false;
+    });
+  }
+}
