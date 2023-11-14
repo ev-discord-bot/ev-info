@@ -1,334 +1,313 @@
 <head>
-    <meta content="Ev.io Info List" property="og:title" />
-    <meta content="Ev.io Info In A Website!" property="og:description" />
-    <meta content="https://media.discordapp.net/attachments/1039308604148293682/1155548421315383406/icon.png" property="og:image" />
-    <meta content="#8B0000" data-react-helmet="true" name="theme-color" />
-   <title>iminthebibleson | Ev.io User Info</title>
-   <link rel="shortcut icon" type="image/x-icon" href="https://media.discordapp.net/attachments/1039308604148293682/1155548421315383406/icon.png">
-   <link rel="icon" href="https://media.discordapp.net/attachments/1039308604148293682/1155548421315383406/icon.png" type="image/x-icon">
-   <link rel="stylesheet" href="styles/index_styles.css">
+	<title>iminthebibleson | Ev.io User Info</title>
+	<link rel="shortcut icon" type="image/x-icon" href="https://media.discordapp.net/attachments/1039308604148293682/1155548421315383406/icon.png">
+	<link rel="icon" href="https://media.discordapp.net/attachments/1039308604148293682/1155548421315383406/icon.png" type="image/x-icon">
+	<link rel="stylesheet" href="styles/index_styles.css">
 </head>
 <div id="SiteContainer" class="container main-content">
-<div class="row g-0">
-<div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-2 sidebar">
-   <div class="left-sidebar">
-      <div class="sidebar-header" onclick="sidebar_toggler()">
-         <div class="label-text">Close Sidebar</div>
-         <i class="sidebar-toggler-btn fa-solid fa-circle-arrow-left"></i>
-      </div>
-      <div class="row g-0">
-         <div class="col-12">
-            <a class="logo-container" href="#">
-               <img id="logo-image" onclick="playAudio();" class="logo-image"
-                 src="https://cdn.discordapp.com/attachments/1039308604148293682/1171560968950657175/Mediamodifier-Design_2.svg"
-                 alt="logo">
-             </a>
-         </div>
-      </div>
-      <div class="sidebar-list">
-         <ul class="list-group">
-            <li class="list-group-item">
-               <span> <i class="fa-solid fa-arrows-rotate"></i> </span> Updates
-               <span class="badge update-badge rounded-pill">2</span>
-            </li>
-         </ul>
-         <ul class="list-group">
-         </ul>
-         </ul>
-         <ul class="list-group">
-            <h5 class="list-heading">Resource Links</h5>
-            <a href="https://ev.io" target="_blank" style="text-decoration: none;">
-               <li class="list-group-item">
-                  <span> <i class="fa-solid fa-e" style="color: #ffffff;"></i> </span> Ev.io
-               </li>
-            </a>
-            <a href="https://ev.io/info" target="_blank" style="text-decoration: none;">
-               <li class="list-group-item">
-                  <span> <i class="fa-solid fa-e" style="color: #ffffff;"></i> </span> Ev.io Info
-               </li>
-            </a>
-            <a href="https://ev.io/user/login" target="_blank" style="text-decoration: none;">
-               <li class="list-group-item">
-                  <span> <i class="fa-solid fa-e" style="color: #ffffff;"></i> </span> Your Ev.io Account
-               </li>
-            </a>
-            <a href="https://arideve.github.io/ev-skin-viewer/" target="_blank"style="text-decoration: none;">
-            <li class="list-group-item">
-               <span> <i class="fa-solid fa-a" style="color: #ffffff;"></i> </span> Ari's Skin Viewer
-            </li>
-            </a>
-            <a href="https://crosshair.themeta.gg" target="_blank" style="text-decoration: none;">
-            <li class="list-group-item">
-               <span> <i class="fa-solid fa-k" style="color: #ffffff;"></i> </span> Kovaak's Crosshair Generator
-            </li>
-         </a>
-         </ul>
-         <ul class="list-group">
-            <h5 class="list-heading">Social Links</h5>
-            <a href="https://github.com/iminthebibleson" target="_blank" style="text-decoration: none;">
-               <li class="list-group-item">
-                  <span> <i class="fa-brands fa-github" style="color: #ffffff;"></i> </span> GitHub
-               </li>
-            </a>
-            <a href="https://discord.gg/WMThD52Dz" target="_blank" style="text-decoration: none;">
-               <li class="list-group-item">
-                  <span> <i class="fa-brands fa-discord" style="color: #ffffff;"></i> </span> Discord
-               </li>
-            </a>
-            <a href="https://twitter.com/iminthebibleson" target="_blank" style="text-decoration: none;">
-               <li class="list-group-item">
-                  <span> <i class="fa-brands fa-twitter" style="color: #ffffff;"></i> </span> Twitter
-               </li>
-            </a>
-         </ul>
-         <ul class="list-group">
-            <h5 class="list-heading">Other Links</h5>
-            <a href="https://ev-info.vercel.app/uisettings.html" target="_blank" style="text-decoration: none;">
-               <li class="list-group-item">
-                  <span> <i class="fa-duotone fa-e" style="--fa-primary-color: #ffffff; --fa-secondary-color: #ff0000;"></i> </span> Ui/Mods
-               </li>
-            </a>
-            <a href="https://ev-info.vercel.app/crossshair.html" target="_blank" style="text-decoration: none;">
-               <li class="list-group-item">
-                  <span> <i class="fa-duotone fa-e" style="--fa-primary-color: #ffffff; --fa-secondary-color: #ff0000;"></i> </span> Crosshairs
-               </li>
-            </a>
-         </ul>
-      </div>
-   </div>
-</div>
-<div class="col-sm-12 col-md-8 col-lg-9 col-xl-9 col-xxl-10">
-<div class="col-12 app-nav">
-   <nav class="navbar navbar-expand-md navbar-dark">
-      <div class="container-fluid">
-         <button class="navbar-toggler" type="button" onclick="sidebar_toggler()"><span
-            class="navbar-toggler-icon"></span></button>
-         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarToggler5rg72" aria-controls="navbarToggler5rg72" aria-expanded="false"
-            aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-         <div class="collapse navbar-collapse" id="navbarToggler5rg72">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            </ul>
-            <ul class="navbar-nav mb-2">
-               <li class="list-group-item">
-                  <span> <i class="fa-solid fa-bug fa-bounce" style="color: #ffffff;"></i> </span><a style="color: #ffffff;">Found a bug?</a><br style="color: #ffffff;"><a style="color: #ffffff;">Dm Me On Discord:</a> <span style="text-decoration: underline; color: #ffffff;">gio.the.dog</span></li>
-            <li class="nav-item">
-               <div class="notification">
-                  <div data-bs-toggle="dropdown" >
-                     <span class="notification-number">3</span>
-                     <i class="fa-solid fa-bell fa-lg" style="color: #ffffff;"></i>
-                  </div>
-                  <ul class="notification-list dropdown-menu">
-                     <!-- * -->
-                     <div class="notification-header">
-                        <span class="btn">Notificatons</span>
-                     </div>
-                     <!-- * -->
-                     <ul class="list-group">
-                        <li>
-                           <button class="dropdown-item d-flex" type="button">
-                              <img
-                                 src="https://media.discordapp.net/attachments/1039308604148293682/1171561733308022784/d0569b5fef9bf2e470c431a62f101f1e.png"
-                                 alt="">
-                              <div class="update">
-                                 <div class="notification-msg">
-                                    Remade the Whole website <br>(used a template btw)
-                                 </div>
-                                 <div class="date-time">
-                                    <i class="fa-regular fa-clock"></i>
-                                    <span>8:00 AM - Nov 8, 2023</span>
-                                 </div>
-                              </div>
-                           </button>
-                        </li>
-                        <!-- * -->
-                        <ul class="list-group">
-                           <li>
-                              <button class="dropdown-item d-flex" type="button">
-                                 <img
-                                    src="https://media.discordapp.net/attachments/1039308604148293682/1171561733308022784/d0569b5fef9bf2e470c431a62f101f1e.png"
-                                    alt="">
-                                 <div class="update">
-                                    <div class="notification-msg">
-                                       Soon i will remake the other sites
-                                    </div>
-                                    <div class="date-time">
-                                       <i class="fa-regular fa-clock"></i>
-                                       <span>8:09 AM - Nov 8, 2023</span>
-                                    </div>
-                                 </div>
-                              </button>
-                           </li>
-                        </ul>
-                        <!-- * -->
-                        <ul class="list-group">
-                           <li>
-                              <button class="dropdown-item d-flex" type="button">
-                                 <img
-                                    src="https://media.discordapp.net/attachments/1039308604148293682/1171561733308022784/d0569b5fef9bf2e470c431a62f101f1e.png"
-                                    alt="">
-                                 <div class="update">
-                                    <div class="notification-msg">
-                                       Tweaked things abit and made it abit better i hope
-                                    </div>
-                                    <div class="date-time">
-                                       <i class="fa-regular fa-clock"></i>
-                                       <span>4:42 PM - 11 13, 2023</span>
-                                    </div>
-                                 </div>
-                              </button>
-                           </li>
-                        </ul>
-                     </ul>
-               </div>
-               </li>
-               <li class="nav-item">
-               <div class="profile-img">
-               <img
-                  src="https://media.discordapp.net/attachments/1039308604148293682/1171561733308022784/d0569b5fef9bf2e470c431a62f101f1e.png"
-                  alt="avatar">
-               </div>
-               </li>
-               </ul>
-         </div>
-      </div>
-   </nav>
-</div>
-<div class="content-area">
-<div class="row">
-<div class="col-12">
-<div id="pills-tabContent" class="tab-content app-tab-content">
-<div id="tab_fwe6dsff5e" class="tab-pane fade show active" role="tabpanel"
-   aria-labelledby="tab_fwe6dsff5e_tab">
-<div class="row">
-<div class="col-12">
-<div class="text-white">
-</div>
-</div>
-<div class="apps-status-options">
-<div class="row list-item">
-<center>
-<label for="usernameInput">Enter Username:</label>
-<br><input class="form-control me-2" type="text" id="usernameInput"><br>
-<button id="fetchUserButton" class="search-bar-button">Fetch User Info</button>
-<div id="loadingMessage">Loading...</div>
-<div class="middle-header" id="middleHeader" style="display: none;"></div>
-<div class="userInfo"id="userInfo"></div>
-<center><br><button id="moreInfoButton" class="search-bar-button">More Info</button></center>
-<div class="userInfo" id="moreInfoDetails"></div>
-<br>
-</div>
-</center>
-<div class="col-md-4 d-none d-lg-block">
-</div>
-<br>
-<hr>
-<br>
-<div class="row list-item">
-<center>
-<label for="nftIdInput">Enter NFT ID:</label>
-<input class="form-control me-2" type="text" id="nftIdInput"><br>
-<button class="search-bar-button" id="searchButton">Search NFT Info</button>
-<div id="loadingMessage">Loading...</div>
-<br><br>
-<div id="output"></div>
-</center>
-</div>
-<br>
-<hr>
-<br>
-<div class="row list-item">
-   <center><label for="usernameInputTabs">Enter Username:</label></center>
-   <input class="form-control me-2" type="text" id="usernameInputTabs">
-   <div class="search-bar"><br>
-   <center>
-   <button class="search-bar-button" id="fetchUserButtonTabs">Show Equipped Skins</button>
-   </center>
-   </div>
-   <div id="userInfo">
-   <div id="loadingMessageTabs" style="display: none;">Loading...</div>
-   <div class="button-container">
-   <button class="custom-tab-button" data-tab="CharacterTab">Character</button>
-   <button class="custom-tab-button" data-tab="AssaultRifleTab">Assault Rifle</button>
-   <button class="custom-tab-button" data-tab="HandCannonTab">Hand Cannon</button>
-   <button class="custom-tab-button" data-tab="LaserRifleTab">Laser Rifle</button>
-   <button class="custom-tab-button" data-tab="BurstRifleTab">Burst Rifle</button>
-   <button class="custom-tab-button" data-tab="SweeperTab">Sweeper</button>
-   <button class="custom-tab-button" data-tab="SwordTab">Sword</button>
-   </div>
-   <div id="CharacterTab" class="custom-tab"></div>
-   <div id="AssaultRifleTab" class="custom-tab"></div>
-   <div id="HandCannonTab" class="custom-tab"></div>
-   <div id="LaserRifleTab" class="custom-tab"></div>
-   <div id="BurstRifleTab" class="custom-tab"></div>
-   <div id="SweeperTab" class="custom-tab"></div>
-   <div id="SwordTab" class="custom-tab"></div>
-   </div></div>
-<br>
-<hr>
-<br>
-<div class="row list-item">
-   <button class="search-bar-button" id="random-button">Pick Random Crosshair</button>
-   <center><br><a id="download-button" class="hidden" download="crosshair.png" target="_blank" style="color: #ffffff;">Download Crosshair</a></br></center>
-   <center>
-   <p id="loadingText" class="hidden">Loading...</p>
-   <div class="earn-rate-info">
-   <p id="username" class="hidden"></p>
-   <img id="crosshair-image" class="hidden" alt="Crosshair">
-   </div>
-   <center>
-   </div>
-<br>
-<hr>
-<br>
+	<div class="row g-0">
+		<div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-2 sidebar">
+			<div class="left-sidebar">
+				<div class="sidebar-header" onclick="sidebar_toggler()">
+					<div class="label-text">Close Sidebar</div>
+					<i class="sidebar-toggler-btn fa-solid fa-circle-arrow-left"></i>
+				</div>
+				<div class="row g-0">
+					<div class="col-12">
+						<a class="logo-container" href="#">
+							<img id="logo-image" onclick="playAudio();" class="logo-image" src="https://cdn.discordapp.com/attachments/1039308604148293682/1171560968950657175/Mediamodifier-Design_2.svg" alt="logo">
+						</a>
+					</div>
+				</div>
+				<div class="sidebar-list">
+					<ul class="list-group">
+						<button class="notification-button" onclick="requestPermission()">Request Notification Permission</button>
+						<li class="list-group-item">
+							<span> <i class="fa-solid fa-arrows-rotate"></i> </span> Updates
+							<span class="badge update-badge rounded-pill">2</span>
+						</li>
+					</ul>
+					<ul class="list-group">
+					</ul>
+					</ul>
+					<ul class="list-group">
+						<h5 class="list-heading">Resource Links</h5>
+						<a href="https://ev.io" target="_blank" style="text-decoration: none;">
+							<li class="list-group-item">
+								<span> <i class="fa-solid fa-e" style="color: #ffffff;"></i> </span> Ev.io
+							</li>
+						</a>
+						<a href="https://ev.io/info" target="_blank" style="text-decoration: none;">
+							<li class="list-group-item">
+								<span> <i class="fa-solid fa-e" style="color: #ffffff;"></i> </span> Ev.io Info
+							</li>
+						</a>
+						<a href="https://ev.io/user/login" target="_blank" style="text-decoration: none;">
+							<li class="list-group-item">
+								<span> <i class="fa-solid fa-e" style="color: #ffffff;"></i> </span> Your Ev.io Account
+							</li>
+						</a>
+						<a href="https://arideve.github.io/ev-skin-viewer/" target="_blank" style="text-decoration: none;">
+							<li class="list-group-item">
+								<span> <i class="fa-solid fa-a" style="color: #ffffff;"></i> </span> Ari's Skin Viewer
+							</li>
+						</a>
+						<a href="https://crosshair.themeta.gg" target="_blank" style="text-decoration: none;">
+							<li class="list-group-item">
+								<span> <i class="fa-solid fa-k" style="color: #ffffff;"></i> </span> Kovaak's Crosshair Generator
+							</li>
+						</a>
+					</ul>
+					<ul class="list-group">
+						<h5 class="list-heading">Social Links</h5>
+						<a href="https://github.com/iminthebibleson" target="_blank" style="text-decoration: none;">
+							<li class="list-group-item">
+								<span> <i class="fa-brands fa-github" style="color: #ffffff;"></i> </span> GitHub
+							</li>
+						</a>
+						<a href="https://discord.gg/WMThD52Dz" target="_blank" style="text-decoration: none;">
+							<li class="list-group-item">
+								<span> <i class="fa-brands fa-discord" style="color: #ffffff;"></i> </span> Discord
+							</li>
+						</a>
+						<a href="https://twitter.com/iminthebibleson" target="_blank" style="text-decoration: none;">
+							<li class="list-group-item">
+								<span> <i class="fa-brands fa-twitter" style="color: #ffffff;"></i> </span> Twitter
+							</li>
+						</a>
+					</ul>
+					<ul class="list-group">
+						<h5 class="list-heading">Other Links</h5>
+						<a href="https://ev-info.vercel.app/uisettings.html" target="_blank" style="text-decoration: none;">
+							<li class="list-group-item">
+								<span> <i class="fa-duotone fa-e" style="--fa-primary-color: #ffffff; --fa-secondary-color: #ff0000;"></i> </span> Ui/Mods
+							</li>
+						</a>
+						<a href="https://ev-info.vercel.app/crossshair.html" target="_blank" style="text-decoration: none;">
+							<li class="list-group-item">
+								<span> <i class="fa-duotone fa-e" style="--fa-primary-color: #ffffff; --fa-secondary-color: #ff0000;"></i> </span> Crosshairs
+							</li>
+						</a>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-8 col-lg-9 col-xl-9 col-xxl-10">
+			<div class="col-12 app-nav">
+				<nav class="navbar navbar-expand-md navbar-dark">
+					<div class="container-fluid">
+						<button class="navbar-toggler" type="button" onclick="sidebar_toggler()"><span class="navbar-toggler-icon"></span></button>
+						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler5rg72" aria-controls="navbarToggler5rg72" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+						<div class="collapse navbar-collapse" id="navbarToggler5rg72">
+							<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+							</ul>
+							<ul class="navbar-nav mb-2">
+								<li class="list-group-item">
+									<span>
+										<i class="fa-solid fa-bug fa-bounce" style="color: #ffffff;"></i>
+									</span>
+									<a style="color: #ffffff;">Found a bug?</a>
+									<br style="color: #ffffff;">
+									<a style="color: #ffffff;">Dm Me On Discord:</a>
+									<span id="copyText" id="MyDiscord" style="cursor: pointer; text-decoration: underline; color: #ffffff;">gio.the.dog</span>
+								<li class="nav-item">
+									<div class="notification">
+										<div data-bs-toggle="dropdown">
+											<span class="notification-number">3</span>
+											<i class="fa-solid fa-bell fa-lg" style="color: #ffffff;"></i>
+										</div>
+										<ul class="notification-list dropdown-menu">
+											<!-- * -->
+											<div class="notification-header">
+												<span class="btn">Notificatons</span>
+											</div>
+											<!-- * -->
+											<ul class="list-group">
+												<li>
+													<button class="dropdown-item d-flex" type="button">
+														<img src="https://media.discordapp.net/attachments/1039308604148293682/1171561733308022784/d0569b5fef9bf2e470c431a62f101f1e.png" alt="">
+														<div class="update">
+															<div class="notification-msg">
+																Remade the Whole website <br>(used a template btw)
+															</div>
+															<div class="date-time">
+																<i class="fa-regular fa-clock"></i>
+																<span>8:00 AM - Nov 8, 2023</span>
+															</div>
+														</div>
+													</button>
+												</li>
+												<!-- * -->
+												<ul class="list-group">
+													<li>
+														<button class="dropdown-item d-flex" type="button">
+															<img src="https://media.discordapp.net/attachments/1039308604148293682/1171561733308022784/d0569b5fef9bf2e470c431a62f101f1e.png" alt="">
+															<div class="update">
+																<div class="notification-msg">
+																	Soon i will remake the other sites
+																</div>
+																<div class="date-time">
+																	<i class="fa-regular fa-clock"></i>
+																	<span>8:09 AM - Nov 8, 2023</span>
+																</div>
+															</div>
+														</button>
+													</li>
+												</ul>
+												<!-- * -->
+												<ul class="list-group">
+													<li>
+														<button class="dropdown-item d-flex" type="button">
+															<img src="https://media.discordapp.net/attachments/1039308604148293682/1171561733308022784/d0569b5fef9bf2e470c431a62f101f1e.png" alt="">
+															<div class="update">
+																<div class="notification-msg">
+																	Tweaked things abit and made it abit better i hope
+																</div>
+																<div class="date-time">
+																	<i class="fa-regular fa-clock"></i>
+																	<span>4:42 PM - 11 13, 2023</span>
+																</div>
+															</div>
+														</button>
+													</li>
+												</ul>
+											</ul>
+									</div>
+								</li>
+								<li class="nav-item">
+									<div class="profile-img">
+										<img onclick="openLink('https://www.youtube.com/watch?v=j5a0jTc9S10')" src="https://media.discordapp.net/attachments/1039308604148293682/1171561733308022784/d0569b5fef9bf2e470c431a62f101f1e.png" alt="avatar">
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+			<div class="content-area">
+				<div class="row">
+					<div class="col-12">
+						<div id="pills-tabContent" class="tab-content app-tab-content">
+							<div id="tab_fwe6dsff5e" class="tab-pane fade show active" role="tabpanel" aria-labelledby="tab_fwe6dsff5e_tab">
+								<div class="row">
+									<div class="col-12">
+										<div class="text-white">
+										</div>
+									</div>
+									<div class="apps-status-options">
+										<div class="row list-item">
+											<center>
+												<label for="usernameInput">Enter Username:</label>
+												<br><input class="form-control me-2" type="text" id="usernameInput"><br>
+												<button id="fetchUserButton" class="search-bar-button">Fetch User Info</button>
+												<div id="loadingMessage">Loading...</div>
+												<div class="middle-header" id="middleHeader" style="display: none;"></div>
+												<div class="userInfo" id="userInfo"></div>
+												<center><br><button id="moreInfoButton" class="search-bar-button">More Info</button></center>
+												<div class="userInfo" id="moreInfoDetails"></div>
+												<br>
+										</div>
+										</center>
+										<div class="col-md-4 d-none d-lg-block">
+										</div>
+										<br>
+										<hr>
+										<br>
+										<div class="row list-item">
+											<center>
+												<label for="nftIdInput">Enter NFT ID:</label>
+												<input class="form-control me-2" type="text" id="nftIdInput"><br>
+												<button class="search-bar-button" id="searchButton">Search NFT Info</button>
+												<div id="loadingMessage">Loading...</div>
+												<br><br>
+												<div id="output"></div>
+											</center>
+										</div>
+										<br>
+										<hr>
+										<br>
+										<div class="row list-item">
+											<center><label for="usernameInputTabs">Enter Username:</label></center>
+											<input class="form-control me-2" type="text" id="usernameInputTabs">
+											<div class="search-bar"><br>
+												<center>
+													<button class="search-bar-button" id="fetchUserButtonTabs">Show Equipped Skins</button>
+												</center>
+											</div>
+											<div id="userInfo">
+												<div id="loadingMessageTabs" style="display: none;">Loading...</div>
+												<div class="button-container">
+													<button class="custom-tab-button" data-tab="CharacterTab">Character</button>
+													<button class="custom-tab-button" data-tab="AssaultRifleTab">Assault Rifle</button>
+													<button class="custom-tab-button" data-tab="HandCannonTab">Hand Cannon</button>
+													<button class="custom-tab-button" data-tab="LaserRifleTab">Laser Rifle</button>
+													<button class="custom-tab-button" data-tab="BurstRifleTab">Burst Rifle</button>
+													<button class="custom-tab-button" data-tab="SweeperTab">Sweeper</button>
+													<button class="custom-tab-button" data-tab="SwordTab">Sword</button>
+												</div>
+												<div id="CharacterTab" class="custom-tab"></div>
+												<div id="AssaultRifleTab" class="custom-tab"></div>
+												<div id="HandCannonTab" class="custom-tab"></div>
+												<div id="LaserRifleTab" class="custom-tab"></div>
+												<div id="BurstRifleTab" class="custom-tab"></div>
+												<div id="SweeperTab" class="custom-tab"></div>
+												<div id="SwordTab" class="custom-tab"></div>
+											</div>
+										</div>
+										<br>
+										<hr>
+										<br>
+										<div class="row list-item">
+											<button class="search-bar-button" id="random-button">Pick Random Crosshair</button>
+											<center><br><a id="download-button" class="hidden" download="crosshair.png" target="_blank" style="color: #ffffff;">Download Crosshair</a></br></center>
+											<center>
+												<p id="loadingText" class="hidden">Loading...</p>
+												<div class="earn-rate-info">
+													<p id="username" class="hidden"></p>
+													<img id="crosshair-image" class="hidden" alt="Crosshair">
+												</div>
+												<center>
+										</div>
+										<br>
+										<hr>
+										<br>
 
-<div class="row list-item">
-<div id="nft-drops"></div>
+										<div class="row list-item">
+											<div id="nft-drops"></div>
 
-</div>
+										</div>
 
-<br>
-<hr>
-<br>
-<div class="row list-item">
-
-   <div id="Earn-Rate"></div>
-
-
-
-</div>
-
-
-<br>
-<hr>
-<br>
-<div class="row list-item">
-<center><div class="crypto-info">
-<h1>Sol <span style="text-decoration: underline;">To</span> World Money</h1><br>
-<p id="usd">1 SOL = USD Loading...</p>
-<p id="inr">1 SOL = INR Loading...</p>
-<p id="php">1 SOL = PHP Loading...</p>
-</div></center>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="col-12">
-</div>
-</div>
-</div>
-<div id="video_container" class="video-bg"></div>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-   integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-   crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-   integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
-   integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
-   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"
-   integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A=="
-   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="functions/index_function.js"></script>
+										<br>
+										<hr>
+										<br>
+										<div class="row list-item">
+											<div id="Earn-Rate"></div>
+										</div>
+										<br>
+										<hr>
+										<br>
+										<div class="row list-item">
+											<center>
+												<div class="crypto-info">
+													<h1>Sol <span style="text-decoration: underline;">To</span> World Money</h1><br>
+													<p id="usd">1 SOL = USD Loading...</p>
+													<p id="inr">1 SOL = INR Loading...</p>
+													<p id="php">1 SOL = PHP Loading...</p>
+												</div>
+											</center>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-12">
+					</div>
+				</div>
+			</div>
+			<div id="video_container" class="video-bg"></div>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js" integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+			<script src="functions/index_function.js"></script>

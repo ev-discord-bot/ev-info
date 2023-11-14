@@ -1128,3 +1128,17 @@ body {
 	max-width: 50%;
 	height: auto;
 }
+
+.notification-button {
+	font-size: 13px;
+	margin-top: 4px;
+	border-style: groove;
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0);
+	border-radius: 25px;
+	margin-bottom: 4px;
+	text-transform: capitalize;
+	border-color: #fff;
+	text-align: center;
+	line-height: 20px;
+}
