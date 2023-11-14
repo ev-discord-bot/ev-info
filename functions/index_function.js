@@ -622,3 +622,25 @@ copyTextElement.addEventListener('click', function() {
 function openLink(linkURL) {
    window.open(linkURL, '_blank');
  }
+
+ let url = new URL(`https://api.us-east.tinybird.co/v0/pipes/untitled_pipe_6579.json`)
+
+
+ const result = await fetch(url, {
+   headers: {
+	 Authorization: 'Bearer p.eyJ1IjogImFmOTlmOTI4LWJiNDgtNDhkYi1iMjQ0LWYxZjBmNDZlZDAyOSIsICJpZCI6ICJhZDExMzk0NC05N2ZiLTQ4MGQtOWI4OS0wMTE5MzY1YjQ1YWQiLCAiaG9zdCI6ICJ1c19lYXN0In0.wALQKENUBQOs-Tv1Qz1D4vvuOTkt1_vHhGRAiJEuKuo'
+   }
+ }) 
+   .then(r => r.json())
+   .then(r => r)
+   .catch(e => e.toString())
+ 
+ if (!result.data) {
+   console.error(`there is a problem running the query: ${result}`);
+ } else {
+   console.table(result.data)
+   console.log("** Query columns **")
+   for (let column of result.meta) {
+	 console.log(`${column.name} -> ${column.type}`)
+   }
+ }
