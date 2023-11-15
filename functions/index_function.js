@@ -578,3 +578,8 @@ copyTextElement.addEventListener('click', function() {
 function openLink(linkURL) {
    window.open(linkURL, '_blank');
  }
+
+ window.addEventListener('load', function() {
+	const loadingScreen = document.getElementById('loadingScreen');
+	loadingScreen.style.display = 'none';
+  });
