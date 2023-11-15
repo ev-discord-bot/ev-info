@@ -544,7 +544,7 @@ var isAudioPlaying = false;
 
 function playAudio() {
 	if (!isAudioPlaying) {
-		var audioUrl = "https://cdn.discordapp.com/attachments/972952855210238015/1124542374165618778/Rick_Roll_Sound_Effect.mp3";
+		var audioUrl = "https://cdn.discordapp.com/attachments/972952855210238015/1124542374165618778/Rick_Roll_SoundEffect.mp3";
 		var audioElement = new Audio(audioUrl);
 		audioElement.play();
 		document.querySelector('#logo-image').src = "https://cdn.discordapp.com/attachments/1039308604148293682/1173756837418508308/Mediamodifier-Design_2.svg";
