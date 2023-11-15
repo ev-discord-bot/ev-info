@@ -561,50 +561,6 @@ function playAudio() {
 	}
 }
 
-function requestPermission() {
-	if (Notification.permission !== 'granted') {
-		Notification.requestPermission();
-		setTimeout(function() {
-			var notification = new Notification('Thanks!', {
-				icon: 'https://media.discordapp.net/attachments/1039308604148293682/1155548421315383406/icon.png',
-				body: 'You will be notified when the site updates!'
-			});
-
-			notification.onclick = function() {};
-		}, 2000);
-	} else {
-		alert("You have already registered");
-	}
-}
-
-var websiteURL = "https://ev-info.vercel.app";
-var lastModificationTime = 0;
-
-window.setInterval(function() {
-	fetch(websiteURL)
-		.then(response => response.text())
-		.then(code => {
-			var fingerprint = sha256(code);
-
-			if (fingerprint !== lastModificationTime) {
-				if (Notification.permission !== 'granted') {
-					Notification.requestPermission();
-				} else {
-					var notification = new Notification('New updates!', {
-						icon: 'https://media.discordapp.net/attachments/1039308604148293682/1155548421315383406/icon.png',
-						body: 'Something new has come up on EV-Info! Check it out!'
-					});
-
-					notification.onclick = function() {
-						window.open(websiteURL);
-					};
-				}
-
-				lastModificationTime = fingerprint;
-			}
-		});
-}, 10);
-
 const copyTextElement = document.getElementById('copyText');
 copyTextElement.addEventListener('click', function() {
 	const textToCopy = copyTextElement.textContent;
