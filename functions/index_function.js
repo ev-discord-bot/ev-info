@@ -544,14 +544,14 @@ var isAudioPlaying = false;
 
 function playAudio() {
 	if (!isAudioPlaying) {
-		var audioUrl = "https://cdn.discordapp.com/attachments/972952855210238015/1124542374165618778/Rick_Roll_SoundEffect.mp3";
+		var audioUrl = "https://github.com/ev-discord-bot/ev-info/raw/main/src/the_music.mp3";
 		var audioElement = new Audio(audioUrl);
 		audioElement.play();
-		document.querySelector('#logo-image').src = "https://cdn.discordapp.com/attachments/1039308604148293682/1173756837418508308/Mediamodifier-Design_2.svg";
+		document.querySelector('#logo-image').src = "https://github.com/ev-discord-bot/ev-info/raw/main/src/rick_logo.svg";
 		isAudioPlaying = true;
 		document.querySelector('.scrolling-text').style.pointerEvents = 'none';
 		audioElement.addEventListener('ended', function() {
-			document.querySelector('#logo-image').src = "https://cdn.discordapp.com/attachments/1039308604148293682/1171560968950657175/Mediamodifier-Design_2.svg";
+			document.querySelector('#logo-image').src = "https://github.com/ev-discord-bot/ev-info/raw/main/src/main_logo.svg";
 			audioElement.pause();
 			document.querySelector('.scrolling-text').style.pointerEvents = 'auto';
 		});
