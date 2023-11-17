@@ -292,10 +292,12 @@ body {
 	color: var(--theme-color);
 	border: 1px solid var(--border-color);
 	background-color: var(--theme-bg-color);
+	text-align: center;
 }
 
 .serach-box .form-control:focus {
 	background-color: #fbfbfb;
+	text-align: center;
 }
 
 .serach-box .btn {
@@ -1046,10 +1048,13 @@ body {
 	background-color: rgba(15, 15, 15, 0.65);
 	color: #fff;
 	border: none;
-	padding: 10px 20px;
+	padding: 10px;
 	border-radius: 25px;
 	cursor: pointer;
 	text-decoration: none;
+	width: 60;
+	text-transform: capitalize;
+	text-align: center;
 }
 
 .search-bar-button :hover {
@@ -1068,6 +1073,7 @@ body {
 	border: 1px solid var(--border-color);
 	background-color: var(--theme-bg-color);
 	padding: 15px;
+	width: 75%;
 	border-radius: 25px;
 	text-align: center;
 	display: flex;
@@ -1220,4 +1226,9 @@ body {
 	100% {
 		transform: rotate(360deg);
 	}
+}
+
+input.form-control.me-2 {
+	text-transform: capitalize;
+	text-align: center
 }

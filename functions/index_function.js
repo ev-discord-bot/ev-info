@@ -279,7 +279,7 @@ window.addEventListener('load', async () => {
 		const field_earnings_cap = EarnRatepData[0]['field_earnings_cap'];
 		const earnRateDataHtml = `
       <center>
-      <h2>Current Earn Rate</h2>
+      <h2><img src="src/ev_icon.png" alt="Sol Logo" style="width: 30; height: 30px; margin-bottom: 6px;">Earn Rate</h2>
       <p>The E Earn Rate Per 100 Score is: <strong>${field_e_earn_rate_per_100_score}</strong></p>
       <p>The Earnings Cap is: <strong>${field_earnings_cap}</strong></p>
       </center>
@@ -300,7 +300,7 @@ window.addEventListener('load', async () => {
 		const nftDropData = await response.json();
 		const nftDropsList = nftDropData.map(nft => `
       <center>
-          <div class="nft-drop">
+          <div class="nft-drop" style="text-transform: capitalize;">
               <h2>${nft.type}</h2>
               <p>Name: ${nft.title}</p>
               <p>Tier: ${nft.field_tier}</p>
