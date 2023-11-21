@@ -35,9 +35,7 @@ const crosshairUrl = `${user.field_custom_crosshair[0].url}`;
 const eCoinBalance = user.field_ev_coins[0].value;
 const usdValue = eCoinBalance / 2000;
 userInfoDiv.innerHTML = `
-<h3>User Information for $ {
-   user.name[0].value
-   }
+<h3>User Information for ${user.name[0].value}
 </h3>
 <p><strong>Username:</strong> ${user.name[0].value}
 </p>
