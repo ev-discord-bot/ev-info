@@ -10,10 +10,12 @@
  </head>
  <body>
 	<div id="loadingScreen">
-	   <p class="loading-text">Loading Content<br>Please Wait<span class="connectingText"></span></p>
-	   <div class="spinner"></div>
+	  <p class="loading-text">Loading Content<br>Please Wait<span class="connectingText"></span></p>
+	  <div class="spinner"></div>
+  
+	  <button id="skipLoadingButton">Skip Loading Screen if your stuck on it</button>
 	</div>
- </body>
+  </body>
  <div id="SiteContainer" class="container main-content">
  <div class="row g-0">
  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-2 sidebar">
@@ -33,7 +35,7 @@
 		  <ul class="list-group">
 			 <li class="list-group-item">
 				<span> <i class="fa-solid fa-arrows-rotate"></i> </span> verison
-				<span class="badge update-badge rounded-pill">3.5.1</span>
+				<span class="badge update-badge rounded-pill">3.5.3</span>
 			 </li>
 		  </ul>
 		  <ul class="list-group">
@@ -207,12 +209,12 @@
  <div class="row list-item">
  <center>
  <label for="usernameInput">Enter Username:</label>
- <br><input class="form-control me-2" type="text" id="usernameInput"><br>
+ <br><input class="form-control me-2" type="text" id="usernameInput" placeholder="Enter Player's Username"><br>
  <button id="fetchUserButton" class="search-bar-button"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button>
  <div id="loadingMessage">Loading...</div>
  <div class="middle-header" id="middleHeader" style="display: none;"></div>
  <div class="userInfo" id="userInfo"></div>
- <center><br><button id="moreInfoButton" class="search-bar-button">More<i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button></center>
+ <center><br><button id="moreInfoButton" class="search-bar-button" style="width: 13%;">Extra Stats<br><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button></center>
  <div class="userInfo" id="moreInfoDetails"></div>
  <br>
  </div>
@@ -225,7 +227,7 @@
  <div class="row list-item">
  <center>
  <label for="nftIdInput">Enter NFT ID:</label>
- <input class="form-control me-2" type="text" id="nftIdInput"><br>
+ <input class="form-control me-2" type="text" id="nftIdInput" placeholder="Enter NFT ID"><br>
  <button class="search-bar-button" id="searchButton"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button>
  <div id="loadingMessage">Loading...</div>
  <br><br>
@@ -237,7 +239,7 @@
  <br>
  <div class="row list-item">
  <center><center><label for="usernameInputTabs">Enter Username:</label></center>
- <center><input class="form-control me-2" type="text" id="usernameInputTabs"></center>
+ <center><input class="form-control me-2" type="text" id="usernameInputTabs" placeholder="Enter Player's Username"></center>
  <div class="search-bar"><br>
  <center>
  <button class="search-bar-button" id="fetchUserButtonTabs"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button>
@@ -267,8 +269,21 @@
  <hr>
  <br>
  <div class="row list-item">
+ <center>
+ <div id="ev-to-usd-converter">
+ <label for="e-coin-input">Enter e coin amount:</label><br>
+ <input class="form-control me-2" type="number" id="e-coin-input" placeholder="Enter e coin amount"><br>
+ <button class="search-bar-button"onclick="calculateUSDCFromE()"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button>
+ <p id="usd-result"></p>
+ </div>
+ <center>
+ </div>
+ <br>
+ <hr>
+ <br>
+ <div class="row list-item">
  <center><button class="search-bar-button" id="random-button"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button></center>
- <center><br><a id="download-button" download="crosshair.png" target="_blank" style="color: #ffffff; text-decoration: none; background-color: rgba(15, 15, 15, 0.65); padding: 10px 20px; border-radius: 25px; width: 30%;">Download Crosshair</a></br><br></center>
+ <center><br><a id="download-button" download="crosshair.png" target="_blank" style="color: #ffffff; text-decoration: none; background-color: rgba(15, 15, 15, 0.65); padding: 10px 20px; border-radius: 25px; width: 35%;"><i class="fa-solid fa-download" style="color: #ffffff;"></i> Download Crosshair</a></br><br></center>
  <center>
  <p id="loadingText" class="hidden">Loading...</p>
  <div class="earn-rate-info">
@@ -295,7 +310,7 @@
  <div class="row list-item">
  <center>
  <div class="crypto-info">
- <h1><img src="src/solana-sol-logo.png" alt="Sol Logo" style="width: 40; height: 40px; margin: 1px;"> To World Money</h1><br>
+ <h1><img src="src/solana-sol-logo.png" alt="Sol Logo" style="width: 40; height: 40px; margin-top: -10px;"> To World Money</h1><br>
  <p id="usd">1 SOL  = USD Loading...</p>
  <p id="inr">1 SOL = INR Loading...</p>
  <p id="php">1 SOL = PHP Loading...</p>
