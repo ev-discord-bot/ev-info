@@ -31,29 +31,58 @@ moreInfoButton.style.display = 'none';
 } else {
 user = data[0];
 const uidUrl = `https://ev.io/user/${user.uid[0].value}`;
-const crosshairUrl = `${user.field_custom_crosshair[0].url}`;
-const eCoinBalance = user.field_ev_coins[0].value;
-const usdValue = eCoinBalance / 2000;
-userInfoDiv.innerHTML = `
-<h3>User Information for ${user.name[0].value}
-</h3>
-<p><strong>Username:</strong> ${user.name[0].value}
-</p>
-<p><strong><i class="fa-solid fa-link" style="color: #ffffff;" ></i> User URL: </strong><a style="text-decoration: none; color: #FFA500;" href="${uidUrl}" target="_blank" >https://ev.io/user/${user.uid[0].value}</a></p>
-<p><strong><i class="fa-solid fa-skull" style="color: #ffffff;" ></i> Kills:</strong> ${user.field_kills[0].value.toLocaleString()}
-   | <strong><i class="fa-solid fa-skull-crossbones" style="color: #ffffff;" ></i> Deaths:</strong> ${user.field_deaths[0].value.toLocaleString()}
-   | <strong><i class="fa-solid fa-person-rifle" style="color: #ffffff;" ></i> KD:</strong> ${user.field_k_d[0].value}
-</p>
-<p><strong><i class="fa-solid fa-ranking-star" style="color: #ffffff;" ></i> Ranking:</strong> ${user.field_rank[0].value.toLocaleString()}
-   | <strong><i class="fa-solid fa-star" style="color: #ffffff;" ></i> Score:</strong> ${user.field_score[0].value.toLocaleString()}
-</p>
-<p><strong><img src="src/e_coin.png" alt="Sol Logo" style="width: 15; height: 15px; margin-bottom: 6px;" > Coins:</strong> ${user.field_ev_coins[0].value.toLocaleString()}
-   | <strong>Estimated Value:</strong> $${usdValue.toFixed(2)}
-   <img src="src/usdc-coin.svg" alt="Sol Logo" style="width: 20; height: 20px; margin-bottom: 6px;" >
-</p>
-<hr>
-<p><strong><i class="fa-solid fa-crosshairs" style="color: #ffffff;" ></i> Crosshair:</strong> <a style="text-decoration: none; color: #FFA500;" href="${crosshairUrl}" target="_blank" >Users Crosshair</a></p>
-`;
+try {
+	const crosshairUrl = `${user.field_custom_crosshair[0].url}`;
+	const eCoinBalance = user.field_ev_coins[0].value;
+	const usdValue = eCoinBalance / 2000;
+
+	userInfoDiv.innerHTML = `
+	<h3>User Information for ${user.name[0].value}
+	</h3>
+	<p><strong>Username:</strong> ${user.name[0].value}
+	</p>
+	<p><strong><i class="fa-solid fa-link" style="color: #ffffff;" ></i> User URL: </strong><a style="text-decoration: none; color: #FFA500;" href="${uidUrl}" target="_blank" >https://ev.io/user/${user.uid[0].value}</a></p>
+	<p><strong><i class="fa-solid fa-skull" style="color: #ffffff;" ></i> Kills:</strong> ${user.field_kills[0].value.toLocaleString()}
+	   | <strong><i class="fa-solid fa-skull-crossbones" style="color: #ffffff;" ></i> Deaths:</strong> ${user.field_deaths[0].value.toLocaleString()}
+	   | <strong><i class="fa-solid fa-person-rifle" style="color: #ffffff;" ></i> KD:</strong> ${user.field_k_d[0].value}
+	</p>
+	<p><strong><i class="fa-solid fa-ranking-star" style="color: #ffffff;" ></i> Ranking:</strong> ${user.field_rank[0].value.toLocaleString()}
+	   | <strong><i class="fa-solid fa-star" style="color: #ffffff;" ></i> Score:</strong> ${user.field_score[0].value.toLocaleString()}
+	</p>
+	<p><strong><img src="src/e_coin.png" alt="Sol Logo" style="width: 15; height: 15px; margin-bottom: 6px;" > Coins:</strong> ${user.field_ev_coins[0].value.toLocaleString()}
+	   | <strong>Estimated Value:</strong> $${usdValue.toFixed(2)}
+	   <img src="src/usdc-coin.svg" alt="Sol Logo" style="width: 20; height: 20px; margin-bottom: 6px;" >
+	</p>
+	<hr>
+	<p><strong><i class="fa-solid fa-crosshairs" style="color: #ffffff;" ></i> Crosshair:</strong> <a style="text-decoration: none; color: #FFA500;" href="${crosshairUrl}" target="_blank" >Users Crosshair</a></p>
+	`;
+  } catch (error) {
+	console.error('Error fetching crosshair:', error);
+	const uidUrl = `https://ev.io/user/${user.uid[0].value}`;
+	const eCoinBalance = user.field_ev_coins[0].value;
+	const usdValue = eCoinBalance / 2000;
+	userInfoDiv.innerHTML = `
+	<h3>User Information for ${user.name[0].value}
+	</h3>
+	<p><strong>Username:</strong> ${user.name[0].value}
+	</p>
+	<p><strong><i class="fa-solid fa-link" style="color: #ffffff;" ></i> User URL: </strong><a style="text-decoration: none; color: #FFA500;" href="${uidUrl}" target="_blank" >https://ev.io/user/${user.uid[0].value}</a></p>
+	<p><strong><i class="fa-solid fa-skull" style="color: #ffffff;" ></i> Kills:</strong> ${user.field_kills[0].value.toLocaleString()}
+	   | <strong><i class="fa-solid fa-skull-crossbones" style="color: #ffffff;" ></i> Deaths:</strong> ${user.field_deaths[0].value.toLocaleString()}
+	   | <strong><i class="fa-solid fa-person-rifle" style="color: #ffffff;" ></i> KD:</strong> ${user.field_k_d[0].value}
+	</p>
+	<p><strong><i class="fa-solid fa-ranking-star" style="color: #ffffff;" ></i> Ranking:</strong> ${user.field_rank[0].value.toLocaleString()}
+	   | <strong><i class="fa-solid fa-star" style="color: #ffffff;" ></i> Score:</strong> ${user.field_score[0].value.toLocaleString()}
+	</p>
+	<p><strong><img src="src/e_coin.png" alt="Sol Logo" style="width: 15; height: 15px; margin-bottom: 6px;" > Coins:</strong> ${user.field_ev_coins[0].value.toLocaleString()}
+	   | <strong>Estimated Value:</strong> $${usdValue.toFixed(2)}
+	   <img src="src/usdc-coin.svg" alt="Sol Logo" style="width: 20; height: 20px; margin-bottom: 6px;" >
+	</p>
+	<hr>
+	<p><strong><i class="fa-solid fa-crosshairs" style="color: #ffffff;" ></i> Crosshair:</strong> Default</p>
+	`;
+  }
+
 
 const skinId = user.field_eq_skin[0].target_id;
 if (skinId) {
