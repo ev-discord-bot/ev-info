@@ -1244,4 +1244,135 @@ input.form-control.me-2 {
 	background-color: rgba(15, 15, 15, 0.65);
 	color: #fff;
 	cursor: pointer;
-  }
+}
+
+
+.open-button {
+	background-color: rgba(16 18 27 / 40%);
+	color: white;
+	padding: 16px 20px;
+	border: none;
+	cursor: pointer;
+	opacity: 0.8;
+	position: fixed;
+	bottom: 100px;
+	right: -112px;
+	width: 280px;
+	transform: rotate(630deg);
+	border-top-left-radius: 25px;
+	border-top-right-radius: 25px;
+	border-style: 1px solid;
+	border-color: rgba(16 18 27 / 20%);
+}
+
+.form-popup {
+	display: none;
+	position: fixed;
+	bottom: 1px;
+	right: 1px;
+	z-index: 9;
+}
+
+.form-container {
+	max-width: 900px;
+	padding: 15px;
+	background-color: rgba(0, 0, 0, 0.69);
+	border-radius: 25px;
+	border: 1px solid var(--border-color);
+}
+
+.form-container input[type=text],
+.form-container input[type=password] {
+	width: 100%;
+	padding: 10px;
+	margin: 5px 0 22px 0;
+	border: none;
+}
+
+.form-container .btn {
+	background-color: rgba(255, 0, 0, 30%);
+	color: white;
+	padding: 16px 20px;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	margin-bottom: 10px;
+	opacity: 1;
+}
+
+.pop_up_h1 {
+	color: #000;
+	font-size: 30px;
+	text-align: center;
+}
+
+i.fa-solid.fa-bell.fa-lg {
+	margin-top: 18px;
+	margin-left: 2px;
+}
+
+span.notification-number {
+	margin-top: 11px;
+}
+
+input.form-control.me-2 {
+	width: 74%;
+}
+
+.nft-drop-grid {
+	display: flex;
+	justify-content: center;
+}
+
+.nft-drop {
+	display: flex;
+	flex-direction: column;
+	width: 180px;
+	margin: 10px;
+	border-radius: 8px;
+}
+
+.nft-drop h2 {
+	font-size: xx-large;
+	color: #fff;
+	margin-bottom: 5px;
+	text-align: center;
+}
+
+.nft-drop-info {
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	border-radius: 8px;
+}
+
+.nft-drop-info p {
+	font-size: normal;
+	margin-bottom: 1px;
+	text-align: center;
+	color: #fff;
+}
+
+.loading-spinner {
+	border: 5px solid rgba(0, 0, 0, 0.1);
+	border-top: 5px solid #3498db;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	animation: spin 1s linear infinite;
+	display: inline-block;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.loading-spinner.hidden {
+	display: none;
+}
