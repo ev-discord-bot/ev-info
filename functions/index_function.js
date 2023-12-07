@@ -49,6 +49,14 @@ const fetchUserInfo = () => {
                const crosshairUrl = `${user.field_custom_crosshair[0].url}`;
                const eCoinBalance = user.field_ev_coins[0].value;
                const usdValue = eCoinBalance / 2000;
+               const usdValueFormatted = usdValue.toLocaleString("en-US", {
+                  style: "currency",
+                  currency: "USD",
+               });
+
+               const usdValueSpan = document.createElement("span");
+               usdValueSpan.textContent = usdValueFormatted;
+               usdValueSpan.classList.add("formatted-value");;
 
                userInfoDiv.innerHTML = `
 <h3>User Information for ${user.name[0].value}
@@ -64,7 +72,7 @@ const fetchUserInfo = () => {
 	| <strong><i class="fa-solid fa-star" style="color: #ffffff;"></i> Score:</strong> ${user.field_score[0].value.toLocaleString()}
 </p>
 <p><strong><img src="src/e_coin.png" alt="Sol Logo" style="width: 15; height: 15px; margin-bottom: 6px;"> Coins:</strong> ${user.field_ev_coins[0].value.toLocaleString()}
-	| <strong>Estimated Value:</strong> $${usdValue.toFixed(2)}
+	| <strong>Estimated Value: ${usdValueFormatted}
 	<img src="src/usdc-coin.svg" alt="Sol Logo" style="width: 20; height: 20px; margin-bottom: 6px;">
 </p>
 <hr>
@@ -89,7 +97,7 @@ const fetchUserInfo = () => {
 	| <strong><i class="fa-solid fa-star" style="color: #ffffff;"></i> Score:</strong> ${user.field_score[0].value.toLocaleString()}
 </p>
 <p><strong><img src="src/e_coin.png" alt="Sol Logo" style="width: 15; height: 15px; margin-bottom: 6px;"> Coins:</strong> ${user.field_ev_coins[0].value.toLocaleString()}
-	| <strong>Estimated Value:</strong> $${usdValue.toFixed(2)}
+	| <strong>Estimated Value:</strong> $${usdValue.toFixed(2).toLocaleString()}
 	<img src="src/usdc-coin.svg" alt="Sol Logo" style="width: 20; height: 20px; margin-bottom: 6px;">
 </p>
 <hr>
@@ -607,12 +615,50 @@ window.addEventListener("resize", (e) => {
    if (windowWidth > 960) {
       doSomething();
    }
-   if (windowWidth < 960) { doSomething(); }
-}); var isAudioPlaying = false; function playAudio() { if (!isAudioPlaying) { var audioUrl = "https://github.com/ev-discord-bot/ev-info/raw/main/src/the_music.mp3"; var audioElement = new Audio(audioUrl); audioElement.play(); document.querySelector('#logo-image').src = "https://github.com/ev-discord-bot/ev-info/raw/main/src/rick_logo.svg"; isAudioPlaying = true; document.querySelector('.scrolling-text').style.pointerEvents = 'none'; audioElement.addEventListener('ended', function () { document.querySelector('#logo-image').src = "https://github.com/ev-discord-bot/ev-info/raw/main/src/main_logo.svg"; audioElement.pause(); document.querySelector('.scrolling-text').style.pointerEvents = 'auto'; }); document.querySelector('#logo-image').addEventListener('click', function () { isAudioPlaying = false; }); } } function calculateUSDCFromE() {
-   const eCoinAmount = parseFloat(document.getElementById('e-coin-input').value); if (!isNaN(eCoinAmount) && eCoinAmount > 0) {
-      const usdValue = eCoinAmount / 2000;
+   if (windowWidth < 960) {
+      doSomething();
+   }
+});
+var isAudioPlaying = false;
 
-      document.getElementById('usd-result').textContent = `USDC Value: $${usdValue.toFixed(2)}`;
+function playAudio() {
+   if (!isAudioPlaying) {
+      var audioUrl = "https://github.com/ev-discord-bot/ev-info/raw/main/src/the_music.mp3";
+      var audioElement = new Audio(audioUrl);
+      audioElement.play();
+      document.querySelector('#logo-image').src = "https://github.com/ev-discord-bot/ev-info/raw/main/src/rick_logo.svg";
+      isAudioPlaying = true;
+      document.querySelector('.scrolling-text').style.pointerEvents = 'none';
+      audioElement.addEventListener('ended', function () {
+         document.querySelector('#logo-image').src = "https://github.com/ev-discord-bot/ev-info/raw/main/src/main_logo.svg";
+         audioElement.pause();
+         document.querySelector('.scrolling-text').style.pointerEvents = 'auto';
+      });
+      document.querySelector('#logo-image').addEventListener('click', function () {
+         isAudioPlaying = false;
+      });
+   }
+}
+
+function calculateUSDCFromE() {
+
+
+   const eCoinAmount = parseFloat(document.getElementById('e-coin-input').value);
+   if (!isNaN(eCoinAmount) && eCoinAmount > 0) {
+      const usdValue = eCoinAmount / 2000;
+      const usdValueFormatted = usdValue.toLocaleString("en-US", {
+         style: "currency",
+         currency: "USD",
+      });
+
+      const usdValueSpan = document.createElement("span");
+      usdValueSpan.textContent = usdValueFormatted;
+      usdValueSpan.classList.add("formatted-value"); // Define custom class in CSS
+
+
+      const usdResultElement = document.getElementById("usd-result");
+      usdResultElement.textContent = "USDC Value: "; // Remove existing text
+      usdResultElement.appendChild(usdValueSpan);
    } else {
       alert('Please enter a valid e coin amount.');
    }
@@ -642,6 +688,149 @@ copyTextElement.addEventListener('click', function () {
 function openLink(linkURL) {
    window.open(linkURL, '_blank');
 }
+
+
+const pageSize = 6; // Number of items per page
+
+function truncateToken(token) {
+   if (token.length > 8) {
+      return token.slice(0, 4) + '...' + token.slice(-4);
+   }
+   return token;
+}
+
+async function getUserNFTs(userId) {
+   try {
+      const response = await fetch(`https://ev.io/flags/${userId}`);
+      const data = await response.json();
+
+      // Check if the expected properties exist in the response
+      if (!data || !Array.isArray(data)) {
+         throw new Error('Invalid or missing data structure in API response');
+      }
+
+      return data;
+   } catch (error) {
+      console.error('Error fetching user NFTs:', error.message);
+      return null;
+   }
+}
+
+async function displayUserNFTs() {
+   const userIdInput = document.getElementById('userIdInput');
+   const userId = userIdInput.value.trim();
+
+   if (!userId) {
+      alert('Please enter a user ID.');
+      return;
+   }
+
+   const nftContainer = document.getElementById('nftContainer');
+   nftContainer.innerHTML = ''; // Clear previous content
+
+   const pagination = document.getElementById('pagination');
+   pagination.innerHTML = ''; // Clear previous pagination
+
+   const loadingSpinner = document.createElement('span');
+   loadingSpinner.classList.add('loading-spinner');
+   nftContainer.appendChild(loadingSpinner);
+
+   const userNFTs = await getUserNFTs(userId);
+
+   if (userNFTs) {
+      loadingSpinner.remove();
+
+      const totalPages = Math.ceil(userNFTs.length / pageSize);
+
+      for (let page = 1; page <= totalPages; page++) {
+         const startIndex = (page - 1) * pageSize;
+         const endIndex = startIndex + pageSize;
+         const paginatedNFTs = userNFTs.slice(startIndex, endIndex);
+
+         const pageButton = document.createElement('button');
+         pageButton.textContent = page;
+         pageButton.onclick = () => displayPageNFTs(paginatedNFTs);
+
+         pagination.appendChild(pageButton);
+      }
+
+      // Display the first page by default
+      displayPageNFTs(userNFTs.slice(0, pageSize));
+   } else {
+      loadingSpinner.textContent = 'Failed to fetch user NFTs. Please try again later.';
+   }
+}
+
+function displayPageNFTs(nfts) {
+   const nftContainer = document.getElementById('nftContainer');
+   nftContainer.innerHTML = ''; // Clear previous content
+
+   if (nfts.length === 0) {
+      const noNFTsMessage = document.createElement('div');
+      noNFTsMessage.textContent = 'User has no NFTs.';
+      noNFTsMessage.classList.add('no-nfts-message');
+      nftContainer.appendChild(noNFTsMessage);
+   } else {
+      nfts.forEach((nftData) => {
+         const nftCard = document.createElement('div');
+         nftCard.classList.add('nft-card');
+
+         const nftImage = document.createElement('img');
+         nftImage.classList.add('nft-image');
+
+         try {
+            // Use the existing field_wallet_image property from the JSON
+            const imageUrl = `https://ev.io${nftData.field_wallet_image}`;
+
+            nftImage.src = imageUrl;
+            nftImage.alt = 'NFT Image';
+
+            nftCard.appendChild(nftImage);
+
+            const skinInfo = document.createElement('div');
+            skinInfo.innerHTML = `
+                  <p><strong>Name:</strong> ${nftData.field_skin || 'Unknown'}</p>
+                  <p><strong>NFT Token:</strong> ${truncateToken(nftData.field_flag_nft_address) || 'Unknown'}</p>
+                  <p><strong>Skin Node ID:</strong> ${nftData.entity_id || 'Unknown'}</p>
+                  <hr>
+                  <p><strong>Being Lend To:</strong> ${nftData.field_scholar || 'Not Being Lended'}</p>
+                  <p><strong>E Made Today:</strong> ${nftData.field_earned_today || 'Unknown'}</p>
+               `;
+
+            nftCard.appendChild(skinInfo);
+
+            nftContainer.appendChild(nftCard);
+         } catch (parseError) {
+            console.error('Error parsing NFT data:', parseError.message);
+         }
+      });
+   }
+}
+
+
+// Helper function to get attribute from field_meta
+function getMetaAttribute(nftData, attribute) {
+   try {
+      const metaAttributes = JSON.parse(nftData.field_meta[0])?.value?.attributes;
+      return metaAttributes.find(attr => attr.trait_type === attribute)?.value || 'Unknown';
+   } catch (error) {
+      console.error(`Error getting ${attribute} attribute:`, error.message);
+      return 'Unknown';
+   }
+}
+
+document.getElementById('userIdInput').addEventListener('keydown', (event) => {
+   if (event.key === 'Enter') {
+      displayUserNFTs();
+   }
+});
+
+
+function truncateToken(token) {
+   // Display only the first and last 5 characters, and add "..."
+   return `${token.substring(0, 5)}...${token.substring(token.length - 5)}`;
+}
+
 
 window.addEventListener('load', function () {
    const loadingScreen = document.getElementById('loadingScreen');
