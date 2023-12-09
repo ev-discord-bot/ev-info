@@ -3,14 +3,14 @@
 	<meta content="An Website That Shows User Info And More In One Site!"
 	   property="og:description" />
 	<meta
-	   content="https://github.com/ev-discord-bot/ev-info/blob/main/src/logo_icon.png?raw=true"
+	   content="src\evinfo-icon.png"
 	   property="og:image" />
 	<meta content="#43B581" data-react-helmet="true" name="theme-color" />
 	<title>iminthebibleson | Ev.io User Info</title>
 	<link rel="shortcut icon" type="image/x-icon"
-	   href="https://github.com/ev-discord-bot/ev-info/blob/main/src/logo_icon.png?raw=true">
+	   href="src\evinfo-icon.png">
 	<link rel="icon"
-	   href="https://github.com/ev-discord-bot/ev-info/blob/main/src/logo_icon.png?raw=true"
+	   href="src\evinfo-icon.png"
 	   type="image/x-icon">
 	<link rel="stylesheet" href="styles/index_styles.css">
  </head>
@@ -42,7 +42,7 @@
 		  <ul class="list-group">
 			 <li class="list-group-item">
 				<span> <i class="fa-solid fa-arrows-rotate"></i></span> verison
-				<span class="badge update-badge rounded-pill">3.7.0</span>
+				<span class="badge update-badge rounded-pill">3.7.4</span>
 			 </li>
 		  </ul>
 		  <ul class="list-group">
@@ -185,7 +185,7 @@
 			 <li class="nav-item">
 				<div class="notification">
 				   <div data-bs-toggle="dropdown">
-					  <span class="notification-number">3</span>
+					  <span class="notification-number">5</span>
 					  <i class="fa-solid fa-bell fa-lg" style="color: #ffffff;"></i>
 				   </div>
 				   <ul class="notification-list dropdown-menu">
@@ -254,6 +254,22 @@
 								  <div class="date-time">
 									 <i class="fa-regular fa-clock"></i>
 									 <span>2:10 PM - Dec 7, 2023</span>
+								  </div>
+							   </div>
+							</button>
+						 </li>
+					  </ul>
+					  <ul class="list-group">
+						 <li>
+							<button class="dropdown-item d-flex" type="button">
+							   <img src="src/profile_photo.png" alt>
+							   <div class="update">
+								  <div class="notification-msg">
+									 removed showing players crosshairs (i think its useless)
+								  </div>
+								  <div class="date-time">
+									 <i class="fa-regular fa-clock"></i>
+									 <span>11:27 AM - Dec 8, 2023</span>
 								  </div>
 							   </div>
 							</button>
@@ -370,29 +386,12 @@
  <hr>
  <br>
  <center>
- <label for="userIdInput">Enter User ID:</label><br>
- <input class="form-control me-2" type="text" id="userIdInput" placeholder="Type user ID"><br>
- <button class="search-bar-button" style="width: auto;" onclick="displayUserNFTs()">Display NFTs<br><iclass="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button>
+ <label for="usernameInputnft">Enter Username:</label><br>
+ <input class="form-control me-2" type="text" id="usernameInputnft" placeholder="Enter username"><br>
+ <button class="search-bar-button" style="width: auto;" onclick="displayUserNFTs()">Display NFTs<br><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button>
  <div id="nftContainer"></div>
+ <div id="pageIndicator"></div>
  <div id="pagination"></div>
- <center>
- <br>
- <hr>
- <br>
- <center><button class="search-bar-button" id="random-button"
-	style="width: 25%;">Change Crosshair <i
-	class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button></center>
- <center><br><a id="download-button" download="crosshair.png"
-	target="_blank"
-	style="color: #ffffff; text-decoration: none; background-color: rgba(15, 15, 15, 0.65); padding: 10px 20px; border-radius: 25px; width: 30%;"><i
-	class="fa-solid fa-download" style="color: #ffffff;"></i>
- Download Crosshair</a></br><br></center>
- <center>
- <p id="loadingText" class="hidden"><span class="loading-spinner"></p>
- <div class="earn-rate-info">
- <p id="username" class="hidden"></p>
- <img id="crosshair-image" class="hidden" alt="Crosshair">
- </div>
  <center>
  <br>
  <hr>

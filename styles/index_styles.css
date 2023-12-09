@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Tilt+Neon&display=swap');
 
 :root {
 	--body-font: "Poppins", sans-serif;
@@ -41,7 +41,7 @@ body {
 	height: 100vh;
 	font-family: var(--body-font);
 	padding: var(--body-padding-y);
-	background-image: url(https://media.discordapp.net/attachments/1039308604148293682/1171857140592431207/Untitled_design.png);
+	background-image: url(/src/background.png);
 	background-size: cover;
 	background-position: center;
 }
@@ -1163,9 +1163,7 @@ body {
 .loading-text,
 .connectingText {
 	user-select: none;
-	/* Disable text selection */
 	pointer-events: none;
-	/* Disable pointer events */
 }
 
 #loadingScreen .connectingText::before {
@@ -1194,7 +1192,6 @@ body {
 
 	50% {
 		content: "‎";
-		/* Invisible space */
 	}
 
 	66.67% {
@@ -1411,24 +1408,22 @@ input.form-control.me-2 {
 	margin: 10px;
 	display: inline-block;
 	width: 250px;
-	/* Customize the width of each card */
 	text-align: center;
 	height: 360px;
-	/* Set a fixed height for each card */
 	overflow: hidden;
-	/* Hide overflow content if it exceeds the fixed height */
+	border: 1px solid var(--border-color);
+	background-color: var(--theme-bg-color);
+	border-radius: 25px;
 }
 
 .nft-card p {
 	margin: 10px 0;
-	/* Adjust the top and bottom margin of paragraphs */
 }
 
 .nft-image {
 	max-width: 50%;
 	height: auto;
 	border-radius: 10px;
-	/* Customize the border-radius of each image */
 }
 
 #pagination {
@@ -1474,4 +1469,24 @@ input.form-control.me-2 {
 	100% {
 		transform: rotate(360deg);
 	}
+}
+
+.no-nfts-message {
+	padding: 5px;
+	margin: 10px;
+	display: inline-block;
+	width: 250px;
+	text-align: center;
+	height: 100px;
+	overflow: hidden;
+	border: 1px solid var(--border-color);
+	background-color: var(--theme-bg-color);
+	border-radius: 25px;
+}
+
+#totalNFTsMessage {
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 10px;
+	color: #333;
 }
