@@ -1,112 +1,346 @@
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Crosshairs | iminthebibleson</title>
-   <link rel="icon" href="https://media.discordapp.net/attachments/1039308604148293682/1155548421315383406/icon.png" type="image/x-icon">
-   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap">
-   <link rel="stylesheet" href="/styles/crosshair_styles.css">
+   <meta content="Evinfo Website" property="og:title" />
+   <meta content="An Website That Shows User Info And More In One Site!"
+      property="og:description" />
+   <meta
+      content="src\evinfo-icon.png"
+      property="og:image" />
+   <meta content="#43B581" data-react-helmet="true" name="theme-color" />
+   <title>iminthebibleson | Crosshairs</title>
+   <link rel="shortcut icon" type="image/x-icon"
+      href="src\evinfo-icon.png">
+   <link rel="icon"
+      href="src\evinfo-icon.png"
+      type="image/x-icon">
+   <link rel="stylesheet" href="styles/crosshair_styles.css">
 </head>
 <body>
-   <div class="image"></div>
-   <h1>Crosshairs</h1>
-   </body><br>
-   <center><p class="glowing-text" style="color: #fff;">Right Click The Crosshair And Click Save As To Download Crosshair</p></center>
-   <br>
-   <div class="card">
-   <div class="container">
-      <p class="custom-text">Animated Crosshairs</p>
-      <br>
-      <div class="photo-showcase">
-         <div class="photo-item">
-            <img src="https://media.discordapp.net/attachments/1039308604148293682/1048807078938017855/ezgif.com-gif-maker.gif?width=126&height=126" alt="Crosshair 1">
-         </div>
-         <div class="photo-item">
-            <img src="https://cdn.discordapp.com/attachments/1027865490258935828/1029105086330310809/ezgif.com-gif-maker_2.gif" alt="Crosshair 2">
-         </div>
-         <div class="photo-item">
-            <img src="https://cdn.discordapp.com/attachments/1018881473387954317/1032314297428217967/imageedit_41_7376263419_gif_2.gif" alt="Crosshair 3">
-         </div>
-         <div class="photo-item">
-            <img src="https://cdn.discordapp.com/attachments/1018881473387954317/1032767711601754112/imageedit_49_9744862922.gif" alt="Crosshair 4">
-         </div>
-         <div class="photo-item">
-            <img src="https://cdn.discordapp.com/attachments/1018881473387954317/1032767711949901824/imageedit_51_8861531302.gif" alt="Crosshair 5">
-         </div>
-         <div class="photo-item">
-            <img src="https://cdn.discordapp.com/attachments/1018881473387954317/1032767712314798120/ezgif.com-gif-maker_1.gif" alt="Crosshair 6">
-         </div>
-         <div class="photo-item">
-            <img src="https://cdn.discordapp.com/attachments/1039308604148293682/1043645972317732974/number_15.gif" alt="Crosshair 7">
-         </div>
-         <br>
-         <div class="photo-item">
-            <img src="https://cdn.discordapp.com/attachments/1039308604148293682/1043282632462581921/number_9.gif" alt="Crosshair 8">
-         </div>
-         <div class="photo-item">
-            <img src="https://cdn.discordapp.com/attachments/1039308604148293682/1043682004484505641/number_12.gif" alt="Crosshair 9">
-         </div>
-         <div class="photo-item">
-            <img src="https://cdn.discordapp.com/attachments/1039308604148293682/1043282632160596038/number_8.gif" alt="Crosshair 10">
-         </div>
-         <div class="photo-item">
-            <img src="https://cdn.discordapp.com/attachments/1039308604148293682/1043289434424082442/number_10.gif" alt="Crosshair 11">
-         </div>
-         <div class="photo-item">
-            <img src="https://cdn.discordapp.com/attachments/1039308604148293682/1043578751566495823/number_11.gif" alt="Crosshair 12">
-         </div>
-      </div><br><hr class="modern-hr">
-      <p class="custom-text">None Animated Crosshairs</p>
-      <br>
-      <div class="photo-showcase">
-         <div class="photo-item">
-            <img src="https://cdn.discordapp.com/attachments/1039308604148293682/1075171616381734982/imageedit_41_7376263419_gif_2_1.png" alt="Crosshair 1">
-         </div>
-         <div class="photo-item">
-            <img src="https://cdn.discordapp.com/attachments/1039308604148293682/1075171617073807361/number_11.png" alt="Crosshair 2">
-         </div>
-         <div class="photo-item">
-            <img src="https://cdn.discordapp.com/attachments/1039308604148293682/1075171617392562268/number_9.png" alt="Crosshair 3">
-         </div>
-         <div class="photo-item">
-            <img src="https://cdn.discordapp.com/attachments/1039308604148293682/1075171617723928626/number_8_1.png" alt="Crosshair 4">
-         </div>
-         <div class="photo-item">
-            <img src="https://cdn.discordapp.com/attachments/1039308604148293682/1075171617925251103/number_10.png" alt="Crosshair 5">
-         </div>
-         <div class="photo-item">
-            <img src="https://cdn.discordapp.com/attachments/1039308604148293682/1152678078326263939/KovaaK-Crosshair_9_50.png" alt="Crosshair 6">
-         </div>
-         <div class="photo-item">
-            <center>
-               <p class="custom-text"><br>More Coming Soon</p>
-               <br>
-            </center>
-         </div>
-      </div>
+   <div id="loadingScreen">
+      <p class="loading-text">Loading Content<br>Please Wait<span
+         class="connectingText"></span></p>
+      <div class="spinner"></div>
+      <button id="skipLoadingButton">Skip Loading Screen if your stuck on it</button>
    </div>
+   <div id="imageModal" class="modal">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="modalImage">
    </div>
-   <br>
-   
-  <br>
-   <details>
-      <summary style="background-color: rgba(15, 15, 15, 0.65);; color: #fff; padding: 10px; border-radius: 25px; cursor: pointer; text-align: center;" class="custom-text">How to Add Custom Crosshairs (Click to Show/Hide)</summary>
-      <div style="background-color: rgba(15, 15, 15, 0.65); padding: 10px; border-radius: 5px; margin-top: 10px; text-align: center;">
-         <p style="font-family: 'Poppins', sans-serif; color: #fff;">1. Click on <a style="color: #fff; font-family: 'Poppins', sans-serif;" href="https://ev.io/user">My Account</a> on the ev.io website</p>
-         <p style="font-family: 'Poppins', sans-serif; color: #fff;">2. Click on "Edit"</p>
-         <p style="font-family: 'Poppins', sans-serif; color: #fff;">3. Scroll down to Custom Crosshairs</p>
-         <p style="font-family: 'Poppins', sans-serif; color: #fff;">Now you can add and remove custom crosshairs</p>
-      </div>
-   </details>
-   <center><button class="custom-button" onclick="rickroll()">Whats This Button?</button></center>
-   <br><br><br><br><br>
-   <!-- Footer -->
-   <footer>
-      <div>
-         <a href="index.html">Home</a> |
-         <a href="uisettings.html">UI/Settings Mod List</a> |
-         <a href="aimtester.html">Aim Tester</a>
-      </div>
-      Made By Iminthebibleson<br>If you need any bugs or things you think I should add, please contact me
-   </footer>
 </body>
+<div id="SiteContainer" class="container main-content">
+<div class="row g-0">
+   <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-2 sidebar">
+      <div class="left-sidebar">
+         <div class="sidebar-header" onclick="sidebar_toggler()">
+            <div class="label-text">Close Sidebar</div>
+            <i class="sidebar-toggler-btn fa-solid fa-circle-arrow-left"></i>
+         </div>
+         <div class="row g-0">
+            <div class="col-12">
+               <a class="logo-container" href="#">
+               <img id="logo-image" onclick="playAudio();" class="logo-image"
+                  src="src/main_logo.svg" alt="logo">
+               </a>
+            </div>
+         </div>
+         <div class="sidebar-list">
+            <ul class="list-group">
+               <li class="list-group-item">
+                  <span> <i class="fa-solid fa-arrows-rotate"></i></span> verison
+                  <span class="badge update-badge rounded-pill">1.0.0</span>
+               </li>
+            </ul>
+            <ul class="list-group">
+            </ul>
+            </ul>
+            <ul class="list-group">
+               <h5 class="list-heading">Resource Links</h5>
+               <a href="https://ev.io" target="_blank" style="text-decoration: none;">
+                  <li class="list-group-item">
+                     <span> <i class="fa-solid fa-e" style="color: #ffffff;"></i> </span>
+                     Ev.io
+                  </li>
+               </a>
+               <a href="https://ev.io/info" target="_blank" style="text-decoration: none;">
+                  <li class="list-group-item">
+                     <span> <i class="fa-solid fa-e" style="color: #ffffff;"></i> </span>
+                     Ev.io Info
+                  </li>
+               </a>
+               <a href="https://ev.io/user/login" target="_blank"
+                  style="text-decoration: none;">
+                  <li class="list-group-item">
+                     <span> <i class="fa-solid fa-e" style="color: #ffffff;"></i> </span> Your
+                     Ev.io Account
+                  </li>
+               </a>
+               <a href="https://arideve.github.io/ev-skin-viewer/" target="_blank"
+                  style="text-decoration: none;">
+                  <li class="list-group-item">
+                     <span> <i class="fa-solid fa-a" style="color: #ffffff;"></i> </span> Ari's
+                     Skin Viewer
+                  </li>
+               </a>
+               <a href="https://crosshair.themeta.gg" target="_blank"
+                  style="text-decoration: none;">
+                  <li class="list-group-item">
+                     <span> <i class="fa-solid fa-k" style="color: #ffffff;"></i> </span>
+                     Kovaak's Crosshair Generator
+                  </li>
+               </a>
+            </ul>
+            <ul class="list-group">
+               <h5 class="list-heading">Social Links</h5>
+               <a href="https://github.com/iminthebibleson" target="_blank"
+                  style="text-decoration: none;">
+                  <li class="list-group-item">
+                     <span> <i class="fa-brands fa-github" style="color: #ffffff;"></i>
+                     </span> GitHub
+                  </li>
+               </a>
+               <a href="https://discord.gg/WMThD52Dz" target="_blank"
+                  style="text-decoration: none;">
+                  <li class="list-group-item">
+                     <span> <i class="fa-brands fa-discord" style="color: #ffffff;"></i>
+                     </span> Discord
+                  </li>
+               </a>
+               <a href="https://twitter.com/iminthebibleson" target="_blank"
+                  style="text-decoration: none;">
+                  <li class="list-group-item">
+                     <span> <i class="fa-brands fa-twitter" style="color: #ffffff;"></i>
+                     </span> Twitter
+                  </li>
+               </a>
+            </ul>
+            <ul class="list-group">
+               <h5 class="list-heading">Other Links</h5>
+               <a href="/index.html" target="_blank" style="text-decoration: none;">
+                  <li class="list-group-item">
+                     <span> <i class="fa-duotone fa-e"
+                        style="--fa-primary-color: #ffffff; --fa-secondary-color: #ff0000;"></i>
+                     </span> Home
+                  </li>
+               </a>
+               <a href="/uisettings.html" target="_blank" style="text-decoration: none;">
+                  <li class="list-group-item">
+                     <span> <i class="fa-duotone fa-e"
+                        style="--fa-primary-color: #ffffff; --fa-secondary-color: #ff0000;"></i>
+                     </span> Ui/Mods
+                  </li>
+               </a>
+            </ul>
+            <ul class="list-group">
+               <h5 class="list-heading">Ads</h5>
+               <center>
+                  <img style="height: auto; width: 80%; padding: 10px;"
+                     src="src/solana-sol-logo.png" />
+                  <p style="text-align: center; color: #ffffff;">Donate to me if you can. It
+                     will greatly benefit me. Anything is welcome, of course.
+                  </p>
+                  <p
+                     style="font-size: small; padding: 1px; text-align: center; color: #ffffff;;">Click
+                     Token to Copy
+                  </p>
+                  <span id="copyText" id="MyDiscord"
+                     style="cursor: pointer; text-decoration: underline; color: #ffffff; text-align: center;">3JEWbC33yrHfUKLJQxFhpB<br>eLdD7H5LkoBus49F2zaRsa</span>
+                  <hr style="color: gray;">
+                  <img style="height: auto; width: 80%; padding: 10px;"
+                     src="src\ev_bot_logo.svg" />
+                  <p style="text-align: center; color: #ffffff;">Try out my Discord bot on
+                     your Discord server.
+                  </p>
+                  <a
+                     href="https://discord.com/api/oauth2/authorize?client_id=1072538244572516462&permissions=139586825280&scope=bot%20applications.commands"
+                     target="_blank" class="search-bar-button"
+                     style="width: auto; margin-bottom: 15px;"><i class="fa-brands fa-discord"
+                     style="color: #ffffff;"></i> Invite Discord Bot</a><br>
+                  <br>
+                  <p style="color: #ffffff; font-size: small;"><em>Bot Is No Longer
+                     Maintained For Now</em>
+                  </p>
+               </center>
+            </ul>
+         </div>
+      </div>
+   </div>
+   <div class="col-sm-12 col-md-8 col-lg-9 col-xl-9 col-xxl-10">
+      <div class="col-12 app-nav">
+         <nav class="navbar navbar-expand-md navbar-dark">
+            <div class="container-fluid">
+               <button class="navbar-toggler" type="button" onclick="sidebar_toggler()"><span
+                  class="navbar-toggler-icon"></span></button>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarToggler5rg72" aria-controls="navbarToggler5rg72"
+                  aria-expanded="false" aria-label="Toggle navigation"><span
+                  class="navbar-toggler-icon"></span></button>
+               <div class="collapse navbar-collapse" id="navbarToggler5rg72">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <h2 style="color: #ffffff;">Crosshairs List</h2>
+                  </ul>
+                  <ul class="navbar-nav mb-2">
+                  <li class="list-group-item">
+                     <span>
+                     <i class="fa-solid fa-bug fa-bounce" style="color: #ffffff;"></i>
+                     </span>
+                     <a style="color: #ffffff;">Found a bug?</a>
+                     <br style="color: #ffffff;">
+                     <a style="color: #ffffff;">Dm Me On Discord:</a>
+                     <span id="copyText" id="MyDiscord"
+                        style="cursor: pointer; text-decoration: underline; color: #ffffff;">gio.the.dog</span>
+                  <li class="nav-item">
+                     <div class="notification">
+                        <div data-bs-toggle="dropdown">
+                           <span class="notification-number">1</span>
+                           <i class="fa-solid fa-bell fa-lg" style="color: #ffffff;"></i>
+                        </div>
+                        <ul class="notification-list dropdown-menu">
+                        <!-- * -->
+                        <div class="notification-header">
+                           <span class="btn">Notificatons</span>
+                        </div>
+                        <!-- * -->
+                        <ul class="list-group">
+                           <li>
+                              <button class="dropdown-item d-flex" type="button">
+                                 <img src="src/profile_photo.png" alt>
+                                 <div class="update">
+                                    <div class="notification-msg">
+                                       there done i didnt felt lazy
+                                    </div>
+                                    <div class="date-time">
+                                       <i class="fa-regular fa-clock"></i>
+                                       <span>8:50 AM - Dec 11, 2023</span>
+                                    </div>
+                                 </div>
+                              </button>
+                           </li>
+                           <!-- * -->
+                     </div>
+                     </li>
+                     <li class="nav-item">
+                     <div class="profile-img">
+                     <img
+                        onclick="openLink('https://www.youtube.com/watch?v=j5a0jTc9S10')"
+                        src="src/profile_photo.png" alt="avatar">
+                     </div>
+                     </li>
+                     </ul>
+               </div>
+            </div>
+         </nav>
+      </div>
+      <div class="content-area">
+      <div class="row">
+      <div class="col-12">
+      <div id="pills-tabContent" class="tab-content app-tab-content">
+      <div id="tab_fwe6dsff5e" class="tab-pane fade show active"
+         role="tabpanel" aria-labelledby="tab_fwe6dsff5e_tab">
+      <div class="row">
+      <div class="text-white">
+      </div>
+      <div class="apps-status-options">
+      <center>
+      <div class="photo-showcase">
+      <div class="photo-item">
+      <img src="crosshairs\crosshair_1.gif" alt="Crosshair 1">
+      </div>
+      <div class="photo-item">
+      <img src="crosshairs\crosshair_2.gif" alt="Crosshair 2">
+      </div>
+      <div class="photo-item">
+      <img src="crosshairs\crosshair_3.gif" alt="Crosshair 3">
+      </div>
+      <div class="photo-item">
+      <img src="crosshairs\crosshair_4.gif" alt="Crosshair 4">
+      </div>
+      <div class="photo-item">
+      <img src="crosshairs\crosshair_5.gif" alt="Crosshair 5">
+      </div>
+      <div class="photo-item">
+      <img src="crosshairs\crosshair_6.gif" alt="Crosshair 6">
+      </div>
+      <div class="photo-item">
+      <img src="crosshairs\crosshair_7.gif" alt="Crosshair 7">
+      </div>
+      <br>
+      <div class="photo-item">
+      <img src="crosshairs\crosshair_8.gif" alt="Crosshair 8">
+      </div>
+      <div class="photo-item">
+      <img src="crosshairs\crosshair_9.gif" alt="Crosshair 9">
+      </div>
+      <div class="photo-item">
+      <img src="crosshairs\crosshair_10.gif" alt="Crosshair 10">
+      </div>
+      <div class="photo-item">
+      <img src="crosshairs\crosshair_11.gif" alt="Crosshair 11">
+      </div>
+      <div class="photo-item">
+      <img src="crosshairs\crosshair_12.gif" alt="Crosshair 12">
+      </div>
+      <div class="photo-item">
+      <img src="crosshairs\crosshair_13.gif" alt="Crosshair 12">
+      </div>
+      </div><br><hr class="modern-hr">
+      <h3>None Animated Crosshairs</h3>
+      <br>
+      <div class="photo-showcase">
+      <div class="photo-item">
+      <img src="crosshairs\none_animated_crosshair_1.png" alt="Crosshair 1">
+      </div>
+      <div class="photo-item">
+      <img src="crosshairs\none_animated_crosshair_2.png" alt="Crosshair 2">
+      </div>
+      <div class="photo-item">
+      <img src="crosshairs\none_animated_crosshair_3.png" alt="Crosshair 3">
+      </div>
+      <div class="photo-item">
+      <img src="crosshairs\none_animated_crosshair_4.png" alt="Crosshair 4">
+      </div>
+      <div class="photo-item">
+      <img src="crosshairs\none_animated_crosshair_5.png" alt="Crosshair 5">
+      </div>
+      <div class="photo-item">
+      <img src="crosshairs\none_animated_crosshair_6.png" alt="Crosshair 6">
+      </div>
+      <div class="photo-item">
+      <img src="crosshairs\none_animated_crosshair_7.png" alt="Crosshair 6">
+      </div>
+      <div class="photo-item">
+      <img src="crosshairs\none_animated_crosshair_8.png" alt="Crosshair 6">
+      </div>
+      <div class="photo-item">
+      <center>
+      <p class="custom-text"><br>More Coming Soon</p>
+      <br>
+      </center>
+      </div>
+      </div>
+      </center>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+   </div>
+</div>
+<link rel="stylesheet"
+   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+   integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+   crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link
+   href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+   rel="stylesheet"
+   integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+   crossorigin="anonymous">
+<script
+   src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+   integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script
+   src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"
+   integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A=="
+   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="functions/crosshair_function.js"></script>

@@ -1,0 +1,361 @@
+/* Original code by elialol, modified by Vhagar */
+
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&display=swap');
+
+/* Performance-Mode: */
+/*
+*{
+    backdrop-filter:unset !important
+}
+*/
+
+/* modern menu icon */
+#hamburger {
+  display: inline-block !important;
+  position: relative;
+}
+#hamburger img {
+  position: relative;
+  content: url(https://res.cloudinary.com/dl6qadouj/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1684779557/menu_tfcpmq.jpg?_s=public-apps);
+  width: 45px;
+  height: 45px;
+}
+#menu_hotkey_top {
+  position: absolute !important;
+  top: -7%;
+  left: 70%;
+  font-weight: 700 !important;
+  text-shadow: 0px 0px 8px rgb(63 0 255 / 100%) !important;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+/* killdiv placement */
+#killMessagesDiv {
+  left: 14px !important;
+}
+
+/* ping/fps >> visibility */
+#ping_div,
+#fps_div {
+  font-weight: 700;
+  font-size: 15px;
+  text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+  left: 15px !important;
+}
+#fps_span,
+#ping_span {
+  font-weight: 400;
+}
+#ping_div {
+  top: 72px !important;
+}
+#fps_div {
+  top: 87px !important;
+}
+
+/* BARS */
+/* position: fixed to avoid DOM re-rendering >> better perf */
+
+/* cont */
+#lower_left_container {
+  background-image: unset !important;
+}
+
+/* health-number */
+#healthDiv:before {
+  font-weight: 700 !important;
+  content: attr(data-hp);
+  font-size: 32px;
+  position: fixed;
+  float: right;
+  bottom: 6px;
+  color: var(--health-color);
+}
+
+/* Health count color ranges */
+#healthDiv[data-hp='100'],
+#healthDiv[data-hp^='9'],
+#healthDiv[data-hp^='8'] {
+  --health-color: #50d91d;
+}
+
+#healthDiv[data-hp^='7'],
+#healthDiv[data-hp^='6'],
+#healthDiv[data-hp^='5'] {
+  --health-color: #ffcc00;
+}
+
+#healthDiv[data-hp^='4'],
+#healthDiv[data-hp^='3'] {
+  --health-color: #e9ae07;
+}
+
+#healthDiv[data-hp^='2'],
+#healthDiv[data-hp^='1']:not([data-hp='100']),
+#healthDiv[data-hp='9'],
+#healthDiv[data-hp='8'],
+#healthDiv[data-hp='7'],
+#healthDiv[data-hp='6'],
+#healthDiv[data-hp='5'],
+#healthDiv[data-hp='4'],
+#healthDiv[data-hp='3'],
+#healthDiv[data-hp='2'],
+#healthDiv[data-hp='1'],
+#healthDiv[data-hp='0'] {
+  --health-color: #e32636;
+}
+
+/* healthbar */
+#healthDivCont {
+  position: fixed;
+  top: unset !important;
+  bottom: 30px;
+  left: 20px;
+  /* background-image: url('https://h1lseduck.github.io/var/hud3/health_l0.svg') !important; */
+  background: #e0eafc; /* fallback for old browsers */
+  background: linear-gradient(to left, #e0eafc, #cfdef3) !important;
+  transform: scale(1.4);
+  border-radius: 5px !important;
+}
+#healthDiv {
+  /* background-image: url('https://h1lseduck.github.io/var/hud3/health_l1.svg') !important; */
+  background: #50d91d; /* fallback for old browsers */
+  background: linear-gradient(
+    to right,
+    #e32636,
+    #50d91d
+  ) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 5px !important;
+  border: none !important;
+}
+
+/* manabar */
+#manaDivCont {
+  position: fixed;
+  top: unset !important;
+  /* background-image: url('https://h1lseduck.github.io/var/hud3/mana_l0.svg') !important; */
+  background: #e0eafc; /* fallback for old browsers */
+  background: linear-gradient(
+    to left,
+    #e0eafc,
+    #cfdef3
+  ) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  bottom: 14px;
+  left: 20px;
+  transform: scale(1.4);
+  border-radius: 5px !important;
+}
+#manaDiv {
+  /* background-image: url('https://h1lseduck.github.io/var/hud3/mana_l1.svg') !important; */
+  background: #7f00ff; /* fallback for old browsers */
+  background: linear-gradient(
+    to left,
+    #e100ff,
+    #7f00ff
+  ) !important; /* Chrome 10-25, Safari 5.1-6 */
+  border-radius: 5px !important;
+  border: none !important;
+}
+
+/* ICONS */
+
+/* if widht lower than that >> overlap >> then classic layout */
+@media (max-width: 1060px) {
+  #icons_container {
+    position: fixed;
+    top: unset !important;
+    zoom: unset !important;
+    left: 230px !important;
+    bottom: 50px !important;
+  }
+}
+@media (max-width: 1150px) {
+  #icons_container {
+    zoom: unset !important;
+  }
+}
+
+#icons_container {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  zoom: 1.2;
+  top: unset !important;
+  bottom: 12px;
+}
+
+/* ab icon font settings */
+.ab_hotkey,
+.ab_count {
+  font-weight: 700;
+}
+
+/* icon svg replacements */
+.ab_icon_cont[data-ab-id='0'] img {
+  content: url(https://h1lseduck.github.io/var/hud3/ab_icons/tp_l0.svg);
+}
+
+.ab_icon_cont[data-ab-id='0'] .active_ab_cd_div {
+  background-image: url(https://h1lseduck.github.io/var/hud3/ab_icons/tp_l1.svg) !important;
+}
+
+.ab_icon_cont[data-ab-id='0'] .ab_hotkey {
+  color: #ff9b26;
+}
+.ab_icon_cont[data-ab-id='13'] .ab_hotkey,
+.ab_icon_cont[data-ab-id='16'] .ab_hotkey,
+.ab_icon_cont[data-ab-id='14'] .ab_hotkey,
+.ab_icon_cont[data-ab-id='8'] .ab_hotkey {
+  color: #00d1ff;
+}
+.ab_icon_cont[data-ab-id='10'] .ab_hotkey,
+.ab_icon_cont[data-ab-id='9'] .ab_hotkey {
+  color: #50d91d;
+}
+
+.ab_icon_cont[data-ab-id='13'] img {
+  content: url(https://h1lseduck.github.io/var/hud3/ab_icons/sticky_l0.svg);
+}
+.ab_icon_cont[data-ab-id='13'] .active_ab_cd_div {
+  background-image: url(https://h1lseduck.github.io/var/hud3/ab_icons/sticky_l1.svg) !important;
+}
+
+.ab_icon_cont[data-ab-id='10'] img {
+  content: url(https://h1lseduck.github.io/var/hud3/ab_icons/flash_l0.svg);
+}
+.ab_icon_cont[data-ab-id='10'] .active_ab_cd_div {
+  background-image: url(https://h1lseduck.github.io/var/hud3/ab_icons/flash_l1.svg) !important;
+}
+.ab_icon_cont[data-ab-id='9'] img {
+  content: url(https://h1lseduck.github.io/var/hud3/ab_icons/smoke_l0.svg);
+}
+.ab_icon_cont[data-ab-id='9'] .active_ab_cd_div {
+  background-image: url(https://h1lseduck.github.io/var/hud3/ab_icons/smoke_l1.svg) !important;
+}
+
+.ab_icon_cont[data-ab-id='8'] img {
+  content: url(https://h1lseduck.github.io/var/hud3/ab_icons/grenade_l0.svg);
+}
+.ab_icon_cont[data-ab-id='8'] .active_ab_cd_div {
+  background-image: url(https://h1lseduck.github.io/var/hud3/ab_icons/grenade_l1.svg) !important;
+}
+
+.ab_icon_cont[data-ab-id='16'] img {
+  content: url(https://h1lseduck.github.io/var/hud3/ab_icons/imp_l0.svg);
+}
+.ab_icon_cont[data-ab-id='16'] .active_ab_cd_div {
+  background-image: url(https://h1lseduck.github.io/var/hud3/ab_icons/imp_l1.svg) !important;
+}
+.ab_icon_cont[data-ab-id='14'] img {
+  content: url(https://h1lseduck.github.io/var/hud3/ab_icons/mine_l0.svg);
+}
+.ab_icon_cont[data-ab-id='14'] .active_ab_cd_div {
+  background-image: url(https://h1lseduck.github.io/var/hud3/ab_icons/mine_l1.svg) !important;
+}
+
+.ab_count {
+  top: -1px !important;
+  left: 4px !important;
+  color: #fff !important;
+}
+.ab_hotkey {
+  right: -3px;
+  bottom: -0.5px;
+}
+.ab_icon_cont img {
+  height: 55px;
+}
+.ab_icon_cont .ab_icon_base,
+.ab_icon_cont .active_ab_cd_div {
+  border-radius: 5px !important;
+}
+.active_ab_cd_div {
+  background-position-y: center;
+  background-size: 50px 55px;
+  height: 55px !important;
+}
+
+/* TDM */
+#team_2_top_score {
+  border-radius: 9px 0px 0px 9px !important;
+}
+#team_1_top_score {
+  border-radius: 0px 9px 9px 0px !important;
+}
+
+/* Weapons */
+.activeWeapon .ammo_amt {
+  text-align: left;
+  font-size: 40px;
+  font-weight: 700;
+  position: fixed;
+  left: unset;
+  right: 160px;
+  top: unset;
+  bottom: -7px;
+}
+.weapon_icon {
+  transition: all 0.3s ease-out;
+  float: right;
+}
+.activeWeapon .weapon_icon {
+  width: 80% !important;
+  opacity: 0.72 !important;
+}
+#weaponsDiv:before {
+  content: url(https://h1lseduck.github.io/var/hud3/bullets.svg);
+  transform: scale(0.09);
+  opacity: 0.3;
+  position: fixed !important;
+  right: 30px;
+  bottom: -350px;
+}
+.weapons_hotkey,
+.ammo_amt {
+  font-weight: 700;
+}
+.weapons_hotkey {
+  top: 8px;
+  font-size: 25px !important;
+  right: 12px;
+}
+.weapon_cont {
+  border-right: 5px solid rgba(255, 255, 255, 0) !important;
+}
+/* killdiv */
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0%;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateX(0px);
+  }
+}
+@keyframes killExpansion {
+  0% {
+    margin-bottom: -36px;
+  }
+  100% {
+    margin-bottom: 8px;
+  }
+}
+#killMessagesDiv .sys_message {
+  animation: 0.15s ease-out 1 fadeInLeft, 0.15s ease-out 1 killExpansion;
+}
+
+/* score // cp */
+#score_div {
+  bottom: 60px;
+}
+#clan_notify {
+  bottom: 160px;
+}
+
+/* chat */
+.from_message {
+  font-weight: 600;
+}

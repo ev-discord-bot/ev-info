@@ -1,0 +1,278 @@
+/* rev 2 */
+/* more Rajdhani weights */
+/* elialol is the original author I used their code as a base for this mod*/
+/* zerodarkflirty mod includes adjustment of element visibility to my liking*/
+/* discord bxk#0285*/
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+
+/* Performance-Mode: */
+/*
+*{
+    backdrop-filter:unset !important
+}
+*/
+
+/* killdiv placement */
+#killMessagesDiv{
+    left: 14px !important;
+}
+
+
+/* ping/fps >> visibility */
+#ping_div, #fps_div{
+    font-weight: 500;
+    font-size: 15px;
+    text-shadow: 0px 0px 8px rgba(0, 0, 0,0.2);
+    left: 15px !important;
+}
+#fps_span, #ping_span{
+    font-weight: 500;
+    color: #50D91D;
+}
+#ping_div{
+    top: 72px !important;
+}
+#fps_div{
+    top: 87px !important;
+}
+
+
+/* BARS */
+/* position: fixed to avoid DOM re-rendering >> better perf */
+
+/* cont */
+#lower_left_container{
+    background-image: unset !important;
+}
+
+/* health-number */
+#healthDiv:before{
+    color:#ff0000;
+    font-weight: 600 !important;
+    content:attr(data-hp);
+    font-size: 22px;
+    position: fixed;
+    float: right;
+    bottom: 400px;
+}
+
+/* healthbar */
+#healthDivCont {
+    position: fixed;
+    top: 38%;
+    left: 38%;
+    transform: translate(-50%, -50%);
+    zoom: 0.8;
+    background-image: url("https://raw.githubusercontent.com/eliahilse/var/cbd36c03348f175165eb2f1296be3110f2aa6570/hud3/health_l0.svg") !important;
+    transform: scale(1.4);
+}
+
+#healthDiv {
+    background-image: url("https://raw.githubusercontent.com/eliahilse/var/cbd36c03348f175165eb2f1296be3110f2aa6570/hud3/health_l1.svg") !important;
+}
+
+/* manabar */
+#manaDivCont {
+    position: fixed;
+    top: 38%;
+    left: 38%;
+    transform: translate(-50%, -50%);
+    zoom: 0.8;
+    background-image: url("https://raw.githubusercontent.com/eliahilse/var/cbd36c03348f175165eb2f1296be3110f2aa6570/hud3/mana_l0.svg") !important;
+    transform: scale(1.4);
+}
+
+#manaDiv {
+    background-image: url("https://raw.githubusercontent.com/eliahilse/var/cbd36c03348f175165eb2f1296be3110f2aa6570/hud3/mana_l1.svg") !important;
+}
+
+
+/* ICONS */
+
+/* if widht lower than that >> overlap >> then classic layout */
+@media (max-width:1060px) {
+    #icons_container{
+        position: fixed;
+        top: unset !important;
+        zoom: unset !important;
+        left: 230px  !important;
+        bottom: 50px !important;
+    }
+}
+@media (max-width:1150px) {
+    #icons_container{zoom: unset !important;}
+}
+
+#icons_container{
+    position: fixed;
+    left: 49.5%;
+    transform:translateX(-50%);
+    zoom: 1;
+    top: unset !important;
+    bottom: 50px;
+}
+
+/* ab icon font settings */
+.ab_hotkey, .ab_count{
+    font-weight: 700;
+}
+
+/* icon svg replacements */
+.ab_icon_cont[data-ab-id="16"] img {
+    content: url(https://raw.githubusercontent.com/eliahilse/var/cbd36c03348f175165eb2f1296be3110f2aa6570/icons/impulse-used.svg);
+  }
+  
+  .ab_icon_cont[data-ab-id="16"] .active_ab_cd_div {
+    background: url(https://raw.githubusercontent.com/eliahilse/var/cbd36c03348f175165eb2f1296be3110f2aa6570/icons/impulse.svg) !important;
+    background-size: 50px 50px !important;
+  }
+  
+  .ab_icon_cont[data-ab-id="15"] img {
+    content: url(https://raw.githubusercontent.com/eliahilse/var/cbd36c03348f175165eb2f1296be3110f2aa6570/icons/trip-used.svg);
+  }
+  
+  .ab_icon_cont[data-ab-id="15"] .active_ab_cd_div {
+    background: url(https://raw.githubusercontent.com/eliahilse/var/cbd36c03348f175165eb2f1296be3110f2aa6570/icons/trip.svg) !important;
+    background-size: 50px 50px !important;
+  }
+  
+  .ab_icon_cont[data-ab-id="14"] img {
+    content: url(https://raw.githubusercontent.com/eliahilse/var/cbd36c03348f175165eb2f1296be3110f2aa6570/icons/mine-used.svg);
+  }
+  
+  .ab_icon_cont[data-ab-id="14"] .active_ab_cd_div {
+    background: url(https://raw.githubusercontent.com/eliahilse/var/cbd36c03348f175165eb2f1296be3110f2aa6570/icons/mine.svg) !important;
+    background-size: 50px 50px !important;
+  }
+  
+  .ab_icon_cont[data-ab-id="13"] img {
+    content: url(https://raw.githubusercontent.com/eliahilse/var/cbd36c03348f175165eb2f1296be3110f2aa6570/icons/sticky-used.svg);
+  }
+  
+  .ab_icon_cont[data-ab-id="13"] .active_ab_cd_div {
+    background: url(https://raw.githubusercontent.com/eliahilse/var/cbd36c03348f175165eb2f1296be3110f2aa6570/icons/sticky.svg) !important;
+    background-size: 50px 50px !important;
+  }
+  
+  .ab_icon_cont[data-ab-id="10"] img {
+    content: url(https://raw.githubusercontent.com/eliahilse/var/cbd36c03348f175165eb2f1296be3110f2aa6570/icons/flashbang-used.svg);
+  }
+  
+  .ab_icon_cont[data-ab-id="10"] .active_ab_cd_div {
+    background: url(https://raw.githubusercontent.com/eliahilse/var/cbd36c03348f175165eb2f1296be3110f2aa6570/icons/flashbang.svg) !important;
+    background-size: 50px 50px !important;
+  }
+  
+  .ab_icon_cont[data-ab-id="9"] img {
+    content: url(https://raw.githubusercontent.com/eliahilse/var/cbd36c03348f175165eb2f1296be3110f2aa6570/icons/smoke-used.svg);
+  }
+  
+  .ab_icon_cont[data-ab-id="9"] .active_ab_cd_div {
+    background: url(https://raw.githubusercontent.com/eliahilse/var/cbd36c03348f175165eb2f1296be3110f2aa6570/icons/smoke.svg) !important;
+    background-size: 50px 50px !important;
+  }
+  
+  .ab_icon_cont[data-ab-id="0"] img {
+    content: url(https://raw.githubusercontent.com/eliahilse/var/cbd36c03348f175165eb2f1296be3110f2aa6570/icons/teleport-used.svg);
+  }
+  
+  .ab_icon_cont[data-ab-id="0"] .active_ab_cd_div {
+    background: url(https://raw.githubusercontent.com/eliahilse/var/cbd36c03348f175165eb2f1296be3110f2aa6570/icons/teleport.svg) !important;
+    background-size: 50px 50px !important;
+  }
+
+.ab_count {
+  top: -1px !important;
+  left: 4px !important;
+  color: #fff !important;
+}
+.ab_hotkey {
+  right: -3px;
+  bottom: -0.5px;
+}
+.ab_icon_cont img {
+  height: 50px;
+}
+.ab_icon_cont .ab_icon_base,
+.ab_icon_cont .active_ab_cd_div {
+  border-radius: 1px !important;
+}
+.active_ab_cd_div {
+  background-position-y: center;
+  background-size: 50px 55px;
+  height: 50px !important;
+}
+
+/* TDM */
+#team_2_top_score{
+    border-radius: 9px 0px 0px 9px !important;
+}
+#team_1_top_score {
+    border-radius: 0px 9px 9px 0px !important;
+}
+
+
+/* Weapons */
+#weaponsDiv:not(#weaponsDiv.br_weaponsDiv) .activeWeapon .ammo_amt {
+    text-align: left !important;
+    font-size: 20px;
+    position: fixed !important;
+    left: unset !important;
+    right: 1050px !important;
+    top: unset !important;
+    bottom: 450px !important;
+}
+.weapon_icon{
+    transition: all .3s ease-out;
+    float: right;
+}
+.activeWeapon .weapon_icon{
+    width: 80% !important;
+    opacity: 0.2 !important;
+}
+#weaponsDiv:before{
+    content: url(https://h1lseduck.github.io/var/hud3/bullets.svg);
+    transform: scale(0.09);
+    opacity: 0.3;
+    position: fixed !important;
+    right: 30px;
+    bottom: -350px;
+}
+.weapons_hotkey, .ammo_amt{
+    font-weight: 700;
+}
+.weapons_hotkey{
+    top: 8px;
+    font-size: 25px !important;
+    right: 12px;
+}
+.weapon_cont{
+    border-right: 5px solid rgba(255, 255, 255,0) !important;
+}
+/* killdiv */
+@keyframes fadeInLeft{
+    0%{opacity:0%;transform:translateX(-20px)}
+    100%{opacity:100%;transform:translateX(0px)}
+}
+@keyframes killExpansion{
+    0%{margin-bottom:-36px;}
+    100%{margin-bottom: 8px;}
+}
+#killMessagesDiv .sys_message{
+   animation: .15s ease-out 1 fadeInLeft, .15s ease-out 1 killExpansion;
+}
+
+/* score // cp */
+#score_div{
+    bottom: 60px;
+
+}
+#clan_notify{
+    bottom: 160px;
+}
+
+/* chat */
+.from_message{
+    font-weight: 600;
+}

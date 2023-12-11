@@ -577,21 +577,6 @@ body {
 	background-position: center;
 }
 
-.video-bg {
-	top: 50%;
-	left: 50%;
-	width: auto;
-	height: auto;
-	z-index: -100;
-	position: fixed;
-	min-width: 100%;
-	min-height: 100%;
-	transform: translateX(-50%) translateY(-50%);
-	background: url("//demosthenes.info/assets/images/polina.jpg") no-repeat;
-	background-size: cover;
-	transition: 1s opacity;
-}
-
 .sidebar-header i.sidebar-toggler-btn {
 	float: left;
 	font-size: 40px;
