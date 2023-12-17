@@ -6,12 +6,12 @@
 	--body-padding-y: 25px;
 	--header-height: 40px;
 	--theme-color: #eee;
-	--bg-dark: #2959d591;
-	--bg-primary: #2959d591;
+	--bg-dark: #0f0f0f;
+	--bg-primary: #0f0f0f;
 	--muted-color: rgba(96, 96, 96, 0.78);
-	--theme-bg-color: rgba(16 18 27 / 40%);
-	--border-color: rgba(113 119 144 / 25%);
-	--content-bg-color: rgb(146 151 179 / 13%);
+	--theme-bg-color: rgba(16, 18, 27, 0.5);
+	--border-color: rgba(113, 119, 144, 0.5);
+	--content-bg-color: rgb(29, 32, 44);
 	--inactive-color: rgba(172, 175, 187, 0.78);
 	--active-color: rgb(255, 255, 255);
 	--section-title-color: rgba(198, 198, 204, 0.78);
@@ -43,7 +43,7 @@ body {
 	height: 100vh;
 	font-family: var(--body-font);
 	padding: var(--body-padding-y);
-	background-image: url(/src/background.png);
+	background-image: url(/src/dark_background.png);
 	background-size: cover;
 	background-position: center;
 }
@@ -1480,7 +1480,7 @@ input.form-control.me-2 {
 }
 
 .open-button-theme {
-	background-color: rgba(16 18 27 / 90%);
+	background-color: rgba(100, 100, 100, 0.9);
 	font-family: var(--body-font);
 	color: white;
 	padding: 16px 20px;
@@ -1495,6 +1495,6 @@ input.form-control.me-2 {
 	border-top-left-radius: 25px;
 	border-top-right-radius: 25px;
 	border-style: 1px solid;
-	border-color: rgba(16 18 27 / 100%);
+	border-color: rgb(96, 98, 110);
 	animation: glow 2s ease-in-out infinite alternate;
 }

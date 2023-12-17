@@ -12,8 +12,7 @@
 	<link rel="icon"
 	   href="src\evinfo-icon.png"
 	   type="image/x-icon">
-	<link rel="stylesheet" href="styles/index_styles.css">
- </head>
+	<link id="customCSS" rel="stylesheet" href="styles/index_styles.css">
  <body>
 	<div id="loadingScreen">
 	   <p class="loading-text">Loading Content<br>Please Wait<span
@@ -41,51 +40,51 @@
 	   <div class="sidebar-list">
 		  <ul class="list-group">
 			 <li class="list-group-item">
-				<span><i class="fa-solid fa-arrows-rotate"></i></span> verison
-				<span class="badge update-badge rounded-pill">3.7.5</span>
+				<span><i class="fa-solid fa-arrows-rotate fa-bounce" style="color: #ffffff;"></i></span> verison
+				<span class="badge update-badge rounded-pill">3.8.0</span>
 			 </li>
 		  </ul>
 		  <ul class="list-group">
 		  </ul>
 		  </ul>
 		  <ul class="list-group">
-			 <h5 class="list-heading">Resource Links</h5>
+			 <h5 class="list-heading"><i class="fa-solid fa-info" style="color: var(--inactive-color);"></i> Resource Links</h5>
 			 <a href="https://ev.io" target="_blank" style="text-decoration: none;">
 				<li class="list-group-item">
-				   <span> <i class="fa-solid fa-e" style="color: #ffffff;"></i> </span>
+				   <span> <img src="src\ev_icon.png" style="width: 20px; height: auto; margin-left: -5px; border-radius: 4px;"> </span>
 				   Ev.io
 				</li>
 			 </a>
 			 <a href="https://ev.io/info" target="_blank" style="text-decoration: none;">
 				<li class="list-group-item">
-				   <span> <i class="fa-solid fa-e" style="color: #ffffff;"></i> </span>
+				   <span> <img src="src\ev_icon.png" style="width: 20px; height: auto; margin-left: -5px; border-radius: 4px;"> </span>
 				   Ev.io Info
 				</li>
 			 </a>
 			 <a href="https://ev.io/user/login" target="_blank"
 				style="text-decoration: none;">
 				<li class="list-group-item">
-				   <span> <i class="fa-solid fa-e" style="color: #ffffff;"></i> </span> Your
+				   <span> <img src="src\ev_icon.png" style="width: 20px; height: auto; margin-left: -5px; border-radius: 4px;"> </span> Your
 				   Ev.io Account
 				</li>
 			 </a>
 			 <a href="https://arideve.github.io/ev-skin-viewer/" target="_blank"
 				style="text-decoration: none;">
 				<li class="list-group-item">
-				   <span> <i class="fa-solid fa-a" style="color: #ffffff;"></i> </span> Ari's
+				   <span> <img src="src\ari_icon.png" style="width: 20px; height: auto; margin-left: -5px; border-radius: 4px;"></span> Ari's
 				   Skin Viewer
 				</li>
 			 </a>
 			 <a href="https://crosshair.themeta.gg" target="_blank"
 				style="text-decoration: none;">
 				<li class="list-group-item">
-				   <span> <i class="fa-solid fa-k" style="color: #ffffff;"></i> </span>
+				   <span> <img src="src\themeta_icon.png" style="width: 20px; height: auto; margin-left: -5px; border-radius: 4px;"> </span>
 				   Kovaak's Crosshair Generator
 				</li>
 			 </a>
 		  </ul>
 		  <ul class="list-group">
-			 <h5 class="list-heading">Social Links</h5>
+			 <h5 class="list-heading"><i class="fa-solid fa-share-from-square" style="color: var(--inactive-color);"></i> Social Links</h5>
 			 <a href="https://github.com/iminthebibleson" target="_blank"
 				style="text-decoration: none;">
 				<li class="list-group-item">
@@ -109,24 +108,22 @@
 			 </a>
 		  </ul>
 		  <ul class="list-group">
-			 <h5 class="list-heading">Other Links</h5>
+			 <h5 class="list-heading"><i class="fa-solid fa-link" style="color: var(--inactive-color);"></i> Other Links</h5>
 			 <a href="/uisettings.html" target="_blank" style="text-decoration: none;">
 				<li class="list-group-item">
-				   <span> <i class="fa-duotone fa-e"
-					  style="--fa-primary-color: #ffffff; --fa-secondary-color: #ff0000;"></i>
+				   <span> <img src="src\logo_icon.png" style="width: 20px; height: auto; margin-left: -5px;">
 				   </span> Ui/Mods
 				</li>
 			 </a>
 			 <a href="/crossshair.html" target="_blank" style="text-decoration: none;">
 				<li class="list-group-item">
-				   <span> <i class="fa-duotone fa-e"
-					  style="--fa-primary-color: #ffffff; --fa-secondary-color: #ff0000;"></i>
+				   <span> <img src="src\logo_icon.png" style="width: 20px; height: auto; margin-left: -5px;">
 				   </span> Crosshairs
 				</li>
 			 </a>
 		  </ul>
 		  <ul class="list-group">
-			 <h5 class="list-heading">Ads</h5>
+			 <h5 class="list-heading"><i class="fa-solid fa-paperclip" style="color: var(--inactive-color);"></i> Ads</h5>
 			 <center>
 				<img style="height: auto; width: 80%; padding: 10px;"
 				   src="src/solana-sol-logo.png" />
@@ -186,7 +183,7 @@
 			 <li class="nav-item">
 				<div class="notification">
 				   <div data-bs-toggle="dropdown">
-					  <span class="notification-number">6</span>
+					  <span class="notification-number">7</span>
 					  <i class="fa-solid fa-bell fa-lg" style="color: #ffffff;"></i>
 				   </div>
 				   <ul class="notification-list dropdown-menu">
@@ -277,21 +274,37 @@
 						 </li>
 					  </ul>
 					  <ul class="list-group">
-						<li>
-						   <button class="dropdown-item d-flex" type="button">
-							  <img src="src/profile_photo.png" alt>
-							  <div class="update">
-								 <div class="notification-msg">
-									took awhile but i remake the rest of the other wesbites<br>check them out!
-								 </div>
-								 <div class="date-time">
-									<i class="fa-regular fa-clock"></i>
-									<span>11:27 AM - Dec 8, 2023</span>
-								 </div>
-							  </div>
-						   </button>
-						</li>
-					 </ul>
+						 <li>
+							<button class="dropdown-item d-flex" type="button">
+							   <img src="src/profile_photo.png" alt>
+							   <div class="update">
+								  <div class="notification-msg">
+									 took awhile but i remake the rest of the other wesbites<br>check them out!
+								  </div>
+								  <div class="date-time">
+									 <i class="fa-regular fa-clock"></i>
+									 <span>11:27 AM - Dec 8, 2023</span>
+								  </div>
+							   </div>
+							</button>
+						 </li>
+					  </ul>
+					  <ul class="list-group">
+						 <li>
+							<button class="dropdown-item d-flex" type="button">
+							   <img src="src/profile_photo.png" alt>
+							   <div class="update">
+								  <div class="notification-msg">
+									 Added a dark and light mode toggle button<br>try it out!
+								  </div>
+								  <div class="date-time">
+									 <i class="fa-regular fa-clock"></i>
+									 <span>12:44 PM - Dec 17, 2023</span>
+								  </div>
+							   </div>
+							</button>
+						 </li>
+					  </ul>
 				</div>
 				</li>
 				<li class="nav-item">
@@ -317,7 +330,7 @@
  </div>
  <div class="apps-status-options">
  <center>
- <label for="usernameInput">Enter Username:</label>
+ <label for="usernameInput"><img src="src/nerd.gif" style="width: 20; height: auto; margin-top: -5px; border-radius: 4px;"> Enter Username:</label>
  <br><input class="form-control me-2" type="text" id="usernameInput"
 	placeholder="Enter Player's Username">
  <br>
@@ -340,7 +353,7 @@
  <hr>
  <br>
  <center>
- <label for="nftIdInput">Enter NFT ID:</label>
+ <label for="nftIdInput"><img src="src/cat_glasses.png" style="width: 20; height: 20px; margin-top: -5px; border-radius: 4px;"> Enter NFT ID:</label>
  <input class="form-control me-2" type="text" id="nftIdInput"
 	placeholder="Enter NFT ID"><br>
  <button class="search-bar-button" id="searchButton"><i
@@ -352,7 +365,7 @@
  <br>
  <hr>
  <br>
- <center><center><label for="usernameInputTabs">Enter Username:</label></center>
+ <center><center><label for="usernameInputTabs"><img src="src/spongbob_glasses.png" style="width: 20; height: auto; margin-top: -5px; border-radius: 4px;"> Enter Username:</label></center>
  <center><input class="form-control me-2" type="text"
 	id="usernameInputTabs" placeholder="Enter Player's Username"></center>
  <div class="search-bar"><br>
@@ -391,7 +404,7 @@
  <br>
  <center>
  <div id="ev-to-usd-converter">
- <label for="e-coin-input">Enter e coin amount:</label><br>
+ <label for="e-coin-input"><img src="src/monke.png" style="width: 20; height: auto; margin-top: -5px; border-radius: 4px;"> Enter e coin amount:</label><br>
  <input class="form-control me-2" type="number" id="e-coin-input"
 	placeholder="Enter e coin amount"><br>
  <button class="search-bar-button" onclick="calculateUSDCFromE()"
@@ -403,7 +416,7 @@
  <hr>
  <br>
  <center>
- <label for="usernameInputnft">Enter Username:</label><br>
+ <label for="usernameInputnft"><img src="src/dog_glasses.png" style="width: 20; height: auto; margin-top: -5px; border-radius: 4px;"> Enter Username:</label><br>
  <input class="form-control me-2" type="text" id="usernameInputnft" placeholder="Enter username"><br>
  <button class="search-bar-button" style="width: auto;" onclick="displayUserNFTs()">Display NFTs<br><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button>
  <div id="nftContainer"></div>
@@ -457,6 +470,7 @@
 	crossorigin="anonymous" referrerpolicy="no-referrer"></script>
  <script src="functions/index_function.js"></script>
  <button class="open-button" onclick="openForm()">Saved Username</button>
+ <button class="open-button-theme" id="toggleCSSButton" onclick="toggleCSS()">theme toggle</button>
  <body>
  <center><div class="form-popup" id="myForm">
  <form class="form-container">
@@ -504,6 +518,5 @@
 	usernameInputsave.value = '';
 	alert(`Saved username removed successfully.`);
 	});
-	 
  </script>
  </body>
