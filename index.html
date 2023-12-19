@@ -1,11 +1,13 @@
 <head>
-	<meta content="Evinfo Website" property="og:title" />
-	<meta content="An Website That Shows User Info And More In One Site!"
-	   property="og:description" />
-	<meta
-	   content="src\evinfo-icon.png"
-	   property="og:image" />
-	<meta content="#43B581" data-react-helmet="true" name="theme-color" />
+	<meta property="og:type" content="article">
+	<meta property="og:url" content="https://embedl.ink/e/0VTvvWYZ">
+	<meta property="og:title" content="EvInfo Website | home">
+	<meta property="og:description" content="This is a free website where you can look up a player's status, what nfts they own, e coin conversions, and more. Consider Donating will greatly assist me.">
+	<meta property="og:image" content="src/background.png">
+	<meta property="og:image:width" content="1920">
+	<meta property="og:image:height" content="1080">
+	<meta property="og:site_name" content="Iminthebibleson">
+	<meta property="og:provider" content="EvInfo Website">
 	<title>iminthebibleson | Ev.io User Info</title>
 	<link rel="shortcut icon" type="image/x-icon"
 	   href="src\evinfo-icon.png">
@@ -151,6 +153,15 @@
 				<p style="color: #ffffff; font-size: small;"><em>Bot Is No Longer
 				   Maintained For Now</em>
 				</p>
+				<hr style="color: gray;">
+				<img style="height: auto; width: 80%; padding: 10px;"
+				   src="src\potion_swap_pfp.png" />
+				<p style="text-align: center; color: #ffffff;">try out potionswap's no KYC features by inviting the discord bot below! </p>
+				<a
+				   href="https://discord.com/api/oauth2/authorize?client_id=1175511291880812594&permissions=0&scope=applications.commands%20bot"
+				   target="_blank" class="search-bar-button"
+				   style="width: auto; margin-bottom: 15px;"><i class="fa-brands fa-discord"
+				   style="color: #ffffff;"></i> Invite Discord Bot</a><br>
 			 </center>
 		  </ul>
 	   </div>
@@ -489,6 +500,19 @@
 	onclick="closeForm()">Close</button>
  </form>
  </div></center>
+ <div id="myBtn" class="green-glow"></div>
+ <div id="myModal" class="popup-modal">
+ <div class="popup-modal-content">
+ <div class="popup-modal-header">
+ <span class="popup-close">&times;</span>
+ <h2>Give Me Your FeedBack!</h2>
+ </div>
+ <div class="popup-modal-body">
+ <p>I've been remaking, changing, and adding new things to this website for a little while, but I'm curious what the public would want for this site, so please fill out the form below if you have any suggestions.</p>
+ <p><a style="color: #ffffff; text-decoration: none;" href="https://forms.gle/KVPzCAigDoFYe4HFA" target="_blank">Click here</a></p>
+ </div>
+ </div>
+ </div>
  <script>
 	const saveUsernameButton = document.getElementById('saveUsernameButton');
 	const removeUsernameButton = document.getElementById('removeUsernameButton');
@@ -518,5 +542,22 @@
 	usernameInputsave.value = '';
 	alert(`Saved username removed successfully.`);
 	});
+	
+	document.addEventListener('DOMContentLoaded', function () {
+	   var modal = document.getElementById("myModal");
+	   var btn = document.getElementById("myBtn");
+	   var span = document.querySelector(".popup-close");
+	   btn.onclick = function () {
+		   modal.style.display = "block";
+	   }
+	   span.onclick = function () {
+		   modal.style.display = "none";
+	   }
+	   window.onclick = function (event) {
+		   if (event.target == modal) {
+			   modal.style.display = "none";
+		   }
+	   }
+	   });
  </script>
  </body>
