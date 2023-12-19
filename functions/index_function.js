@@ -9,6 +9,18 @@ const moreInfoButton = document.getElementById('moreInfoButton');
 const moreInfoDetails = document.getElementById('moreInfoDetails');
 let user;
 
+function getParameterByName(name, url) {
+   if (!url) url = window.location.href;
+   name = name.replace(/[\[\]]/g, '\\$&');
+   var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+      results = regex.exec(url);
+   if (!results) return null;
+   if (!results[2]) return '';
+   return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+const username = getParameterByName('username');
+
 const fetchImage = (imageUrl) => {
    return fetch(imageUrl)
       .then(response => {
@@ -75,22 +87,22 @@ const fetchUserInfo = () => {
                usdValueSpan.classList.add("formatted-value");;
 
                userInfoDiv.innerHTML = `
-          <h3>User Information for ${user.name[0].value === 'iminthebibleson' ? `iminthebibleson | Owner Of Site <img src="src/cat.gif" height="auto" width="35px" style="border-radius: 15px;">` : user.name[0].value}</h3>
-
-<p><strong>Username:</strong>${user.name[0].value === 'iminthebibleson' ? `iminthebibleson <em>fear me <img src="src/dog_flew.gif" height="auto" width="25px" style="border-radius: 15px;"></em></i>` : user.name[0].value}</p>
-<p><strong><i class="fa-solid fa-link" style="color: #ffffff;"></i> User URL: </strong><a style="text-decoration: none; color: #FFA500;" href="${uidUrl}" target="_blank">https://ev.io/user/${user.uid[0].value}</a></p>
-<p><strong><i class="fa-solid fa-skull" style="color: #ffffff;"></i> Kills:</strong> ${user.field_kills[0].value.toLocaleString()} | 
-<strong><i class="fa-solid fa-skull-crossbones" style="color: #ffffff;"></i> Deaths:</strong> ${user.field_deaths[0].value.toLocaleString()} | 
-<strong><i class="fa-solid fa-person-rifle" style="color: #ffffff;"></i> KD:</strong> ${user.field_k_d[0].value}</p>
-<p><strong><i class="fa-solid fa-ranking-star" style="color: #ffffff;"></i> Ranking:</strong> ${user.field_rank[0].value.toLocaleString()} | 
-<strong><i class="fa-solid fa-star" style="color: #ffffff;"></i> Score:</strong> ${user.field_score[0].value.toLocaleString()}</p>
-<p><strong><img src="src/e_coin.png" alt="Sol Logo" style="width: 15; height: 15px; margin-bottom: 6px; user-select: none;"> Coins:</strong> ${user.field_ev_coins[0].value.toLocaleString()} | 
-<strong>Estimated Value:</strong> ${usdValueFormatted}
-<img src="src/usdc-coin.svg" alt="Sol Logo" style="width: 20; height: 20px; margin-bottom: 6px; user-select: none;">
-<br><strong><i class="fa-solid fa-square-check" style="color: #ffffff;"></i> Users Status:</strong> ${user.field_social_bio[0]?.value || 'No Bio Set'} ${user.field_social_bio[0]?.value.toLowerCase().includes('the lag tho') || user.field_social_bio[0]?.value.toLowerCase().includes('lag') ? '(fr tho)' : ''}</p>
-<hr>
-<p><strong><i class="fa-solid fa-crosshairs" style="color: #ffffff;"></i> Crosshair:</strong> <a style="text-decoration: none; color: #FFA500;" href="${crosshairUrl}" target="_blank">Users Crosshair</a></p>
-`;
+               <h3>User Information for ${user.name[0].value === 'iminthebibleson' ? `iminthebibleson | Owner Of Site <img src="src/cat.gif" height="auto" width="35px" style="border-radius: 15px;">` : user.name[0].value}</h3>
+               <p>Short cut URl: <strong style="user-select: all;">https://evinfo.vercel.app?username=${user.name[0].value}</strong></p>
+               <p><strong>Username:</strong>${user.name[0].value === 'iminthebibleson' ? `iminthebibleson <em>fear me <img src="src/dog_flew.gif" height="auto" width="25px" style="border-radius: 15px;"></em></i>` : user.name[0].value}</p>
+               <p><strong><i class="fa-solid fa-link" style="color: #ffffff;"></i> User URL: </strong><a style="text-decoration: none; color: #FFA500;" href="${uidUrl}" target="_blank">https://ev.io/user/${user.uid[0].value}</a></p>
+               <p><strong><i class="fa-solid fa-skull" style="color: #ffffff;"></i> Kills:</strong> ${user.field_kills[0].value.toLocaleString()} | 
+               <strong><i class="fa-solid fa-skull-crossbones" style="color: #ffffff;"></i> Deaths:</strong> ${user.field_deaths[0].value.toLocaleString()} | 
+               <strong><i class="fa-solid fa-person-rifle" style="color: #ffffff;"></i> KD:</strong> ${user.field_k_d[0].value}</p>
+               <p><strong><i class="fa-solid fa-ranking-star" style="color: #ffffff;"></i> Ranking:</strong> ${user.field_rank[0].value.toLocaleString()} | 
+               <strong><i class="fa-solid fa-star" style="color: #ffffff;"></i> Score:</strong> ${user.field_score[0].value.toLocaleString()}</p>
+               <p><strong><img src="src/e_coin.png" alt="Sol Logo" style="width: 15; height: 15px; margin-bottom: 6px; user-select: none;"> Coins:</strong> ${user.field_ev_coins[0].value.toLocaleString()} | 
+               <strong>Estimated Value:</strong> ${usdValueFormatted}
+               <img src="src/usdc-coin.svg" alt="Sol Logo" style="width: 20; height: 20px; margin-bottom: 6px; user-select: none;">
+               <br><strong><i class="fa-solid fa-square-check" style="color: #ffffff;"></i> Users Status:</strong> ${user.field_social_bio[0]?.value || 'No Bio Set'} ${user.field_social_bio[0]?.value.toLowerCase().includes('the lag tho') || user.field_social_bio[0]?.value.toLowerCase().includes('lag') ? '(fr tho)' : ''}</p>
+               <hr>
+               <p><strong><i class="fa-solid fa-crosshairs" style="color: #ffffff;"></i> Crosshair:</strong> <a style="text-decoration: none; color: #FFA500;" href="${crosshairUrl}" target="_blank">Users Crosshair</a></p>
+           `;
 
             } catch (error) {
                console.error('Error fetching crosshair:', error);
@@ -155,6 +167,10 @@ const fetchUserInfo = () => {
          console.error('Error:', error);
       });
 };
+if (username) {
+   usernameInput.value = username;
+   fetchUserInfo();
+}
 
 const showMoreInfo = () => {
    const username = usernameInput.value.trim();
