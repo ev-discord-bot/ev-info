@@ -170,6 +170,7 @@ const fetchUserInfo = () => {
 if (username) {
    usernameInput.value = username;
    fetchUserInfo();
+   document.getElementById('userinfo-lookup').scrollIntoView({ behavior: 'smooth' });
 }
 
 const showMoreInfo = () => {
@@ -202,10 +203,22 @@ usernameInput.addEventListener('keyup', event => {
    }
 });
 
+function getParameterByName(name, url) {
+   if (!url) url = window.location.href;
+   name = name.replace(/[\[\]]/g, '\\$&');
+   var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+      results = regex.exec(url);
+   if (!results) return null;
+   if (!results[2]) return '';
+   return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+const nft_id = getParameterByName('nft_id');
 
 const outputDiv = document.getElementById('output');
 const nftIdInput = document.getElementById('nftIdInput');
 const searchButton = document.getElementById('searchButton');
+
 nftIdInput.addEventListener('keyup', (event) => {
    if (event.key === 'Enter') {
       searchButton.click();
@@ -219,9 +232,11 @@ searchButton.addEventListener('click', () => {
       return;
    }
 
+   // Define your loadingMessage element here
+   // const loadingMessage = document.getElementById('loadingMessage');
+   // loadingMessage.style.display = 'block';
 
-   loadingMessage.style.display = 'block';
-   outputDiv.innerHTML = '';
+   outputDiv.innerHTML = ''; // Clear previous results
 
    const api_url = `https://ev.io/get-nft-flags/${nftId}`;
 
@@ -233,7 +248,8 @@ searchButton.addEventListener('click', () => {
          return response.json();
       })
       .then(data => {
-         loadingMessage.style.display = 'none';
+         // Uncomment if you have a loading message
+         // loadingMessage.style.display = 'none';
 
          const reset_time = data[0]["field_reset_time"];
          const field_meta = JSON.parse(data[0]["field_meta"][0]);
@@ -277,21 +293,28 @@ searchButton.addEventListener('click', () => {
          infoContainer.appendChild(thumbnailImage);
          const uidUrl = `https://ev.io/node/${game_node_id}`;
          infoContainer.innerHTML += `<br><br>
-<p style="margin-top: -12px;"><strong>Skin Name:</strong> ${skin_name}</p>
-<p style="margin-top: -12px;"><strong>Game Node URL:</strong> <a style="text-decoration: none; color: #FFA500;" href="${uidUrl}" target="_blank">${uidUrl}</a></p>
-<p style="margin-top: -12px;"><strong>Weapon Type:</strong> ${weapon_type}</p>
-<p style="margin-top: -12px;"><strong>Reset Time:</strong> ${reset_time}</p>
-<p style="margin-top: -12px;"><strong>Collection:</strong> ${collection}</p>
-`;
+                    <p style="margin-top: -12px;"><strong>Skin Name:</strong> ${skin_name}</p>
+                    <p style="margin-top: -12px;"><strong>Game Node URL:</strong> <a style="text-decoration: none; color: #FFA500;" href="${uidUrl}" target="_blank">${uidUrl}</a></p>
+                    <p style="margin-top: -12px;"><strong>Weapon Type:</strong> ${weapon_type}</p>
+                    <p style="margin-top: -12px;"><strong>Reset Time:</strong> ${reset_time}</p>
+                    <p style="margin-top: -12px;"><strong>Collection:</strong> ${collection}</p>
+                    `;
 
          outputDiv.appendChild(infoContainer);
       })
       .catch(error => {
-         loadingMessage.style.display = 'none';
+         // Uncomment if you have a loading message
+         // loadingMessage.style.display = 'none';
          console.error('Error:', error);
          outputDiv.innerHTML = '<p>Invalid ID</p>';
       });
 });
+
+if (nft_id) {
+   nftIdInput.value = nft_id;
+   searchButton.click();
+   document.getElementById('nftid-lookup').scrollIntoView({ behavior: 'smooth' });
+}
 
 const EarnRateContainer = document.getElementById('Earn-Rate');
 
@@ -358,6 +381,16 @@ window.addEventListener('load', async () => {
    }
 });
 
+function getParameterByName(name, url) {
+   if (!url) url = window.location.href;
+   name = name.replace(/[\[\]]/g, '\\$&');
+   var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+       results = regex.exec(url);
+   if (!results) return null;
+   if (!results[2]) return '';
+   return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
 document.addEventListener("DOMContentLoaded", () => {
    const fetchUserButton = document.getElementById('fetchUserButtonTabs');
    const usernameInput = document.getElementById('usernameInputTabs');
@@ -366,31 +399,36 @@ document.addEventListener("DOMContentLoaded", () => {
    const tabs = document.querySelectorAll('.custom-tab');
 
    const fetchEquippedSkins = () => {
-      const username = usernameInput.value.trim();
-      if (username === '') {
-         alert('Please enter an ev.io username.');
-         return;
-      }
+       const username = usernameInput.value.trim();
+       if (username === '') {
+           alert('Please enter an ev.io username.');
+           return;
+       }
 
-      loadingMessage.style.display = 'block';
+       loadingMessage.style.display = 'block';
 
-      tabs.forEach(tab => {
-         tab.style.display = 'none';
-      });
+       tabs.forEach(tab => {
+           tab.style.display = 'none';
+       });
 
-      fetch(`https://ev.io/stats-by-un/${encodeURIComponent(username)}`)
-         .then(response => response.json())
-         .then(data => {
-            loadingMessage.style.display = 'none';
+       fetch(`https://ev.io/stats-by-un/${encodeURIComponent(username)}`)
+           .then(response => {
+               if (!response.ok) {
+                   throw new Error('Network response was not ok');
+               }
+               return response.json();
+           })
+           .then(data => {
+               loadingMessage.style.display = 'none';
 
-            if (data.length === 0) {
-               tabs.forEach(tab => {
-                  tab.innerHTML = '<p>User not found.</p>';
-               });
-            } else {
-               console.log('User data:', data);
+               if (data.length === 0) {
+                   tabs.forEach(tab => {
+                       tab.innerHTML = '<p>User not found.</p>';
+                   });
+               } else {
+                   console.log('User data:', data);
 
-               const user = data[0];
+                   const user = data[0];
 
                const characterSkinId = user.field_eq_skin[0]?.target_id;
                if (characterSkinId) {
@@ -496,53 +534,60 @@ document.addEventListener("DOMContentLoaded", () => {
          .catch(error => {
             loadingMessage.style.display = 'none';
             tabs.forEach(tab => {
-               tab.innerHTML = '<p>Error fetching user information.</p>';
+                tab.innerHTML = '<p>Error fetching user information.</p>';
             });
             console.error('Error:', error);
-         });
-   };
+        });
+};
 
-   const displaySkin = (tabId, skinName, skinIcon) => {
-      const tab = document.getElementById(tabId);
-      tab.innerHTML = `
-<h2>Equipped ${tabId.replace('Tab', '')} Skin</h2>
-<p><strong>Skin Name:</strong> ${skinName}</p>
-<img style="border-top-width: 0px; padding-top: 5px;" src="${skinIcon}" alt="${skinName} Skin" style="max-width: 300px;">
-<hr class="modern-hr">
-`;
+const displaySkin = (tabId, skinName, skinIcon) => {
+    const tab = document.getElementById(tabId);
+    tab.innerHTML = `
+        <h2>Equipped ${tabId.replace('Tab', '')} Skin</h2>
+        <p><strong>Skin Name:</strong> ${skinName}</p>
+        <img style="border-top-width: 0px; padding-top: 5px;" src="${skinIcon}" alt="${skinName} Skin" style="max-width: 300px;">
+        <hr class="modern-hr">
+    `;
 
-      tab.style.display = 'block';
-   };
+    tab.style.display = 'block';
+};
 
-   const displayNoSkin = (tabId) => {
-      const tab = document.getElementById(tabId);
-      tab.innerHTML = '<p>No skin equipped for this category.</p>';
+const displayNoSkin = (tabId) => {
+    const tab = document.getElementById(tabId);
+    tab.innerHTML = '<p>No skin equipped for this category.</p>';
 
-      tab.style.display = 'block';
-   };
+    tab.style.display = 'block';
+};
 
-   const handleEnterKey = (event) => {
-      if (event.key === 'Enter') {
-         fetchUserButton.click();
-      }
-   };
+const handleEnterKey = (event) => {
+    if (event.key === 'Enter') {
+        fetchEquippedSkins();
+    }
+};
 
-   fetchUserButton.addEventListener('click', fetchEquippedSkins);
-   usernameInput.addEventListener('keydown', handleEnterKey);
+fetchUserButton.addEventListener('click', fetchEquippedSkins);
+usernameInput.addEventListener('keydown', handleEnterKey);
 
-   tabButtons.forEach(button => {
-      button.addEventListener('click', () => {
-         tabs.forEach(tab => {
+tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        tabs.forEach(tab => {
             tab.style.display = 'none';
-         });
+        });
 
-         const tabId = button.getAttribute('data-tab');
-         const tab = document.getElementById(tabId);
-         tab.style.display = 'block';
-      });
-   });
+        const tabId = button.getAttribute('data-tab');
+        const tab = document.getElementById(tabId);
+        tab.style.display = 'block';
+    });
+});
 
-   fetchUserButton.addEventListener('click', fetchEquippedSkins);
+// Check if 'equipped_skins' is provided in the URL and trigger the fetchEquippedSkins function
+const equippedSkinsParam = getParameterByName('equipped_skins');
+
+if (equippedSkinsParam) {
+    usernameInput.value = equippedSkinsParam;
+    fetchEquippedSkins();
+    document.getElementById('equipped-skins-lookup').scrollIntoView({ behavior: 'smooth' });
+}
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -599,10 +644,22 @@ function playAudio() {
    }
 }
 
+function getParameterByName(name, url) {
+   if (!url) url = window.location.href;
+   name = name.replace(/[\[\]]/g, '\\$&');
+   var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+      results = regex.exec(url);
+   if (!results) return null;
+   if (!results[2]) return '';
+   return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+const e_to_usdc = getParameterByName('e_to_usdc');
+
 function calculateUSDCFromE() {
 
 
-   const eCoinAmount = parseFloat(document.getElementById('e-coin-input').value);
+   const eCoinAmount = parseFloat(document.getElementById('e_coin_input').value);
    if (!isNaN(eCoinAmount) && eCoinAmount > 0) {
       const usdValue = eCoinAmount / 2000;
       const usdValueFormatted = usdValue.toLocaleString("en-US", {
@@ -623,11 +680,17 @@ function calculateUSDCFromE() {
    }
 }
 
-document.getElementById('e-coin-input').addEventListener('keypress', (event) => {
+document.getElementById('e_coin_input').addEventListener('keypress', (event) => {
    if (event.key === 'Enter') {
       calculateUSDCFromE();
    }
 });
+
+if (e_to_usdc) {
+   e_coin_input.value = e_to_usdc;
+   calculateUSDCFromE();
+   document.getElementById('e-usdc').scrollIntoView({ behavior: 'smooth' });
+}
 
 
 const copyTextElement = document.getElementById('copyText');
@@ -648,6 +711,17 @@ function openLink(linkURL) {
    window.open(linkURL, '_blank');
 }
 
+function getParameterByName(name, url) {
+   if (!url) url = window.location.href;
+   name = name.replace(/[\[\]]/g, '\\$&');
+   var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+      results = regex.exec(url);
+   if (!results) return null;
+   if (!results[2]) return '';
+   return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+const nft_lookup = getParameterByName('nft_lookup');
 
 const pageSize = 6;
 
@@ -830,6 +904,12 @@ document.getElementById('usernameInputnft').addEventListener('keypress', (event)
       displayUserNFTs();
    }
 });
+
+if (nft_lookup) {
+   usernameInputnft.value = nft_lookup;
+   displayUserNFTs();
+   document.getElementById('user-nfts-lookup').scrollIntoView({ behavior: 'smooth' });
+}
 
 function getMetaAttribute(nftData, attribute) {
    try {
