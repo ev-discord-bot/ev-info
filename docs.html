@@ -1,0 +1,328 @@
+<head>
+   <meta content="Evinfo Website" property="og:title" />
+   <meta content="An Website That Shows User Info And More In One Site!"
+      property="og:description" />
+   <meta
+      content="src\evinfo-icon.png"
+      property="og:image" />
+   <meta content="#43B581" data-react-helmet="true" name="theme-color" />
+   <title>iminthebibleson | Docs</title>
+   <link rel="shortcut icon" type="image/x-icon"
+      href="src\evinfo-icon.png">
+   <link rel="icon"
+      href="src\evinfo-icon.png"
+      type="image/x-icon">
+   <link rel="stylesheet" href="styles/docs.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css">
+</head>
+<body>
+   <div id="loadingScreen">
+      <p class="loading-text">Loading Content<br>Please Wait<span
+         class="connectingText"></span></p>
+      <div class="loader"></div>
+      <button id="skipLoadingButton">Skip Loading Screen if your stuck on it</button>
+   </div>
+   <div id="imageModal" class="modal">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="modalImage">
+   </div>
+</body>
+<div id="SiteContainer" class="container main-content">
+<div class="row g-0">
+<div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-2 sidebar">
+   <div class="left-sidebar">
+      <div class="sidebar-header" onclick="sidebar_toggler()">
+         <div class="label-text">Close Sidebar</div>
+         <i class="sidebar-toggler-btn fa-solid fa-circle-arrow-left"></i>
+      </div>
+      <div class="row g-0">
+         <div class="col-12">
+            <a class="logo-container" href="#">
+            <img id="logo-image" onclick="playAudio();" class="logo-image"
+               src="src/main_logo.svg" alt="logo">
+            </a>
+         </div>
+      </div>
+      <div class="sidebar-list">
+         <ul class="list-group">
+            <li class="list-group-item">
+               <span><i class="fa-solid fa-arrows-rotate fa-bounce" style="color: #ffffff;"></i></span> verison
+               <span class="badge update-badge rounded-pill">1.0.0</span>
+            </li>
+         </ul>
+         <ul class="list-group">
+         </ul>
+         </ul>
+         <ul class="list-group">
+            <h5 class="list-heading"><i class="fa-solid fa-info" style="color: var(--inactive-color);"></i> Resource Links</h5>
+            <a href="https://ev.io" target="_blank" style="text-decoration: none;">
+               <li class="list-group-item">
+                  <span> <img src="src\ev_icon.png" style="width: 20px; height: auto; margin-left: -5px; border-radius: 4px;"> </span>
+                  Ev.io
+               </li>
+            </a>
+            <a href="https://ev.io/info" target="_blank" style="text-decoration: none;">
+               <li class="list-group-item">
+                  <span> <img src="src\ev_icon.png" style="width: 20px; height: auto; margin-left: -5px; border-radius: 4px;"> </span>
+                  Ev.io Info
+               </li>
+            </a>
+            <a href="https://ev.io/user/login" target="_blank"
+               style="text-decoration: none;">
+               <li class="list-group-item">
+                  <span> <img src="src\ev_icon.png" style="width: 20px; height: auto; margin-left: -5px; border-radius: 4px;"> </span> Your
+                  Ev.io Account
+               </li>
+            </a>
+            <a href="https://arideve.github.io/ev-skin-viewer/" target="_blank"
+               style="text-decoration: none;">
+               <li class="list-group-item">
+                  <span> <img src="src\ari_icon.png" style="width: 20px; height: auto; margin-left: -5px; border-radius: 4px;"></span> Ari's
+                  Skin Viewer
+               </li>
+            </a>
+            <a href="https://crosshair.themeta.gg" target="_blank"
+               style="text-decoration: none;">
+               <li class="list-group-item">
+                  <span> <img src="src\themeta_icon.png" style="width: 20px; height: auto; margin-left: -5px; border-radius: 4px;"> </span>
+                  Kovaak's Crosshair Generator
+               </li>
+            </a>
+         </ul>
+         <ul class="list-group">
+            <h5 class="list-heading"><i class="fa-solid fa-share-from-square" style="color: var(--inactive-color);"></i> Social Links</h5>
+            <a href="https://github.com/iminthebibleson" target="_blank"
+               style="text-decoration: none;">
+               <li class="list-group-item">
+                  <span> <i class="fa-brands fa-github" style="color: #ffffff;"></i>
+                  </span> GitHub
+               </li>
+            </a>
+            <a href="https://discord.gg/WMThD52Dz" target="_blank"
+               style="text-decoration: none;">
+               <li class="list-group-item">
+                  <span> <i class="fa-brands fa-discord" style="color: #ffffff;"></i>
+                  </span> Discord
+               </li>
+            </a>
+            <a href="https://twitter.com/iminthebibleson" target="_blank"
+               style="text-decoration: none;">
+               <li class="list-group-item">
+                  <span> <i class="fa-brands fa-twitter" style="color: #ffffff;"></i>
+                  </span> Twitter
+               </li>
+            </a>
+         </ul>
+         <ul class="list-group">
+            <h5 class="list-heading"><i class="fa-solid fa-link" style="color: var(--inactive-color);"></i> Other Links</h5>
+            <a href="/index.html" target="_blank" style="text-decoration: none;">
+               <li class="list-group-item">
+                  <span> <img src="src\logo_icon.png" style="width: 20px; height: auto; margin-left: -5px;">
+                  </span> Home
+               </li>
+            </a>
+            <a href="/uisettings.html" target="_blank" style="text-decoration: none;">
+               <li class="list-group-item">
+                  <span> <img src="src\logo_icon.png" style="width: 20px; height: auto; margin-left: -5px;">
+                  </span> Ui/Mods
+               </li>
+            </a>
+            <a href="/crossshair.html" target="_blank" style="text-decoration: none;">
+               <li class="list-group-item">
+                  <span> <img src="src\logo_icon.png" style="width: 20px; height: auto; margin-left: -5px;">
+                  </span> Crosshairs
+               </li>
+            </a>
+         </ul>
+         <ul class="list-group">
+            <h5 class="list-heading"><i class="fa-solid fa-paperclip" style="color: var(--inactive-color);"></i> Ads</h5>
+            <center>
+               <img style="height: auto; width: 80%; padding: 10px;"
+                  src="src/solana-sol-logo.png" />
+               <p style="text-align: center; color: #ffffff;">Donate to me if you can. It
+                  will greatly benefit me. Anything is welcome, of course.
+               </p>
+               <p
+                  style="font-size: small; padding: 1px; text-align: center; color: #ffffff;;">Click
+                  Token to Copy
+               </p>
+               <span id="copyText" id="MyDiscord"
+                  style="cursor: pointer; text-decoration: underline; color: #ffffff; text-align: center;">3JEWbC33yrHfUKLJQxFhpB<br>eLdD7H5LkoBus49F2zaRsa</span>
+               <hr style="color: gray;">
+               <img style="height: auto; width: 80%; padding: 10px;"
+                  src="src\ev_bot_logo.svg" />
+               <p style="text-align: center; color: #ffffff;">Try out my Discord bot on
+                  your Discord server.
+               </p>
+               <a
+                  href="https://discord.com/api/oauth2/authorize?client_id=1072538244572516462&permissions=139586825280&scope=bot%20applications.commands"
+                  target="_blank" class="search-bar-button"
+                  style="width: auto; margin-bottom: 15px;"><i class="fa-brands fa-discord"
+                  style="color: #ffffff;"></i> Invite Discord Bot</a><br>
+               <br>
+               <p style="color: #ffffff; font-size: small;"><em>Bot Is Back Online Now! (Thanks to h1)</em>
+               </p>
+               <hr style="color: gray;">
+               <img style="height: auto; width: 80%; padding: 10px;"
+                  src="src\potion_swap_pfp.png" />
+               <p style="text-align: center; color: #ffffff;">try out potionswap's no KYC features by inviting the discord bot below! </p>
+               <a
+                  href="https://discord.com/api/oauth2/authorize?client_id=1175511291880812594&permissions=0&scope=applications.commands%20bot"
+                  target="_blank" class="search-bar-button"
+                  style="width: auto; margin-bottom: 15px;"><i class="fa-brands fa-discord"
+                  style="color: #ffffff;"></i> Invite Discord Bot</a><br>
+            </center>
+         </ul>
+      </div>
+   </div>
+</div>
+<div class="col-sm-12 col-md-8 col-lg-9 col-xl-9 col-xxl-10">
+<div class="col-12 app-nav">
+   <nav class="navbar navbar-expand-md navbar-dark">
+      <div class="container-fluid">
+         <button class="navbar-toggler" type="button" onclick="sidebar_toggler()"><span
+            class="navbar-toggler-icon"></span></button>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarToggler5rg72" aria-controls="navbarToggler5rg72"
+            aria-expanded="false" aria-label="Toggle navigation"><span
+            class="navbar-toggler-icon"></span></button>
+         <div class="collapse navbar-collapse" id="navbarToggler5rg72">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+               <h2 style="color: #ffffff;">Docs</h2>
+            </ul>
+            <ul class="navbar-nav mb-2">
+            <li class="list-group-item">
+               <span>
+               <i class="fa-solid fa-bug fa-bounce" style="color: #ffffff;"></i>
+               </span>
+               <a style="color: #ffffff;">Found a bug?</a>
+               <br style="color: #ffffff;">
+               <a style="color: #ffffff;">Dm Me On Discord:</a>
+               <span id="copyText" id="MyDiscord"
+                  style="cursor: pointer; text-decoration: underline; color: #ffffff;">gio.the.dog</span>
+            <li class="nav-item">
+               <div class="notification">
+                  <div data-bs-toggle="dropdown">
+                     <span class="notification-number">1</span>
+                     <i class="fa-solid fa-bell fa-lg" style="color: #ffffff;"></i>
+                  </div>
+                  <ul class="notification-list dropdown-menu">
+                  <!-- * -->
+                  <div class="notification-header">
+                     <span class="btn">Notificatons</span>
+                  </div>
+                  <!-- * -->
+                  <ul class="list-group">
+                     <li>
+                        <button class="dropdown-item d-flex" type="button">
+                           <img src="src/profile_photo.png" alt>
+                           <div class="update">
+                              <div class="notification-msg">
+                                 does this feel helpful?
+                              </div>
+                              <div class="date-time">
+                                 <i class="fa-regular fa-clock"></i>
+                                 <span>11:02 AM - Jan 9, 2024</span>
+                              </div>
+                           </div>
+                        </button>
+                     </li>
+                     <!-- * -->
+               </div>
+               </li>
+               <li class="nav-item">
+               <div class="profile-img">
+               <img
+                  onclick="openLink('https://www.youtube.com/watch?v=j5a0jTc9S10')"
+                  src="src/profile_photo.png" alt="avatar">
+               </div>
+               </li>
+               </ul>
+         </div>
+      </div>
+   </nav>
+</div>
+<div class="content-area">
+<div class="row">
+<div class="col-12">
+<div id="pills-tabContent" class="tab-content app-tab-content">
+<div id="tab_fwe6dsff5e" class="tab-pane fade show active"
+   role="tabpanel" aria-labelledby="tab_fwe6dsff5e_tab">
+<div class="row">
+<div class="text-white">
+</div>
+<div class="apps-status-options">
+<h2>Quick URL's</h2>
+<blockquote style="padding-left: 20px;">These URLs will allow you to quickly check your evio stats, player nfts, nft information, and more!</blockquote>
+<div class="url-list">
+<code style="padding: 5px; background-color: var(--theme-bg-color); color: white; text-shadow: none;" class="language-uri">https://evinfo.vercel.app?username={username}</code><a> Usage: Fetches User status</a>
+<hr style="width: auto;">
+<code style="padding: 5px; background-color: var(--theme-bg-color); color: white; text-shadow: none;" class="language-uri">https://evinfo.vercel.app?nft_id={nft_token}</code><a> Usage: Searches up Nft's info</a>
+<hr style="width: auto;">
+<code style="padding: 5px; background-color: var(--theme-bg-color); color: white; text-shadow: none;" class="language-uri">https://evinfo.vercel.app?equipped_skins={username}</code><a> Usage: Fetches users current equipped skins</a>
+<hr style="width: auto;">
+<code style="padding: 5px; background-color: var(--theme-bg-color); color: white; text-shadow: none;" class="language-uri">https://evinfo.vercel.app?e_to_usdc={e}</code><a> Usage: Shows how much e will equal to usdc (this wont last long)</a>
+<hr style="width: auto;">
+<code style="padding: 5px; background-color: var(--theme-bg-color); color: white; text-shadow: none;" class="language-uri">https://evinfo.vercel.app?nft_lookup={username}</code><a> Usage: Fetches all the players Nft's/none Nft's they own</a>
+</div><hr style="width: auto;">
+<h2>Api's I used</h2>
+<blockquote style="padding-left: 20px;">This is a list of apis I've used for websites and other purposes in order to help others get started coding with evio-related api's.</blockquote>
+<div class="container">
+<h3><i class="fa-solid fa-cloud" style="color: #ffffff;"></i> Request</h3><p>User stats lookup</p>
+<code style="padding: 5px; background-color: var(--theme-bg-color); color: white; text-shadow: none;" class="language-uri">https://ev.io/stats-by-un/iminthebibleson</code><a> aka </a><br><br><code style="padding: 5px; background-color: var(--theme-bg-color); color: white; text-shadow: none;" class="language-uri">https://ev.io/stats-by-un/{username}</code><a> or </a><code style="padding: 5px; background-color: var(--theme-bg-color); color: white; text-shadow: none;" class="language-uri">https://ev.io/user/{user_id}?_format=json	</code>
+<br><br>
+<h3>Response</h3>
+<pre><code class="language-json">[{"uid":[{"value":239066}],"uuid":[{"value":"162e9395-a70b-4390-8f71-ad7f6d562a6b"}],"langcode":[{"value":"en"}],"preferred_langcode":[{"value":"en"}],"preferred_admin_langcode":[{"value":"en"}],"name":[{"value":"iminthebibleson"}],"timezone":[{"value":"America\/New_York"}],"created":[{"value":"2021-12-07T14:04:16+00:00","format":"Y-m-d\\TH:i:sP"}],"changed":[{"value":"2024-01-05T15:21:48+00:00","format":"Y-m-d\\TH:i:sP"}],"default_langcode":[{"value":true}],"field_abilities_loadout":[{"value":"[1,1,1,1,2,1,2,0,0,0,1,0,0,1,0,1,1,0,0]"}],"field_auto_rifle_skin":[{"target_id":389,"target_type":"node","target_uuid":"586eff2a-0857-448d-82f6-84d6311e8584","url":"\/node\/389"}],"field_battle_royale_wins":[{"value":1}],"field_battle_royale_wins_weekly":[{"value":0}],"field_best_survival_time":[{"value":"00:22:52"}],"field_burst_rifle_skin":[{"target_id":418,"target_type":"node","target_uuid":"ac0a40c5-627f-4b4d-9b92-0684694b6d24","url":"\/node\/418"}],"field_cp_earned_weekly":[{"value":0}],"field_custom_crosshair":[{"target_id":83675,"alt":"","title":"","width":33,"height":33,"target_type":"file","target_uuid":"0e588d17-7cd6-42e5-8766-677f10b9c0ed","url":"https:\/\/ev.io\/sites\/default\/files\/custom_crosshairs\/lmbPlus_1_7_2.png"}],"field_daily_challenge":[],"field_deaths":[{"value":13817}],"field_disguised":[{"value":true}],"field_earned_as_scholar":[{"value":11492}],"field_earned_from_scholars":[{"value":2}],"field_earned_scholar_this_week":[{"value":0}],"field_earn_base":[],"field_eq_character_nft_address":[{"value":"2Yfpcvw5k5nCgExWSgKuU2jARewYcu1yUc8N91GYBgU7"}],"field_eq_skin":[{"target_id":728,"target_type":"node","target_uuid":"7c37e9af-41ab-4100-b0ca-69e7ad07baa9","url":"\/node\/728"}],"field_eq_sword_nft_address":[{"value":"DQUaHFsW1cJ74My8X2SAmNodyA9gUGtHxtzv6izUuWh9"}],"field_eq_weapon_nft_address":[],"field_erealm":[],"field_ev_coins":[{"value":1522}],"field_ev_coins_this_week":[{"value":0}],"field_fractal_uid":[],"field_friends":[{"value":"874457"},{"value":"789767"}],"field_friends_pending_invites":[{"value":"830421"}],"field_from_scholars_this_week":[{"value":0}],"field_hand_cannon_skin":[{"target_id":391,"target_type":"node","target_uuid":"61442ccf-bab6-4347-8cc6-cb55230741be","url":"\/node\/391"}],"field_id":[{"value":"Q0Kr256Ujj4nn64"}],"field_kills":[{"value":51807}],"field_k_d":[{"value":"3.75"}],"field_laser_rifle_skin":[{"target_id":370,"target_type":"node","target_uuid":"ac0d0e3b-5d78-4585-b14d-85d985f87a31","url":"\/node\/370"}],"field_level":[{"value":1}],"field_lifetime_cp_earned":[{"value":76098}],"field_match_history":[{"value":"[{\u0022win\u0022: false, \u0022kills\u0022: 1, \u0022deaths\u0022: 7, \u0022players\u0022: [{\u0022uid\u0022: 761720, \u0022name\u0022: \u0022deiteris\u0022}, {\u0022uid\u0022: 239066, \u0022name\u0022: \u0022iminthebibleson\u0022}], \u0022timestamp\u0022: 1695921072752}, {\u0022win\u0022: false, \u0022kills\u0022: 4, \u0022deaths\u0022: 6, \u0022players\u0022: [{\u0022uid\u0022: 248453, \u0022name\u0022: \u0022HashPanda\u0022}, {\u0022uid\u0022: 239066, \u0022name\u0022: \u0022iminthebibleson\u0022}, {\u0022uid\u0022: 17, \u0022name\u0022: \u0022Guest9750\u0022}], \u0022timestamp\u0022: 1699480264094}, {\u0022win\u0022: false, \u0022kills\u0022: 3, \u0022deaths\u0022: 5, \u0022players\u0022: [{\u0022uid\u0022: 248453, \u0022name\u0022: \u0022HashPanda\u0022}, {\u0022uid\u0022: 239066, \u0022name\u0022: \u0022iminthebibleson\u0022}, {\u0022uid\u0022: 17, \u0022name\u0022: \u0022Guest9750\u0022}], \u0022timestamp\u0022: 1699480540969}, {\u0022win\u0022: false, \u0022kills\u0022: 1, \u0022deaths\u0022: 8, \u0022players\u0022: [{\u0022uid\u0022: 248453, \u0022name\u0022: \u0022HashPanda\u0022}, {\u0022uid\u0022: 239066, \u0022name\u0022: \u0022iminthebibleson\u0022}], \u0022timestamp\u0022: 1699480918552}, {\u0022win\u0022: false, \u0022kills\u0022: 4, \u0022deaths\u0022: 8, \u0022players\u0022: [{\u0022uid\u0022: 248453, \u0022name\u0022: \u0022HashPanda\u0022}, {\u0022uid\u0022: 239066, \u0022name\u0022: \u0022iminthebibleson\u0022}], \u0022timestamp\u0022: 1699481461382}, {\u0022win\u0022: true, \u0022kills\u0022: 5, \u0022deaths\u0022: 3, \u0022players\u0022: [{\u0022uid\u0022: 248453, \u0022name\u0022: \u0022HashPanda\u0022}, {\u0022uid\u0022: 239066, \u0022name\u0022: \u0022iminthebibleson\u0022}], \u0022timestamp\u0022: 1699481778400}, {\u0022win\u0022: false, \u0022kills\u0022: 1, \u0022deaths\u0022: 9, \u0022players\u0022: [{\u0022uid\u0022: 248453, \u0022name\u0022: \u0022HashPanda\u0022}, {\u0022uid\u0022: 239066, \u0022name\u0022: \u0022iminthebibleson\u0022}], \u0022timestamp\u0022: 1699482102507}, {\u0022win\u0022: false, \u0022kills\u0022: 0, \u0022deaths\u0022: 13, \u0022players\u0022: [{\u0022uid\u0022: 248453, \u0022name\u0022: \u0022HashPanda\u0022}, {\u0022uid\u0022: 239066, \u0022name\u0022: \u0022iminthebibleson\u0022}], \u0022timestamp\u0022: 1699482402499}, {\u0022win\u0022: false, \u0022kills\u0022: 3, \u0022deaths\u0022: 7, \u0022players\u0022: [{\u0022uid\u0022: 248453, \u0022name\u0022: \u0022HashPanda\u0022}, {\u0022uid\u0022: 239066, \u0022name\u0022: \u0022iminthebibleson\u0022}], \u0022timestamp\u0022: 1699482718031}, {\u0022win\u0022: false, \u0022kills\u0022: 3, \u0022deaths\u0022: 9, \u0022players\u0022: [{\u0022uid\u0022: 248453, \u0022name\u0022: \u0022HashPanda\u0022}, {\u0022uid\u0022: 239066, \u0022name\u0022: \u0022iminthebibleson\u0022}], \u0022timestamp\u0022: 1699576306254}, {\u0022win\u0022: false, \u0022kills\u0022: 3, \u0022deaths\u0022: 9, \u0022players\u0022: [{\u0022uid\u0022: 248453, \u0022name\u0022: \u0022HashPanda\u0022}, {\u0022uid\u0022: 239066, \u0022name\u0022: \u0022iminthebibleson\u0022}], \u0022timestamp\u0022: 1699577141581}, {\u0022win\u0022: false, \u0022kills\u0022: 3, \u0022deaths\u0022: 13, \u0022players\u0022: [{\u0022uid\u0022: 248453, \u0022name\u0022: \u0022HashPanda\u0022}, {\u0022uid\u0022: 239066, \u0022name\u0022: \u0022iminthebibleson\u0022}], \u0022timestamp\u0022: 1699577559781}, {\u0022win\u0022: false, \u0022kills\u0022: 0, \u0022deaths\u0022: 10, \u0022players\u0022: [{\u0022uid\u0022: 704578, \u0022name\u0022: \u0022MANDAR1N0V\u0022}, {\u0022uid\u0022: 239066, \u0022name\u0022: \u0022iminthebibleson\u0022}], \u0022timestamp\u0022: 1699755004383}]"}],"field_primary_weapon":[{"value":4}],"field_privacy_policy":[{"value":true}],"field_rank":[{"value":286}],"field_score":[{"value":7440690}],"field_social_bio":[{"value":"THE LAG THO"}],"field_survival_high_scores":[{"value":{"0":["Map","Best Time"],"1":["",""],"2":["Enclave","00:22:52"],"3":["",""],"4":["",""],"5":["",""],"6":["",""],"8":["Fractal","00:17:22"],"9":["Hallow-Pawn","00:15:21"],"10":["Vestige","00:13:49"],"11":["Momentum","00:09:15"],"12":["Phalanx","00:05:22"],"13":["Sandblast","00:07:35"],"14":["Hallow-Gypsum","00:18:07"],"15":["Hallow-Enclave","00:04:18"],"16":["Leadfoot","00:02:53"],"17":["Winter-Bishop","00:03:09"],"caption":"Survival High Scores"},"format":null,"caption":"Survival High Scores"}],"field_survival_weekly":[{"value":"00:00:00"}],"field_sweeper_skin":[{"target_id":738,"target_type":"node","target_uuid":"8bb63cad-70f9-4ef8-92e7-74a3325ea728","url":"\/node\/738"}],"field_sword_skin":[{"target_id":553,"target_type":"node","target_uuid":"c5bd82a5-7981-4fdc-8042-84d0cd339db2","url":"\/node\/553"}],"field_terms_of_use":[{"value":true}],"field_total_games":[{"value":7426}],"field_twitch":[{"value":"https:\/\/www.twitch.tv\/iminthebibleson21"}],"field_ui_mod":[],"field_wallet_address":[{"value":"3JEWbC33yrHfUKLJQxFhpBeLdD7H5LkoBus49F2zaRsa"}],"field_weekly_quest_percent_compl":[{"value":0}],"field_weekly_score":[{"value":0}],"field_youtube":[]}]</code></pre>
+<hr>
+<h3><i class="fa-solid fa-cloud" style="color: #ffffff;"></i> Request</h3><p>Nft Info lookup</p>
+<code style="padding: 5px; background-color: var(--theme-bg-color); color: white; text-shadow: none;" class="language-uri">https://ev.io/get-nft-flags/7hsB5sVGbT61JbKFE7Nxve76EfMn54ckaB6yNepuXqc1</code><a> aka </a><code style="padding: 5px; background-color: var(--theme-bg-color); color: white; text-shadow: none;" class="language-uri">https://ev.io/get-nft-flags/{nft_id}</code>
+<br><br>
+<h3>Response</h3>
+<pre><code class="language-json">[{"flag_id":"purchased_item","entity_id":"348","id":"62567","field_flag_nft_address":"7hsB5sVGbT61JbKFE7Nxve76EfMn54ckaB6yNepuXqc1","field_power_level":"0","field_meta":["{\u0022value\u0022: {\u0022uri\u0022: \u0022https:\/\/web3.ev.io\/nft\/Xander_9.json\u0022, \u0022name\u0022: \u0022Xander\u0022, \u0022image\u0022: \u0022https:\/\/ev.io\/sites\/default\/files\/wallet_image\/XanderTiny.png\u0022, \u0022symbol\u0022: \u0022EV.IO\u0022, \u0022maxSupply\u0022: 1, \u0022attributes\u0022: [{\u0022value\u0022: 348, \u0022trait_type\u0022: \u0022game-node-id\u0022}, {\u0022value\u0022: \u0022Rare\u0022, \u0022trait_type\u0022: \u0022tier\u0022}, {\u0022value\u0022: 0, \u0022trait_type\u0022: \u0022power-level\u0022}, {\u0022value\u0022: \u0022Invaders\u0022, \u0022trait_type\u0022: \u0022faction\u0022}, {\u0022value\u0022: \u00221\u0022, \u0022trait_type\u0022: \u0022earn\u0022}], \u0022collection\u0022: {\u0022name\u0022: \u0022EV.IO First Edition Characters\u0022, \u0022family\u0022: \u0022EV.IO\u0022}, \u0022is_mutable\u0022: true, \u0022properties\u0022: {\u0022files\u0022: [{\u0022uri\u0022: \u0022https:\/\/ev.io\/sites\/default\/files\/wallet_image\/XanderTiny.png\u0022, \u0022type\u0022: \u0022image\/png\u0022}], \u0022category\u0022: \u0022image\u0022, \u0022creators\u0022: [{\u0022share\u0022: 27, \u0022address\u0022: \u0022Ey1x9QarM9XDavFKSSMTWzAeA9YTx6EyVgrw6FoaM2eQ\u0022}, {\u0022share\u0022: 63, \u0022address\u0022: \u00228CZ9JnRSLVdwHLnejcW4DS7D4pa2Epx9PhAEG8tUdv7z\u0022}, {\u0022share\u0022: 10, \u0022address\u0022: \u0022HMduKVo3A19U5EpQdEhPjo9hq9zfZXn8aGVYZp7Vc7fX\u0022}]}, \u0022description\u0022: \u0022Earn SOL for every kill with this NFT in your wallet. Power it up through in-game achievements to earn more SOL! Play at https:\/\/ev.io. To enable play to earn, be sure to register and login (ev.io\/account\/register), connect the wallet, then equip the skin at your profile screen.\u0022, \u0022external_url\u0022: \u0022https:\/\/ev.io\/\u0022, \u0022seller_fee_basis_points\u0022: 1000}}"],"uid":"740612","field_earned_today":"992","field_reset_time":"1704636526807","field_last_lent":"1685533754837"}]</code></pre>
+<hr>
+<h3><i class="fa-solid fa-cloud" style="color: #ffffff;"></i> Request</h3><p>crytno prices | learn more: <a href="https://www.coingecko.com/en/api" target="_blank">https://www.coingecko.com/en/api</a></p>
+<code style="padding: 5px; background-color: var(--theme-bg-color); color: white; text-shadow: none;" class="language-uri">https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd%2Cinr%2Cbdt%2Cphp%2Cbrl%2Cmyr%2Caud&include_market_cap=false&include_24hr_vol=false&include_24hr_change=true&include_last_updated_at=true&precision=2</code>
+<br><br>
+<h3>Response</h3>
+<pre><code class="language-json">{"solana":{"usd":98.78,"usd_24h_change":4.152864305506743,"inr":8202.56,"inr_24h_change":3.9643896103811853,"bdt":10834.97,"bdt_24h_change":4.520095566101694,"php":5516.18,"php_24h_change":4.786154112566581,"brl":481.24,"brl_24h_change":4.033432669200884,"myr":459.42,"myr_24h_change":4.074545468882,"aud":147.21,"aud_24h_change":4.304669927353764,"last_updated_at":1704739706}}</code></pre>
+<hr>
+<h4>Evio Api's</h4>
+<p>learn more about evio api's here: <a href="https://ev.io/developer-api">https://ev.io/developer-api</a></p>
+<hr>
+<h4>Formatted Code</h4>
+<p>Go on to <a href="https://jsonformatter.org" target="_blank">https://jsonformatter.org</a> and simply copy and paste the json code above to format it<br>(makes it more simpler to read in my opinion)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<link rel="stylesheet"
+   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+   integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+   crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link
+   href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+   rel="stylesheet"
+   integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+   crossorigin="anonymous">
+<script
+   src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+   integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script
+   src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"
+   integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A=="
+   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="functions/docs_function.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-javascript.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-json.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-python.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-uri.min.js"></script>
