@@ -186,7 +186,7 @@ const showMoreInfo = () => {
       moreInfoDetails.innerHTML = `
 <p><strong>Abilities Layout:</strong> ${user.field_abilities_loadout[0].value}</p>
 <p><strong>Total Games:</strong> ${user.field_total_games[0].value}</p>
-<p><strong>Wallet Address:</strong> <span style="text-decoration: underline;">${user.field_wallet_address[0].value}<span></p>
+<p><strong>Wallet Address:</strong> <span style="text-decoration: underline; user-select: all;">${user.field_wallet_address[0].value}<span></p>
 <p><strong>Weekly Score:</strong> ${user.field_weekly_score[0].value} | <strong>CP Earned Weekly:</strong> ${user.field_cp_earned_weekly[0].value}</p>
 <p><strong>CP Lifetime Earned:</strong> ${user.field_lifetime_cp_earned[0].value} | <strong>Ev Coins:</strong> ${user.field_ev_coins[0].value}</p>
 `;
