@@ -170,7 +170,9 @@ const fetchUserInfo = () => {
 if (username) {
    usernameInput.value = username;
    fetchUserInfo();
-   document.getElementById('userinfo-lookup').scrollIntoView({ behavior: 'smooth' });
+   document.getElementById('userinfo-lookup').scrollIntoView({
+      behavior: 'smooth'
+   });
 }
 
 const showMoreInfo = () => {
@@ -313,7 +315,9 @@ searchButton.addEventListener('click', () => {
 if (nft_id) {
    nftIdInput.value = nft_id;
    searchButton.click();
-   document.getElementById('nftid-lookup').scrollIntoView({ behavior: 'smooth' });
+   document.getElementById('nftid-lookup').scrollIntoView({
+      behavior: 'smooth'
+   });
 }
 
 const EarnRateContainer = document.getElementById('Earn-Rate');
@@ -385,7 +389,7 @@ function getParameterByName(name, url) {
    if (!url) url = window.location.href;
    name = name.replace(/[\[\]]/g, '\\$&');
    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-       results = regex.exec(url);
+      results = regex.exec(url);
    if (!results) return null;
    if (!results[2]) return '';
    return decodeURIComponent(results[2].replace(/\+/g, ' '));
@@ -399,36 +403,36 @@ document.addEventListener("DOMContentLoaded", () => {
    const tabs = document.querySelectorAll('.custom-tab');
 
    const fetchEquippedSkins = () => {
-       const username = usernameInput.value.trim();
-       if (username === '') {
-           alert('Please enter an ev.io username.');
-           return;
-       }
+      const username = usernameInput.value.trim();
+      if (username === '') {
+         alert('Please enter an ev.io username.');
+         return;
+      }
 
-       loadingMessage.style.display = 'block';
+      loadingMessage.style.display = 'block';
 
-       tabs.forEach(tab => {
-           tab.style.display = 'none';
-       });
+      tabs.forEach(tab => {
+         tab.style.display = 'none';
+      });
 
-       fetch(`https://ev.io/stats-by-un/${encodeURIComponent(username)}`)
-           .then(response => {
-               if (!response.ok) {
-                   throw new Error('Network response was not ok');
-               }
-               return response.json();
-           })
-           .then(data => {
-               loadingMessage.style.display = 'none';
+      fetch(`https://ev.io/stats-by-un/${encodeURIComponent(username)}`)
+         .then(response => {
+            if (!response.ok) {
+               throw new Error('Network response was not ok');
+            }
+            return response.json();
+         })
+         .then(data => {
+            loadingMessage.style.display = 'none';
 
-               if (data.length === 0) {
-                   tabs.forEach(tab => {
-                       tab.innerHTML = '<p>User not found.</p>';
-                   });
-               } else {
-                   console.log('User data:', data);
+            if (data.length === 0) {
+               tabs.forEach(tab => {
+                  tab.innerHTML = '<p>User not found.</p>';
+               });
+            } else {
+               console.log('User data:', data);
 
-                   const user = data[0];
+               const user = data[0];
 
                const characterSkinId = user.field_eq_skin[0]?.target_id;
                if (characterSkinId) {
@@ -534,60 +538,62 @@ document.addEventListener("DOMContentLoaded", () => {
          .catch(error => {
             loadingMessage.style.display = 'none';
             tabs.forEach(tab => {
-                tab.innerHTML = '<p>Error fetching user information.</p>';
+               tab.innerHTML = '<p>Error fetching user information.</p>';
             });
             console.error('Error:', error);
-        });
-};
+         });
+   };
 
-const displaySkin = (tabId, skinName, skinIcon) => {
-    const tab = document.getElementById(tabId);
-    tab.innerHTML = `
+   const displaySkin = (tabId, skinName, skinIcon) => {
+      const tab = document.getElementById(tabId);
+      tab.innerHTML = `
         <h2>Equipped ${tabId.replace('Tab', '')} Skin</h2>
         <p><strong>Skin Name:</strong> ${skinName}</p>
         <img style="border-top-width: 0px; padding-top: 5px;" src="${skinIcon}" alt="${skinName} Skin" style="max-width: 300px;">
         <hr class="modern-hr">
     `;
 
-    tab.style.display = 'block';
-};
+      tab.style.display = 'block';
+   };
 
-const displayNoSkin = (tabId) => {
-    const tab = document.getElementById(tabId);
-    tab.innerHTML = '<p>No skin equipped for this category.</p>';
+   const displayNoSkin = (tabId) => {
+      const tab = document.getElementById(tabId);
+      tab.innerHTML = '<p>No skin equipped for this category.</p>';
 
-    tab.style.display = 'block';
-};
+      tab.style.display = 'block';
+   };
 
-const handleEnterKey = (event) => {
-    if (event.key === 'Enter') {
-        fetchEquippedSkins();
-    }
-};
+   const handleEnterKey = (event) => {
+      if (event.key === 'Enter') {
+         fetchEquippedSkins();
+      }
+   };
 
-fetchUserButton.addEventListener('click', fetchEquippedSkins);
-usernameInput.addEventListener('keydown', handleEnterKey);
+   fetchUserButton.addEventListener('click', fetchEquippedSkins);
+   usernameInput.addEventListener('keydown', handleEnterKey);
 
-tabButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        tabs.forEach(tab => {
+   tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+         tabs.forEach(tab => {
             tab.style.display = 'none';
-        });
+         });
 
-        const tabId = button.getAttribute('data-tab');
-        const tab = document.getElementById(tabId);
-        tab.style.display = 'block';
-    });
-});
+         const tabId = button.getAttribute('data-tab');
+         const tab = document.getElementById(tabId);
+         tab.style.display = 'block';
+      });
+   });
 
-// Check if 'equipped_skins' is provided in the URL and trigger the fetchEquippedSkins function
-const equippedSkinsParam = getParameterByName('equipped_skins');
+   // Check if 'equipped_skins' is provided in the URL and trigger the fetchEquippedSkins function
+   const equippedSkinsParam = getParameterByName('equipped_skins');
 
-if (equippedSkinsParam) {
-    usernameInput.value = equippedSkinsParam;
-    fetchEquippedSkins();
-    document.getElementById('equipped-skins-lookup').scrollIntoView({ behavior: 'smooth' });
-}
+   if (equippedSkinsParam) {
+      usernameInput.value = equippedSkinsParam;
+      fetchEquippedSkins();
+      document.getElementById('equipped-skins-lookup').scrollIntoView({
+         behavior: 'smooth'
+      });
+   }
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -689,7 +695,9 @@ document.getElementById('e_coin_input').addEventListener('keypress', (event) => 
 if (e_to_usdc) {
    e_coin_input.value = e_to_usdc;
    calculateUSDCFromE();
-   document.getElementById('e-usdc').scrollIntoView({ behavior: 'smooth' });
+   document.getElementById('e-usdc').scrollIntoView({
+      behavior: 'smooth'
+   });
 }
 
 
@@ -722,10 +730,9 @@ function getParameterByName(name, url) {
 }
 
 const nft_lookup = getParameterByName('nft_lookup');
-
 const pageSize = 6;
 
-const fetchUserUid = async () => {
+async function fetchUserUid() {
    const username = document.getElementById('usernameInputnft').value.trim();
 
    if (username === '') {
@@ -735,7 +742,6 @@ const fetchUserUid = async () => {
 
    try {
       loadingMessage.style.display = 'block';
-
       const response = await fetch(`https://ev.io/stats-by-un/${encodeURIComponent(username)}`);
 
       if (!response.ok) {
@@ -748,14 +754,12 @@ const fetchUserUid = async () => {
       if (data.length === 0) {
          alert('User not found.');
       } else {
-         const user = data[0];
-         const uidUrl = `${user.uid[0].value}`;
-         return uidUrl;
+         return data[0].uid[0].value;
       }
    } catch (error) {
       console.error('Error fetching user data:', error.message);
    }
-};
+}
 
 async function getUserNFTs(uidUrl) {
    try {
@@ -769,6 +773,22 @@ async function getUserNFTs(uidUrl) {
       return data;
    } catch (error) {
       console.error('Error fetching user NFTs:', error.message);
+      return null;
+   }
+}
+
+async function getSkinInfo(entityId) {
+   try {
+      const response = await fetch(`https://ev.io/node/${entityId}?_format=json`);
+      const data = await response.json();
+
+      if (!response.ok) {
+         throw new Error(`Failed to fetch skin info. Status: ${response.status}, ${response.statusText}`);
+      }
+
+      return data;
+   } catch (error) {
+      console.error('Error fetching skin info:', error.message);
       return null;
    }
 }
@@ -818,7 +838,7 @@ async function displayUserNFTs() {
    }
 }
 
-function displayPageNFTs(paginatedNFTs, currentPage, totalPages) {
+async function displayPageNFTs(paginatedNFTs, currentPage, totalPages) {
    const nftContainer = document.getElementById('nftContainer');
    nftContainer.innerHTML = '';
 
@@ -836,7 +856,7 @@ function displayPageNFTs(paginatedNFTs, currentPage, totalPages) {
       noNFTsMessage.classList.add('no-nfts-message');
       nftContainer.appendChild(noNFTsMessage);
    } else {
-      paginatedNFTs.forEach((nftData) => {
+      for (const nftData of paginatedNFTs) {
          const nftCard = document.createElement('div');
          nftCard.classList.add('nft-card');
 
@@ -867,35 +887,50 @@ function displayPageNFTs(paginatedNFTs, currentPage, totalPages) {
          } catch (parseError) {
             console.error('Error parsing NFT data:', parseError.message);
 
+            try {
+               const skinData = await getSkinInfo(nftData.entity_id);
+               let imageUrl = null;
 
-            async function getSkinInfo(entityId) {
-               try {
-                  const response = await fetch(`https://ev.io/node/${entityId}?_format=json`);
-                  const data = await response.json();
-
-                  if (!response.ok) {
-                     throw new Error(`Failed to fetch skin info. Status: ${response.status}, ${response.statusText}`);
-                  }
-
-                  return data;
-               } catch (error) {
-                  console.error('Error fetching skin info:', error.message);
-                  return null;
+               if (skinData.field_profile_thumb) {
+                  imageUrl = skinData.field_profile_thumb[0].url;
+               } else if (skinData.field_weapon_skin_thumb) {
+                  imageUrl = skinData.field_weapon_skin_thumb[0].url;
                }
+
+               const nftCard = document.createElement('div');
+               nftCard.classList.add('nft-card');
+
+               const nftImage = document.createElement('img');
+               nftImage.src = imageUrl;
+               nftImage.alt = 'Skin Image';
+               nftImage.classList.add('skin-image');
+               nftImage.style.borderRadius = '10%';
+
+               nftImage.style.maxWidth = '100%';
+               nftImage.style.maxHeight = '100%';
+
+               if (imageUrl.includes('field_weapon_skin_thumb')) {
+                  nftImage.style.padding = '20px';
+               }
+
+               nftCard.appendChild(nftImage);
+
+               const skinInfo = document.createElement('div');
+               skinInfo.innerHTML = `
+                    <p><strong>Node ID:</strong> ${nftData.entity_id || 'Unknown'}</p>
+                    <p><strong>Title:</strong> ${skinData?.title[0]?.value || 'Unknown'}</p>
+                    <p><strong>None Nft</strong></p>
+                `;
+               nftCard.appendChild(skinInfo);
+
+               nftContainer.appendChild(nftCard);
+            } catch (error) {
+               console.error('Error parsing NFT data:', error.message);
             }
 
 
-            const errorMessage = document.createElement('div');
-            errorMessage.innerHTML = `
-                     <p><strong>Node ID:</strong> ${nftData.entity_id || 'Unknown'}</p>
-                     <p><strong>Nft:</strong> ${nftData.field_flag_nft_address || 'False'}</p>
-                  `;
-
-
-            errorMessage.classList.add('no-nfts-message');
-            nftContainer.appendChild(errorMessage);
          }
-      });
+      }
    }
 }
 
@@ -908,8 +943,11 @@ document.getElementById('usernameInputnft').addEventListener('keypress', (event)
 if (nft_lookup) {
    usernameInputnft.value = nft_lookup;
    displayUserNFTs();
-   document.getElementById('user-nfts-lookup').scrollIntoView({ behavior: 'smooth' });
+   document.getElementById('user-nfts-lookup').scrollIntoView({
+      behavior: 'smooth'
+   });
 }
+
 
 function getMetaAttribute(nftData, attribute) {
    try {
