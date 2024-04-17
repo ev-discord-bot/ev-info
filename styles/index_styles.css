@@ -17,6 +17,10 @@
 --danger-bg-color: #dc3545;
 --success-bg-color: #198754;
 --primary-bg-color: #0d6efd;
+/* type it */
+--ti-cursor-color: transparent;
+--ti-cursor-line-height: 1;
+/* type it end */
 }
 * {
 outline: none;

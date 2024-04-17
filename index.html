@@ -54,35 +54,35 @@
 			 <h5 class="list-heading"><i class="fa-solid fa-info" style="color: var(--inactive-color);"></i> Resource Links</h5>
 			 <a href="https://ev.io" target="_blank" style="text-decoration: none;">
 				<li class="list-group-item">
-				   <span> <img src="src\ev_icon.png" style="width: 20px; height: auto; margin-left: -5px; border-radius: 4px;"> </span>
-				   Ev.io
+				   <span> <img src="src\ev_icon.png" style="width: 20px; height: auto; margin-left: -5px; border-radius: 4px;" > </span>
+				   <span id="evio"></span>
 				</li>
 			 </a>
 			 <a href="https://ev.io/info" target="_blank" style="text-decoration: none;">
 				<li class="list-group-item">
 				   <span> <img src="src\ev_icon.png" style="width: 20px; height: auto; margin-left: -5px; border-radius: 4px;"> </span>
-				   Ev.io Info
+				   <span id="evioinfo"></span>
 				</li>
 			 </a>
 			 <a href="https://ev.io/user/login" target="_blank"
 				style="text-decoration: none;">
 				<li class="list-group-item">
-				   <span> <img src="src\ev_icon.png" style="width: 20px; height: auto; margin-left: -5px; border-radius: 4px;"> </span> Your
-				   Ev.io Account
+				   <span> <img src="src\ev_icon.png" style="width: 20px; height: auto; margin-left: -5px; border-radius: 4px;"> </span>
+				   <span id="evioaccount"></span>  
 				</li>
 			 </a>
 			 <a href="https://arideve.github.io/ev-skin-viewer/" target="_blank"
 				style="text-decoration: none;">
 				<li class="list-group-item">
-				   <span> <img src="src\ari_icon.png" style="width: 20px; height: auto; margin-left: -5px; border-radius: 4px;"></span> Ari's
-				   Skin Viewer
+				   <span> <img src="src\ari_icon.png" style="width: 20px; height: auto; margin-left: -5px; border-radius: 4px;"></span> 
+				   <span id="ari"></span>
 				</li>
 			 </a>
 			 <a href="https://crosshair.themeta.gg" target="_blank"
 				style="text-decoration: none;">
 				<li class="list-group-item">
 				   <span> <img src="src\themeta_icon.png" style="width: 20px; height: auto; margin-left: -5px; border-radius: 4px;"> </span>
-				   Kovaak's Crosshair Generator
+				   <span id="kovaak"></span>
 				</li>
 			 </a>
 		  </ul>
@@ -92,21 +92,21 @@
 				style="text-decoration: none;">
 				<li class="list-group-item">
 				   <span> <i class="fa-brands fa-github" style="color: #ffffff;"></i>
-				   </span> GitHub
+				   </span> <span id="github"></span>
 				</li>
 			 </a>
 			 <a href="https://discord.gg/WMThD52Dz" target="_blank"
 				style="text-decoration: none;">
 				<li class="list-group-item">
 				   <span> <i class="fa-brands fa-discord" style="color: #ffffff;"></i>
-				   </span> Discord
+				   </span> <span id="discord"></span>
 				</li>
 			 </a>
 			 <a href="https://twitter.com/iminthebibleson" target="_blank"
 				style="text-decoration: none;">
 				<li class="list-group-item">
 				   <span> <i class="fa-brands fa-twitter" style="color: #ffffff;"></i>
-				   </span> Twitter
+				   </span> <span id="twitter"></span>
 				</li>
 			 </a>
 		  </ul>
@@ -115,19 +115,19 @@
 			 <a href="/docs.html" target="_blank" style="text-decoration: none;">
 				<li class="list-group-item">
 				   <span> <img src="src\logo_icon.png" style="width: 20px; height: auto; margin-left: -5px;">
-				   </span> Docs
+				   </span> <span id="docs"></span>
 				</li>
 			 </a>
 			 <a href="/uisettings.html" target="_blank" style="text-decoration: none;">
 				<li class="list-group-item">
 				   <span> <img src="src\logo_icon.png" style="width: 20px; height: auto; margin-left: -5px;">
-				   </span> Ui/Mods
+				   </span> <span id="uimods"></span>
 				</li>
 			 </a>
 			 <a href="/crossshair.html" target="_blank" style="text-decoration: none;">
 				<li class="list-group-item">
 				   <span> <img src="src\logo_icon.png" style="width: 20px; height: auto; margin-left: -5px;">
-				   </span> Crosshairs
+				   </span> <span id="crosshairs"></span>
 				</li>
 			 </a>
 		  </ul>
@@ -136,8 +136,7 @@
 			 <center>
 				<img style="height: auto; width: 80%; padding: 10px;"
 				   src="src/solana-sol-logo.png" />
-				<p style="text-align: center; color: #ffffff;">Donate to me if you can. It
-				   will greatly benefit me. Anything is welcome, of course.
+				<p style="text-align: center; color: #ffffff;" id="donate">
 				</p>
 				<p
 				   style="font-size: small; padding: 1px; text-align: center; color: #ffffff;;">Click
@@ -148,7 +147,7 @@
 				<hr style="color: gray;">
 				<img style="height: auto; width: 80%; padding: 10px; border-radius: 25px;"
 				   src="src\helper_bot_logo.png" />
-				<p style="text-align: center; color: #ffffff;">An inspiration and rebuild of the Ev.io Clan Helper an unofficial ev.io bot for clans!<br>(Clan management tools coming soon)<br><br><em>Note: This is still in beta, will be an few bugs</em></p>
+				<p style="text-align: center; color: #ffffff;" id="eviohelper"></p>
 				<a
 				   href="https://discord.com/oauth2/authorize?client_id=1212440273347420180&permissions=2147551296&scope=bot+applications.commands"
 				   target="_blank" class="search-bar-button"
@@ -157,7 +156,7 @@
 				<hr style="color: gray;">
 				<img style="height: auto; width: 80%; padding: 10px; border-radius: 25px;"
 				   src="src\Roycemarketbanner.gif" />
-				<p style="text-align: center; color: #ffffff;">Unlock Exclusive Deals and Community Benefits! 🌟 Join our Discord community for unbeatable discounts on products and subscriptions. With over $100+ in sales so far!</p>
+				<p style="text-align: center; color: #ffffff;" id="roycemarket"></p>
 				<a
 				   href="https://discord.gg/et76cZUD9C"
 				   target="_blank" class="search-bar-button"
@@ -171,9 +170,7 @@
 				<hr style="color: gray;">
 				<img style="height: auto; width: 80%; padding: 10px;"
 				   src="src\ev_bot_logo.svg" />
-				<p style="text-align: center; color: #ffffff;">Try out my Discord bot on
-				   your Discord server.
-				</p>
+				<p style="text-align: center; color: #ffffff;" id="evbot"></p>
 				<a
 				   href="https://discord.com/api/oauth2/authorize?client_id=1072538244572516462&permissions=139586825280&scope=bot%20applications.commands"
 				   target="_blank" class="search-bar-button"
@@ -185,7 +182,7 @@
 				<hr style="color: gray;">
 				<img style="height: auto; width: 80%; padding: 10px;"
 				   src="src\potion_swap_pfp.png" />
-				<p style="text-align: center; color: #ffffff;">try out potionswap's no KYC features by inviting the discord bot below! </p>
+				<p style="text-align: center; color: #ffffff;" id="potionswap"></p>
 				<a
 				   href="https://discord.com/api/oauth2/authorize?client_id=1175511291880812594&permissions=0&scope=applications.commands%20bot"
 				   target="_blank" class="search-bar-button"
@@ -194,7 +191,7 @@
 				<hr style="color: gray;">
 				<img style="height: auto; width: 80%; padding: 10px; border-radius: 25px;"
 				   src="src\stock_bot_profile.gif" />
-				<p style="text-align: center; color: #ffffff;">Check out StockBot, a stock game that utilizes actual stock values from companies like TSLA, RACE, WMT, and more!</p>
+				<p style="text-align: center; color: #ffffff;" id="stockbot"></p>
 				<a
 				   href="https://discord.com/oauth2/authorize?client_id=1197638840932905113&permissions=689342630912&scope=bot+applications.commands"
 				   target="_blank" class="search-bar-button"
@@ -217,7 +214,7 @@
 			 class="navbar-toggler-icon"></span></button>
 		  <div class="collapse navbar-collapse" id="navbarToggler5rg72">
 			 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-				<h2 style="color: #ffffff;">User Info LookUp And More</h2>
+				<h2 style="color: #ffffff;" id="header_title"></h2>
 			 </ul>
 			 <ul class="navbar-nav mb-2">
 			 <li class="list-group-item">
@@ -527,7 +524,14 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"
 	integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A=="
 	crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+ <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
  <script src="functions/index_function.js"></script>
+ <script src="functions/main function/user_lookup.js"></script>
+ <script src="functions/main function/typeit.js"></script>
+
+
  <button class="open-button" onclick="openForm()">Saved Username</button>
  <button class="open-button-theme" id="toggleCSSButton" onclick="toggleCSS()">theme toggle</button>
  <body>
